@@ -1,50 +1,48 @@
 {
     "@context": {
-        "terms": "http://rbmm.org/schemas/accessibility/terms/abstract",
-        "value": "http://rbmm.org/schemas/accessibility/terms/abstract/value",
-        "rating": "http://rbmm.org/schemas/accessibility/terms/abstract/rating",
-        "recommended": "http://rbmm.org/schemas/accessibility/terms/abstract/recomendations"
+        "c4a": "http://rbmm.org/schemas/cloud4all/0.1/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
     },
-    "terms": [
+    "@graph": [
         {
-          "http://registry.gpii.org/common/pointerControllEnhancement" : {
-            "value": true,
-            "rating": 9,
-            "recommended": {
-                "http://registry.gpii.org/common/cursorSize": 0.5,
-                "http://registry.gpii.org/common/cursorColour": "red"
-            }
-          }
+            "@type": "c4a:AbstractTerm",
+            "c4a:id": "http://registry.gpii.org/common/pointerControllEnhancement",
+            "c4a:value": true,
+            "c4a:rating": 9,
+            "c4a:hasRecommendation": [
+                {
+                    "@type": "c4a:Recommendation",
+                    "c4a:id": "http://registry.gpii.org/common/cursorSize",
+					"c4a:name": "cursorSize",
+                    "c4a:value": "0.5"
+                },
+                {
+                    "@type": "c4a:Recommendation",
+                    "c4a:id": "http://registry.gpii.org/common/cursorColour",
+					"c4a:name": "cursorColour",
+                    "c4a:value": "red"
+                }
+            ]
         },
         {
-          "http://registry.gpii.org/common/pointerControllEnhancement" : {
-            "value": true,
-            "rating": 5,
-            "recommended": {
-                "http://registry.gpii.org/common/cursorTrails": true,
-                "http://registry.gpii.org/common/cursorTrailsLength": 0.2
-            }
-          }
-        },
-        {
-          "http://registry.gpii.org/common/pointerControllEnhancement" : {
-            "value": "visibility",
-            "rating": 9,
-            "recommended": {
-                "http://registry.gpii.org/common/cursorSize": 0.5,
-                "http://registry.gpii.org/common/cursorColour": "red"
-            }
-          }
-        },
-        {
-          "http://registry.gpii.org/common/pointerControllEnhancement" : {
-            "value": "visibility",
-            "rating": 5,
-            "recommended": {
-                "http://registry.gpii.org/common/cursorTrails": true,
-                "http://registry.gpii.org/common/cursorTrailsLength": 0.2
-            }
-          }
+            "@type": "c4a:AbstractTerm",
+            "c4a:id": "http://registry.gpii.org/common/pointerControllEnhancement",
+            "c4a:value": true,
+            "c4a:rating": 5,
+            "c4a:hasRecommendation": [
+                {
+                    "@type": "c4a:Recommendation",
+                    "c4a:id": "http://registry.gpii.org/common/cursorTrails",
+					"c4a:name": "cursorTrails",
+                    "c4a:value": true
+                },
+                {
+                    "@type": "c4a:Recommendation",
+                    "c4a:id": "http://registry.gpii.org/common/cursorTrailsLength",
+					"c4a:name": "cursorTrailsLength",
+                    "c4a:value": 0.2
+                }
+            ]
         }
     ]
 }

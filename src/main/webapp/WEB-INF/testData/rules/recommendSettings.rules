@@ -1,0 +1,42 @@
+	@prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
+	@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+		
+// explore abstract terms and recommend settings 
+	[ExploreTerms:  
+	(?ps rdf:type c4a:PreferenceSet)
+	(?ps c4a:hasPrefs ?pref)
+	
+	(?pref rdf:type c4a:Preference)
+	(?pref c4a:type "common")
+	(?pref c4a:id ?p_id)
+	(?pref c4a:name ?p_name)
+	(?pref c4a:value ?p_value)
+	
+	(?at rdf:type c4a:AbstractTerm)
+	(?at c4a:id ?at_id)
+	(?at c4a:rating ?r)
+	
+	(?at2 rdf:type c4a:AbstractTerm)
+	(?at2 c4a:id ?at2_id)
+	(?at2 c4a:rating ?r2)
+
+	(?at c4a:hasRecommendation ?recom)
+	(?recom rdf:type c4a:Recommendation)
+	(?recom c4a:id ?recom_id)
+	(?recom c4a:name ?recom_name)
+	(?recom c4a:value ?recom_value)		
+
+	notEqual(?at, ?at2)
+	equal(?p_id, ?at_id)	
+	equal(?at_id, ?at2_id)
+	greaterThan(?r, ?r2)
+	makeSkolem(?newPref, ?recom, ?ps)
+	->
+	print('fired: ' ?recom_id)
+	(?ps c4a:hasPrefs ?newPref)
+	(?newPref rdf:type c4a:Preference)
+	(?newPref c4a:type "common"^^http://www.w3.org/2001/XMLSchema#string)
+	(?newPref c4a:id ?recom_id)
+	(?newPref c4a:name ?recom_name)
+	(?newPref c4a:value ?recom_value)	
+	]
