@@ -5,13 +5,13 @@
         "com.microsoft.windows.cursors" : {
           "active" : false,
           "settings" : {
-            "http://registry.gpii.net/common/cursorSize" : 0.7
+            "http://registry.gpii.net/common/cursorSize" : 0.9
           }
         },
         "com.microsoft.windows.displaySettings" : {
           "active" : true,
           "settings" : {
-            "http://registry.gpii.net/common/screenResolution" : "medium"
+            "http://registry.gpii.net/common/screenResolution" : "large"
           }
         }
       }

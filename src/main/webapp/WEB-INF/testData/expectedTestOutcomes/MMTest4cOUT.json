@@ -5,7 +5,7 @@
         "com.android.persistentConfiguration" : {
           "active" : true,
           "settings" : {
-            "http://registry.gpii.net/common/fontSize" : 18.0
+            "http://registry.gpii.net/common/fontSize" : 24.0
           }
         }
       }

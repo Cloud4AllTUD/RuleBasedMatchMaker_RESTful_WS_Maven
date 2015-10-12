@@ -5,8 +5,8 @@
         "org.gnome.desktop.interface" : {
           "active" : true,
           "settings" : {
-            "http://registry.gpii.net/common/cursorSize" : 0.7,
-            "http://registry.gpii.net/common/fontSize" : 18.0
+            "http://registry.gpii.net/common/cursorSize" : 0.9,
+            "http://registry.gpii.net/common/fontSize" : 24.0
           }
         }
       }

@@ -95,7 +95,7 @@
                 {
                     "@type": "c4a:Setting",
                     "c4a:id": "default\\.TypingEcho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/WordEcho",
+                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
                     "c4a:name": "Typing Echo"
                 },
                 {
@@ -120,7 +120,7 @@
                     "@type": "c4a:Setting",
                     "c4a:id": "ENU-Global\\.Rate",
                     "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
-                    "c4a:name": "Rate"
+                    "c4a:name": "Voice Rate"
                 },
                 {
                     "@type": "c4a:Setting",
@@ -133,14 +133,20 @@
                     "c4a:id": "ENU-Global\\.SayAllReads: ",
                     "c4a:refersTo": "http://registry.gpii.net/common/readingUnit",
                     "c4a:name": "Say All Reads"
-                }
+                }, 
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "ENU-Global\\.Language: ",
+                    "c4a:refersTo": "http://registry.gpii.net/common/auditoryOutLanguage",
+                    "c4a:name": "Language of the Synthesizer"
+                }                
             ]
         },
         {
             "@id": "http://registry.gpii.net/applications/com.google.chrome",
             "@type": "c4a:Solution",
             "c4a:id": "http://registry.gpii.net/applications/com.google.chrome",
-            "c4a:name": "com.google.chrome-GHOST",
+            "c4a:name": "com.google.chrome",
             "c4a:class": [
                 {
                     "@id":"c4a:task"
@@ -265,7 +271,25 @@
                     "c4a:id": "MagnificationMode",
                     "c4a:refersTo": "http://registry.gpii.net/common/magnifierPosition",
                     "c4a:name": "Magnification Mode"
-                }
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "FollowFocus",
+                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:name": "Follow Focus"
+                },                
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "FollowCaret",
+                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:name": "Follow Caret"
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "FollowMouse",
+                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:name": "Follow Mouse"
+                }                
             ]
         },
         {
@@ -356,7 +380,25 @@
                     "c4a:id": "braille",
                     "c4a:refersTo": "http://registry.gpii.net/common/screenReaderBrailleOutput",
                     "c4a:name": "Braille"
-                }
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "trackFocus",
+                    "c4a:refersTo": "http://registry.gpii.net/common/trackingTTS",
+                    "c4a:name": "Follow System Focus"
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "trackCaret",
+                    "c4a:refersTo": "http://registry.gpii.net/common/trackingTTS",
+                    "c4a:name": "Follow System Caret"
+                }, 
+                                                                  {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "trackMouse",
+                    "c4a:refersTo": "http://registry.gpii.net/common/trackingTTS",
+                    "c4a:name": "Follow Mouse Cursor"
+                }  
             ]
         },
         {
@@ -621,37 +663,49 @@
                     "@type": "c4a:Setting",
                     "c4a:id": "screenReaderTTSEnabled",
                     "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
-                    "c4a:name": "screenReaderTTSEnabled"
+                    "c4a:name": "Voice on"
                 },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "screenReaderLanguage",
+                    "c4a:refersTo": "http://registry.gpii.net/common/auditoryOutLanguage",
+                    "c4a:name": "Screen Reader Language"
+                },                
                 {
                     "@type": "c4a:Setting",
                     "c4a:id": "speechRate",
                     "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
-                    "c4a:name": "speechRate"
+                    "c4a:name": "Reading speed"
                 },
                 {
                     "@type": "c4a:Setting",
-                    "c4a:id": "keyEcho",
+                    "c4a:id": "characterEcho",
                     "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
-                    "c4a:name": "keyEcho"
+                    "c4a:name": "Character Echo"
                 },
                 {
                     "@type": "c4a:Setting",
-                    "c4a:id": "wordEcho",
+                    "c4a:id": "characterEcho",
                     "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
-                    "c4a:name": "wordEcho"
+                    "c4a:name": "Character Echo"
                 },
                 {
                     "@type": "c4a:Setting",
                     "c4a:id": "announceCapitals",
                     "c4a:refersTo": "http://registry.gpii.net/common/announceCapitals",
-                    "c4a:name": "announceCapitals"
+                    "c4a:name": "Announcement of capitals letters"
                 },
                 {
                     "@type": "c4a:Setting",
                     "c4a:id": "punctuationVerbosity",
                     "c4a:refersTo": "http://registry.gpii.net/common/punctuationVerbosity",
-                    "c4a:name": "punctuationVerbosity"
+                    "c4a:name": "Verbosity"
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "userDefinedVoices\\pitchListBox",
+                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:name": "Pitch List Box"
                 },
                 {
                     "@type": "c4a:Setting",
@@ -676,7 +730,25 @@
                     "c4a:id": "magnifierPosition",
                     "c4a:refersTo": "http://registry.gpii.net/common/magnifierPosition",
                     "c4a:name": "magnifierPosition"
-                }
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "settings//tracking",
+                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:name": "Tracking Dialog Box"
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "colourScheme//configure//invertBrightness",
+                    "c4a:refersTo": "http://registry.gpii.net/common/invertColours",
+                    "c4a:name": "Invert Brightness"
+                },
+                {
+                    "@type": "c4a:Setting",
+                    "c4a:id": "focusHighlighting//shape",
+                    "c4a:refersTo": "http://registry.gpii.net/common/showCrosshairs",
+                    "c4a:name": "Invert Brightness"
+                }                                                
             ]
         },
         {

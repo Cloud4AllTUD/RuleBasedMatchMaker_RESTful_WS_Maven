@@ -22,7 +22,7 @@
                             "@type": "xsd:float"
                         },
                         "c4a:max": {
-                            "@value": "1.5",
+                            "@value": "1.4",
                             "@type": "xsd:float"
                         }
                     },
@@ -62,7 +62,7 @@
                 {
                     "c4a:valueRange": {
                         "c4a:min": {
-                            "@value": "1.6",
+                            "@value": "1.5",
                             "@type": "xsd:float"
                         },
                         "c4a:max": {
@@ -123,7 +123,7 @@
                                 {
                                     "c4a:id": "http://registry.gpii.net/common/fontSize",
                                     "c4a:value": {
-                                        "@value": "18",
+                                        "@value": "24",
                                         "@type": "xsd:float"
                                     }
                                 }

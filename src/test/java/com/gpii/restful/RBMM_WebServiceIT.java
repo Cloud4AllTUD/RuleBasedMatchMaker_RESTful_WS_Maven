@@ -15,8 +15,6 @@ public class RBMM_WebServiceIT extends TestCase
 
 		if(JsonLDManager.getInstance().PERFORM_INTEGRATION_TESTS)
         {
-			// core  
-			//_basicAlignment();
 			_MMTest1a();
 			_MMTest1b();
 			_MMTest1c();
@@ -30,46 +28,11 @@ public class RBMM_WebServiceIT extends TestCase
 			_MMTest5b();
 			_MMTest6a();
 			_MMTest6b();			
-			//_resolveMSC_MultiSolutionPreffered();
-			//_resolveMSC_OneSolutionPreffered();
-			
-			/*
-			// review 3
-			_vladimirLobby();
-			_vladimirSubway();
-			_Mary();
-			_Manuel();
-			_ChrisWin();
-			/*_ChrisAndroid();
-			_LiWindows();
-			_LiAndroid();
-			_Franklin();*/
-			
-			// review 4
-			//_Alicia();			
-
         }
         else
             System.out.println("INTEGRATION TESTS WAS IGNORED because 'PERFORM_INTEGRATION_TESTS=false' in config.properties");		
 		
 	}
-	
-    //Core
-    public void _basicAlignment()
-    {
-    	System.out.println("\n**********************************************************************");
-        System.out.println("* Tetsing Basic Alignment of Solutions and Setting *********************");
-        System.out.println("** for multiple contetxs. N&P sets:  ***********************************");    	
-        System.out.println("** 1. same preference across N&P sets (high contrast)*******************"); 
-        System.out.println("** 2. different preference values across N&P sets (cursor size) ********"); 
-        System.out.println("** 3. common prefs not matched to app-specific prefs *******************");
-    	System.out.println("\n**********************************************************************");    	
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/basicAlignment.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/basicAlignmentOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_BasicAlignment");           
-    }
     
     public void _MMTest1a()
     {
@@ -245,160 +208,7 @@ public class RBMM_WebServiceIT extends TestCase
 	    
 	    performTest(filepathIN, filepathExpectedOUT, "_MMTest6b");           
     }     
-    private void _resolveMSC_MultiSolutionPreffered()
-    {
-    	System.out.println("\n*************************************************************************");
-        System.out.println("* Testing 'Resolution of Multiple Solution Conflict  ' ********************");
-        System.out.println("* Test criteria: multiple ATs of same type installed ' ********************");
-        System.out.println("* multiple preferred installed; one installed not preferred; AT suits ' *");
-        System.out.println("***************************************************************************");    	
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MSC_multiInstATpreferred_noATSuite.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MSC_multiInstATpreferred_noATSuiteOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_resolveMSC_MultiSolutionPreffered");           
-    }
     
-    private void _resolveMSC_OneSolutionPreffered()
-    {
-    	System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Resolution of Multiple Solution Conflict  ' *");
-        System.out.println("* Test criteria: one solution preferred; no AT suits ' *");
-        System.out.println("*******************************************************");    	
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MSC_oneInstATpreferred_noATSuite.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MSC_oneInstATpreferred_noATSuiteOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_resolveMSC_OneSolutionPreffered");           
-    }    
-	
-    // Review 3
-    private void _vladimirLobby()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Vladimir at the Lobby' *");
-        System.out.println("*******************************************************");    	
-
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/vladimir.json";
-        String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/vladimirLobbyOUT.json";
-        
-	    performTest(filepathIN, filepathExpectedOUT1, "_vladimirLobby");   
-
-    }
-    
-    private void _vladimirSubway()
-    {
-	    System.out.println("\n*****************************************************");
-	    System.out.println("* Testing 'Vladimir Subway' ***************************");
-	    System.out.println("*******************************************************");    	
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/vladimirSubway.json";
-        String filepathExpectedOUT1;
-        if(JsonLDManager.getInstance().USE_THE_REAL_ONTOLOGY == false)
-            filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/vladimirSubwayOUT.json";
-        else
-            filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/vladimirSubwayRealOntologyOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT1, "_vladimirSubway");           
-    }
-    
-    private void _Mary()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Classroom Marry' ***************************");
-        System.out.println("*******************************************************");	
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/mary.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/maryOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_Mary");           
-    }
-    
-    private void _Manuel()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Classroom Manuel' **************************");
-        System.out.println("*******************************************************");
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/manuel.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/manuelOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_Manuel");           
-    }
-  
-    private void _ChrisWin()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Classroom Chris Windows' *******************");
-        System.out.println("*******************************************************");;
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/chrisWindows.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/chrisWindowsOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "testChristWin");           
-    }
-    
-    private void _ChrisAndroid()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Classroom Chris Android' *******************");
-        System.out.println("*******************************************************");
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/chrisAndroid.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/chrisAndroidOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_ChrisAndroid");           
-    }   
-    
-    private void _LiWindows()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Classroom Li Windows' **********************");
-        System.out.println("*******************************************************");
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/liWindows.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/liWindowsOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_LiWindows");           
-    }
-
-    private void _LiAndroid()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Classroom Li Android' **********************");
-        System.out.println("*******************************************************");
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/liAndroid.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/liAndroidOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT,"_LiAndroid");           
-    } 
-
-    private void _Franklin()
-    {
-        System.out.println("\n*****************************************************");
-        System.out.println("* Testing 'Classroom Franklin' **********************");
-        System.out.println("*******************************************************"); 
-	
-        String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/franklin.json";
-        String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/franklinOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT, "_Franklin");           
-    }     
-   
-	// Review 4    
-	private void _Alicia()
-    {
-	    System.out.println("\n*****************************************************");
-	    System.out.println("* Testing 'Alica' *************************************");
-	    System.out.println("*******************************************************");    	
-	
-	    String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/alicia.json";
-	    String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/franklinOUT.json";
-	    
-	    performTest(filepathIN, filepathExpectedOUT1, "_Alicia");           
-    }
-
     public void test_transformOwlToJSONLD() 
     {
         if(JsonLDManager.getInstance().PERFORM_INTEGRATION_TESTS)
