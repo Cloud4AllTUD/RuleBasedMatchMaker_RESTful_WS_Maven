@@ -1067,6 +1067,9 @@ public class TransformerManager {
           // get context id
           if (soln.contains("?contextID"))
             contextID = soln.get("?contextID").toString();
+          
+          if (contextID.equals("ifnps-multi-users-merged"))
+            contextID = "gpii-default";
 
           // get query type, e.g. Condition
           if (soln.contains("?type"))

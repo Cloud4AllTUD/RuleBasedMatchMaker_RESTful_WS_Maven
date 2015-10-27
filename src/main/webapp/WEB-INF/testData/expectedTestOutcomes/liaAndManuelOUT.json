@@ -1,6 +1,6 @@
 {
   "inferredConfiguration" : {
-    "ifnps-multi-users-merged" : {
+    "gpii-default" : {
       "applications" : {
         "com.certh.service-synthesis" : [ {
           "active" : true,
