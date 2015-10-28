@@ -514,7 +514,28 @@ public class TransformerManager {
        * "c4a:name": "com.cats.org" },
        */
       if (inDevice.has("solutions")) {
+        
         JSONArray inSol = inDevice.getJSONArray("solutions");
+        for (int i = 0; i < inSol.length(); i++) {
+          String solID = inSol.getJSONObject(i).get("id").toString();
+
+          JSONObject outSol = new JSONObject();
+          outSol.put("@type", "c4a:InstalledSolution");
+          outSol.put("@id", "http://registry.gpii.net/applications/" + solID);
+          outSol.put("name", solID);
+
+          outGraph.put(outSol);
+        }
+      }
+
+      /**
+       * Translate web solutions; IN: webSolutions": [ { "id": com.cats.org } ] GOAL: { "@id":
+       * "http://registry.gpii.org/applications/com.cats.org", "@type": "c4a:InstalledSolution",
+       * "c4a:name": "com.cats.org" },
+       */
+      if (inDevice.has("webSolutions")) {
+        
+        JSONArray inSol = inDevice.getJSONArray("webSolutions");
         for (int i = 0; i < inSol.length(); i++) {
           String solID = inSol.getJSONObject(i).get("id").toString();
 

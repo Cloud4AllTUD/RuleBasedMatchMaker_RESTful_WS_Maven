@@ -20,7 +20,7 @@
             "c4a:settings": [
                 {
                     "@type": "c4a:Setting",
-                    "c4a:id": "screen resolution",
+                    "c4a:id": "captions",
                     "c4a:refersTo": "http://registry.gpii.net/common/captionsEnabled",
                     "c4a:name": "captions"
                 }
@@ -1395,65 +1395,10 @@
             ]
         },
         {
-            "@id": "http://registry.gpii.net/applications/es.codefactory.android.app.ma",
+            "@id": "http://registry.gpii.net/applications/com.microsoft.windows.screenResolution",
             "@type": "c4a:Solution",
-            "c4a:id": "es.codefactory.android.app.ma",
-            "c4a:name": "Mobile Accessibility",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:task"
-                },
-                {
-                    "@id": "c4a:at"
-                }
-            ],
-            "c4a:settings": [
-                {
-                    "@type": "c4a:Setting",
-                    "c4a:id": "screenreader",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
-                    "c4a:name": "screenreader"
-                },
-                {
-                    "@type": "c4a:Setting",
-                    "c4a:id": "access_commonprefs_speechrate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
-                    "c4a:name": "speechrate"
-                },
-                {
-                    "@type": "c4a:Setting",
-                    "c4a:id": "access_commonprefs_editingkeyboardecho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
-                    "c4a:name": "speechrate"
-                },
-                {
-                    "@type": "c4a:Setting",
-                    "c4a:id": "access_commonprefs_speechpitch",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
-                    "c4a:name": "pitch"
-                },
-                {
-                    "@type": "c4a:Setting",
-                    "c4a:id": "access_commonprefs_editingkeyboardecho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
-                    "c4a:name": "pitch"
-                },
-                {
-                    "@type": "c4a:Setting",
-                    "c4a:id": "access_commonprefs_screenReaderBrailleOutput",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderBrailleOutput",
-                    "c4a:name": "braille"
-                }
-            ]
-        },
-        {
-            "@id": "http://registry.gpii.net/applications/com.microsoft.windows.displaySettings",
-            "@type": "c4a:Solution",
-            "c4a:id": "com.microsoft.windows.displaySettings",
-            "c4a:name": "Windows Display Settings",
+            "c4a:id": "com.microsoft.windows.screenResolution",
+            "c4a:name": "Windows Screen Resolution",
             "c4a:settings": [
                 {
                     "@type": "c4a:Setting",

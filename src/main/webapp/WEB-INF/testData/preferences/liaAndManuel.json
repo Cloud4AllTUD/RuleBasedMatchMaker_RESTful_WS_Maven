@@ -39,7 +39,7 @@
         },
         "solutions": [
             {
-                "id": "com.microsoft.windows.displaySettings"
+                "id": "com.microsoft.windows.screenResolution"
             },
             {
                 "id": "com.certh.service-synthesis"

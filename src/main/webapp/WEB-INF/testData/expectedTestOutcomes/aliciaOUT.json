@@ -14,32 +14,16 @@
             }
           }
         } ],
-        "com.microsoft.windows.displaySettings" : {
-          "active" : true,
-          "settings" : {
-            "http://registry.gpii.net/common/screenResolution" : "low"
-          }
-        },
         "com.microsoft.windows.highContrast" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/common/highContrastEnabled" : true
           }
         },
-        "com.texthelp.readWriteGold" : {
-          "active" : false,
+        "com.microsoft.windows.screenResolution" : {
+          "active" : true,
           "settings" : {
-            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
-            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
-            "http://registry.gpii.net/common/speechRate" : 350.0,
-            "http://registry.gpii.net/common/volumeTTS" : 0.6
-          }
-        },
-        "com.yourdolphin.supernova-as" : {
-          "active" : false,
-          "settings" : {
-            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
-            "http://registry.gpii.net/common/speechRate" : 350.0
+            "http://registry.gpii.net/common/screenResolution" : "low"
           }
         },
         "eu.gpii.olb" : {
@@ -93,32 +77,16 @@
             }
           }
         } ],
-        "com.microsoft.windows.displaySettings" : {
-          "active" : true,
-          "settings" : {
-            "http://registry.gpii.net/common/screenResolution" : "very low"
-          }
-        },
         "com.microsoft.windows.highContrast" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/common/highContrastEnabled" : false
           }
         },
-        "com.texthelp.readWriteGold" : {
-          "active" : false,
+        "com.microsoft.windows.screenResolution" : {
+          "active" : true,
           "settings" : {
-            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
-            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
-            "http://registry.gpii.net/common/speechRate" : 350.0,
-            "http://registry.gpii.net/common/volumeTTS" : 0.6
-          }
-        },
-        "com.yourdolphin.supernova-as" : {
-          "active" : false,
-          "settings" : {
-            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
-            "http://registry.gpii.net/common/speechRate" : 350.0
+            "http://registry.gpii.net/common/screenResolution" : "very low"
           }
         },
         "eu.gpii.olb" : {
@@ -200,31 +168,16 @@
             }
           }
         } ],
-        "com.microsoft.windows.displaySettings" : {
-          "active" : true,
-          "settings" : {
-            "http://registry.gpii.net/common/screenResolution" : "low"
-          }
-        },
         "com.microsoft.windows.highContrast" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/common/highContrastEnabled" : true
           }
         },
-        "com.texthelp.readWriteGold" : {
-          "active" : false,
+        "com.microsoft.windows.screenResolution" : {
+          "active" : true,
           "settings" : {
-            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
-            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
-            "http://registry.gpii.net/common/speechRate" : 350.0
-          }
-        },
-        "com.yourdolphin.supernova-as" : {
-          "active" : false,
-          "settings" : {
-            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
-            "http://registry.gpii.net/common/speechRate" : 350.0
+            "http://registry.gpii.net/common/screenResolution" : "low"
           }
         },
         "eu.gpii.olb" : {
