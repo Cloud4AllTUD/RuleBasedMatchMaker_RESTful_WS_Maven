@@ -685,9 +685,9 @@
             ]
         },
         {
-            "@id": "http://registry.gpii.net/applications/org.chrome.cloud4chrome",
+            "@id": "http://registry.gpii.net/applications/com.ilunion.cloud4chrome",
             "@type": "c4a:Solution",
-            "c4a:id": "org.chrome.cloud4chrome",
+            "c4a:id": "com.ilunion.cloud4chrome",
             "c4a:name": "Cloud4chrome",
             "c4a:class": [
                 {

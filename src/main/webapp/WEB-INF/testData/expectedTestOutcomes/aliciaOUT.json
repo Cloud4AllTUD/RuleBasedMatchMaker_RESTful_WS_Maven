@@ -14,6 +14,13 @@
             }
           }
         } ],
+        "com.ilunion.cloud4chrome" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/highContrastEnabled" : true,
+            "http://registry.gpii.net/common/highContrastTheme" : "white-black"
+          }
+        },
         "com.microsoft.windows.highContrast" : {
           "active" : true,
           "settings" : {
@@ -30,13 +37,6 @@
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/common/simplifiedUiEnabled" : true
-          }
-        },
-        "org.chrome.cloud4chrome" : {
-          "active" : false,
-          "settings" : {
-            "http://registry.gpii.net/common/highContrastEnabled" : true,
-            "http://registry.gpii.net/common/highContrastTheme" : "white-black"
           }
         },
         "org.nvda-project" : {
@@ -77,6 +77,13 @@
             }
           }
         } ],
+        "com.ilunion.cloud4chrome" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/highContrastEnabled" : false,
+            "http://registry.gpii.net/common/highContrastTheme" : "white-black"
+          }
+        },
         "com.microsoft.windows.highContrast" : {
           "active" : true,
           "settings" : {
@@ -93,13 +100,6 @@
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/common/simplifiedUiEnabled" : true
-          }
-        },
-        "org.chrome.cloud4chrome" : {
-          "active" : false,
-          "settings" : {
-            "http://registry.gpii.net/common/highContrastEnabled" : false,
-            "http://registry.gpii.net/common/highContrastTheme" : "white-black"
           }
         },
         "org.nvda-project" : {
@@ -168,6 +168,13 @@
             }
           }
         } ],
+        "com.ilunion.cloud4chrome" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/highContrastEnabled" : true,
+            "http://registry.gpii.net/common/highContrastTheme" : "white-black"
+          }
+        },
         "com.microsoft.windows.highContrast" : {
           "active" : true,
           "settings" : {
@@ -184,13 +191,6 @@
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/common/simplifiedUiEnabled" : true
-          }
-        },
-        "org.chrome.cloud4chrome" : {
-          "active" : false,
-          "settings" : {
-            "http://registry.gpii.net/common/highContrastEnabled" : true,
-            "http://registry.gpii.net/common/highContrastTheme" : "white-black"
           }
         },
         "org.nvda-project" : {
