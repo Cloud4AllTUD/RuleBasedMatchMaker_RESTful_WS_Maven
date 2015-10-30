@@ -1347,62 +1347,23 @@ public class TransformerManager {
               }
 
               /**
-               * create an array for all services { "inferredConfiguration": { "gpii-default": {
-               * "applications": { "com.certh.service-synthesis": [ ... ],
-               * 
-               */
-              if (soln.contains("?appName")) {
-                appName = soln.get("?appName").toString();
-
-                if (appSet.has(appName))
-                  serviceArrWrap = appSet.getJSONArray(appName);
-                else {
-                  serviceArrWrap = new JSONArray();
-                  appSet.put(appName, serviceArrWrap);
-                  serviceArrWrap = appSet.getJSONArray(appName);
-                }
-
-              }
-
-              /**
                * create a solution object for each service [{ "active": true, "settings": { ... } },
                * { "active": true, "settings": { ... } }]
                */
               if (singleService) {
                 // single scenario with services
+                
+                if (soln.contains("?appName")) {
+                  appName = soln.get("?appName").toString();
 
-                boolean serviceExists = false;
-                int i;
-                for (i = 0; i < serviceArrWrap.length(); i++) {
-
-                  // find the object with the service name "serviceName"
-                  JSONObject tmp_solution = serviceArrWrap.getJSONObject(i);
-
-                  if (tmp_solution.has("settings")) {
-
-                    JSONObject tmp_setting = tmp_solution.getJSONObject("settings");
-
-                    if (tmp_setting.has(appID)) {
-
-                      JSONObject tmp_properties = tmp_setting.getJSONObject(appID);
-
-                      if (tmp_properties.has("serviceName")) {
-
-                        if (serviceName.equals(tmp_properties.get("serviceName").toString())) {
-                          serviceExists = true;
-                          solution = serviceArrWrap.getJSONObject(i);
-
-                        }
-                      }
-                    }
+                  if (appSet.has(appName))
+                    solution = appSet.getJSONObject(appName);
+                  else {
+                    solution = new JSONObject();
+                    appSet.put(appName, solution);
+                    solution = appSet.getJSONObject(appName);
                   }
                 }
-                if (!serviceExists) {
-                  solution = new JSONObject();
-                  serviceArrWrap.put(i, solution);
-                  solution = serviceArrWrap.getJSONObject(i);
-                }
-
 
                 // add activation of application
                 if (soln.contains("?appActive")) {
@@ -1450,7 +1411,11 @@ public class TransformerManager {
 
               } else if (!singleService && !combinedObjectAdded) {
                 // TODO : COMBINED SCENARIO WITH SERVICES
-                serviceArrWrap.put(combinedServicesObject);
+
+                if (soln.contains("?appName")) {
+                    appName = soln.get("?appName").toString();
+                    appSet.put(appName, combinedServicesObject);
+                }
                 combinedObjectAdded = true;
               }
 

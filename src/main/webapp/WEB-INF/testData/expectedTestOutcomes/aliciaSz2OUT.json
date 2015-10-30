@@ -2,7 +2,7 @@
   "inferredConfiguration" : {
     "gpii-default" : {
       "applications" : {
-        "com.certh.service-synthesis" : [ {
+        "com.certh.service-synthesis" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/applications/com.certh.service-synthesis" : {
@@ -13,7 +13,7 @@
               "serviceName" : "Translatewebpage"
             }
           }
-        } ],
+        },
         "org.freedesktop.xrandr" : {
           "active" : true,
           "settings" : {
@@ -51,7 +51,7 @@
     },
     "ifnps-luminance" : {
       "applications" : {
-        "com.certh.service-synthesis" : [ {
+        "com.certh.service-synthesis" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/applications/com.certh.service-synthesis" : {
@@ -62,7 +62,7 @@
               "serviceName" : "Translatewebpage"
             }
           }
-        } ],
+        },
         "org.freedesktop.xrandr" : {
           "active" : true,
           "settings" : {
@@ -128,7 +128,7 @@
     },
     "ifnps-noise" : {
       "applications" : {
-        "com.certh.service-synthesis" : [ {
+        "com.certh.service-synthesis" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/applications/com.certh.service-synthesis" : {
@@ -139,7 +139,7 @@
               "serviceName" : "Translatewebpage"
             }
           }
-        } ],
+        },
         "org.freedesktop.xrandr" : {
           "active" : true,
           "settings" : {

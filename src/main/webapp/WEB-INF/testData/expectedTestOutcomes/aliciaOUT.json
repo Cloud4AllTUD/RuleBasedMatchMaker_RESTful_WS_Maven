@@ -2,7 +2,7 @@
   "inferredConfiguration" : {
     "gpii-default" : {
       "applications" : {
-        "com.certh.service-synthesis" : [ {
+        "com.certh.service-synthesis" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/applications/com.certh.service-synthesis" : {
@@ -13,7 +13,7 @@
               "serviceName" : "Translatewebpage"
             }
           }
-        } ],
+        },
         "com.ilunion.cloud4chrome" : {
           "active" : false,
           "settings" : {
@@ -65,7 +65,7 @@
     },
     "ifnps-luminance" : {
       "applications" : {
-        "com.certh.service-synthesis" : [ {
+        "com.certh.service-synthesis" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/applications/com.certh.service-synthesis" : {
@@ -76,7 +76,7 @@
               "serviceName" : "Translatewebpage"
             }
           }
-        } ],
+        },
         "com.ilunion.cloud4chrome" : {
           "active" : false,
           "settings" : {
@@ -156,7 +156,7 @@
     },
     "ifnps-noise" : {
       "applications" : {
-        "com.certh.service-synthesis" : [ {
+        "com.certh.service-synthesis" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/applications/com.certh.service-synthesis" : {
@@ -167,7 +167,7 @@
               "serviceName" : "Translatewebpage"
             }
           }
-        } ],
+        },
         "com.ilunion.cloud4chrome" : {
           "active" : false,
           "settings" : {
