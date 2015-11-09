@@ -36,10 +36,6 @@
 	(?newMessage c4a:language ?lang)
 	(?newMessage c4a:text ?txt)
 	(?newMessage c4a:learnMore ?learnMore)
-
-	print('***********FeedbackForAts******************')
-	print('CONTEXT: ' ?if_id)
-	print('HELP FOR SOLUTION: ' ?s)	
 ]
 
 // Add tutorial to a helpMessage 
@@ -71,17 +67,12 @@
 	// that has been inferred for a context
 	(?c_inf rdf:type c4a:ContextInference)
 	(?c_inf c4a:id ?inf_if_id)
-	(?c_inf c4a:affects ?inf_aff_prefs)
 
-	// And a user has a preferences ...
-	(?if c4a:hasPrefs ?p)
-	(?p c4a:type ?p_type)
-	(?p c4a:id ?p_id)
-	(?p c4a:id ?p_name)
-	(?p c4a:value ?p_value)
-		
-	// And p is not an affected preference by the context inference
-	listContains(?inf_aff_prefs, ?p_id)		
+	// And a there is a scope ...
+	(?c_inf c4a:scope ?c_inf_scope)
+	(?c_inf_scope c4a:id ?c_inf_scope_id)
+	(?c_inf_scope c4a:name ?c_inf_scope_name)
+	(?c_inf_scope c4a:type ?c_inf_scope_type)
 	
 	// and there is a feedback message available
 	(?feed rdf:type c4a:Message)
@@ -95,18 +86,25 @@
 	// than add a feedback to the metadata
 	makeSkolem(?newMetaData, ?if)
 	makeSkolem(?newScope, ?newMetaData, ?if)
-	makeSkolem(?newMessage, ?newScope, ?newMetaData, ?if)
+	makeSkolem(?newMessage, ?msg, ?newScope, ?newMetaData, ?if)
 	->
 	(?if c4a:hasMetadata ?newMetaData)
+	
 	(?newMetaData rdf:type c4a:Metadata)
 	(?newMetaData c4a:messageType ?msg_type)
 	(?newMetaData c4a:scope ?newScope)
 	(?newMetaData c4a:messages ?newMessage)
-	(?newScope c4a:id ?p_id)
-	(?newScope c4a:name ?p_name)
-	(?newScope c4a:addition ?p_type)	
+	
+	(?newScope c4a:id ?c_inf_scope_id)
+	(?newScope c4a:name ?c_inf_scope_name)
+	(?newScope c4a:addition ?c_inf_scope_type)	
+	
 	(?newMessage c4a:language ?lang)
 	(?newMessage c4a:text ?txt)
 	(?newMessage c4a:learnMore ?learnMore)
-
+	
+	print('***********Feedback for new NPS ******************')
+	print('CONTEXT: ' ?inf_if_id)
+	print('Lang: ' ?lang)
+	print('Message: ' ?txt)	
 ] 

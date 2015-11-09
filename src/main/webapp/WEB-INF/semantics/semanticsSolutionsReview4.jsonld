@@ -5,9 +5,9 @@
     },
     "@graph": [
         {
-            "@id": "http://registry.gpii.net/applications/www.cloud4all.info",
+            "@id": "http://registry.gpii.net/applications/info.cloud4all.www",
             "@type": "c4a:Solution",
-            "c4a:id": "www.cloud4all.info",
+            "c4a:id": "info.cloud4all.www",
             "c4a:name": "Cloud4all.info",
             "c4a:class": [
                 {

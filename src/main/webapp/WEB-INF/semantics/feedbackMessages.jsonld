@@ -11,12 +11,12 @@
             "c4a:messages": [
                 {
                     "c4a:language": "en",
-                    "c4a:text": "Based on your preferences we have configured to increase volume when it gets noisy.",
+                    "c4a:text": "Based on your preferences we have configured to enable captions when it gets noisy.",
                     "c4a:learnMore": ""
                 },
                 {
                     "c4a:language": "de",
-                    "c4a:text": "Basierend auf Deinen Präferenzen haben wir eingestellt dass sich die Lautstärke erhöt wenn es in der Umgebung lauter wird.",
+                    "c4a:text": "Basierend auf Deinen Präferenzen haben wir Untertitel eingestellt, wenn es in der Umgebung lauter wird.",
                     "c4a:learnMore": ""
                 }
             ]
@@ -28,7 +28,7 @@
             "c4a:messages": [
                 {
                     "c4a:language": "en",
-                    "c4a:text": "Based on your preferences we have configured to enlarge everything and disable highContrasr when it gets bright.",
+                    "c4a:text": "Based on your preferences we have configured to enlarge everything and disable high contrast when it gets bright.",
                     "c4a:learnMore": ""
                 },
                 {

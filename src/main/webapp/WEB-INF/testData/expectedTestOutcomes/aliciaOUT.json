@@ -124,7 +124,7 @@
             "message" : "Basierend auf Deinen Präferenzen haben wir eingestellt, die Darstellung zu vergrößern und hohen Kontrast zu deaktivieren wenn es in der Umgebung heller wird."
           },
           "en" : {
-            "message" : "Basierend auf Deinen Präferenzen haben wir eingestellt, die Darstellung zu vergrößern und hohen Kontrast zu deaktivieren wenn es in der Umgebung heller wird."
+            "message" : "Based on your preferences we have configured to enlarge everything and disable high contrast when it gets bright."
           }
         },
         "scope" : [ "http://registry.gpii.net/common/highContrastEnabled" ],
@@ -135,7 +135,7 @@
             "message" : "Basierend auf Deinen Präferenzen haben wir eingestellt, die Darstellung zu vergrößern und hohen Kontrast zu deaktivieren wenn es in der Umgebung heller wird."
           },
           "en" : {
-            "message" : "Basierend auf Deinen Präferenzen haben wir eingestellt, die Darstellung zu vergrößern und hohen Kontrast zu deaktivieren wenn es in der Umgebung heller wird."
+            "message" : "Based on your preferences we have configured to enlarge everything and disable high contrast when it gets bright."
           }
         },
         "scope" : [ "http://registry.gpii.net/common/screenResolution" ],
@@ -193,12 +193,19 @@
             "http://registry.gpii.net/common/simplifiedUiEnabled" : true
           }
         },
+        "info.cloud4all.www" : {
+          "active" : true,
+          "settings" : {
+            "http://registry.gpii.net/common/captionsEnabled" : true
+          }
+        },
         "org.nvda-project" : {
           "active" : true,
           "settings" : {
             "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
             "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
-            "http://registry.gpii.net/common/speechRate" : 350.0
+            "http://registry.gpii.net/common/speechRate" : 350.0,
+            "http://registry.gpii.net/common/volumeTTS" : 0.6
           }
         }
       },
@@ -209,6 +216,17 @@
         "type" : "http://registry.gpii.net/conditions/inRange"
       } ],
       "metadata" : [ {
+        "message" : {
+          "de" : {
+            "message" : "Basierend auf Deinen Präferenzen haben wir Untertitel eingestellt, wenn es in der Umgebung lauter wird."
+          },
+          "en" : {
+            "message" : "Based on your preferences we have configured to enable captions when it gets noisy."
+          }
+        },
+        "scope" : [ "http://registry.gpii.net/common/captionsEnabled" ],
+        "type" : "infoMessage"
+      }, {
         "message" : {
           "de" : {
             "message" : "Der bevorzugte ScreenReader ist auf diesem Gerät nicht verfügbar. Wir haben NVDA für dich gestartet."
