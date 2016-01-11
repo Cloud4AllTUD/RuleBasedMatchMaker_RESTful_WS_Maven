@@ -1,6 +1,9 @@
 @prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
+// Description of the rule set: basic rules to match solution settings and user preferences based on solution ontology (semanticSolution.jsonld).     
+
+// Description of the rule: match common preferences with application settings   
 [MatchSolutions: 
 (?if rdf:type c4a:InferredConfiguration)
 (?if c4a:hasPrefs ?pref)
@@ -43,6 +46,7 @@ makeSkolem(?newSetting, ?setting, ?pref)
 (?pref c4a:status "matched")
 ]
 
+// Description of the rule: match application-specific preferences with application settings
 [MatchSolutions: 
 (?if rdf:type c4a:InferredConfiguration)
 (?if c4a:hasPrefs ?pref)

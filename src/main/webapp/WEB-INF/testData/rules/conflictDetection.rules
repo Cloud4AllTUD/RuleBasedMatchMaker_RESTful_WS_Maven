@@ -1,8 +1,9 @@
 	@prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
 	@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-		
-	// DETECTION OF NoATConflict (NATC) - no configuration available   
+	
+	// Description of the rule set: rules to detect conflicting configuration policies     
 
+	// Description of the rule: DETECTION OF NoATConflict (NATC) - no configuration available	
 	[DetectNoATConflict: 
 	(?if rdf:type c4a:InferredConfiguration)
 	(?if c4a:hasMetadata ?meta)
@@ -21,7 +22,7 @@
 	print('AFFECTED Preference: ' ?pref)
 	]
 	
-	// DETECTION OF MUTIPLE SOLUTION CONFLICTS FOR RELEVANT PREFERENCES (conflictingTermsOnLayers.jsonld)
+	// Description of the rule: DETECTION OF MUTIPLE SOLUTION CONFLICTS FOR RELEVANT PREFERENCES (conflictingTermsOnLayers.jsonld)
 	[DetectMSC:
 	// If there are two inferred configurations ...
 	(?config_x rdf:type c4a:Configuration)

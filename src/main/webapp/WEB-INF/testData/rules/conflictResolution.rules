@@ -1,6 +1,9 @@
 	@prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
 	@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+	
+// Description of the rule set: rules to resolve conflicting configuration policies     
 
+// Description of the rule: Resolves the NoATConflict (NATC) based on defined PreferenceSubstituteSet (substitutePreferenceTerms.jsonld)
 [NATC_RES_rangeVAl:
 	(?if rdf:type c4a:InferredConfiguration)
 	
@@ -74,6 +77,7 @@
 	print('****************************')
 ]
 
+// Description of the rule: Resolves the NoATConflict (NATC) based on defined PreferenceSubstituteSet (substitutePreferenceTerms.jsonld)
 [NATC_RES_singleVal:
 	(?if rdf:type c4a:InferredConfiguration)
 	
@@ -108,7 +112,7 @@
 	(?solution rdf:type c4a:InstalledSolution)
 	(?solution c4a:id ?sol_id)
 	(?solution c4a:name ?sol_name)
-	(?solution c4a:settings ?setting)
+	?solution c4a:settings ?setting)
 	(?setting rdf:type c4a:Setting)
 	(?setting c4a:refersTo ?set_id)
 	(?setting c4a:name ?set_name)
@@ -144,7 +148,7 @@
 	print('****************************')
 ]
 
- // Choose the highest rated recommendation if there are multiple recommendations for on conflict resolutions 
+// Description of the rule: Resolves the NoATConflict (NATC) based on defined PreferenceSubstituteSet (substitutePreferenceTerms.jsonld). Choose the highest rated recommendation if there are multiple recommendations for one conflict. 
 [NATC_RES_Deactivate_LowRated_Configruation:
 	// If there are 2 configurations and both configurations are active = true
 	(?if rdf:type c4a:InferredConfiguration)
@@ -187,7 +191,8 @@
 	print('**********************************')		
 ]
 
-[MATC_Res_ATRanking:
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on defined AT Rankings (rankingOfATs.jsonld).
+[MSC_Res_ATRanking:
 	(?conflict rdf:type c4a:Conflict)
 	(?conflict c4a:refersTo ?config_a)
 	(?conflict c4a:refersTo ?config_b)
@@ -221,8 +226,9 @@
 	print('Configuration deactivated: ' ?sol_b)	
 	print('****************************')	
 ]
- 
-[MATC_Res_ATLayer:
+
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on defined AccessibilityLayer (semanticSolutions.jsonld). 
+[MSC_Res_ATLayer:
 	(?conflict rdf:type c4a:Conflict)
 	(?conflict c4a:refersTo ?config_a)
 	(?conflict c4a:refersTo ?config_b)
@@ -261,7 +267,8 @@
 	print('**********************************')	
 ]
 
-[MATC_Res_ATContext:
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on defined AccessibilityContex (semanticSolutions.jsonld).
+[MSC_Res_ATContext:
 	(?conflict rdf:type c4a:Conflict)
 	(?conflict c4a:refersTo ?config_a)
 	(?conflict c4a:refersTo ?config_b)
@@ -294,6 +301,7 @@
 	print('**********************************')	
 ]
 
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on user defined solution priorities.
 [Res1aJustOnePreferred:
 	(?conflict rdf:type c4a:Conflict)
 	(?conflict c4a:class ?class)
@@ -322,6 +330,7 @@
 	print('activated solution: ' ?sol_b)	
 ]
 
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on user defined solution priorities.
 [Res1bTwoSolPreferred:
 	(?conflict rdf:type c4a:Conflict)
 	(?conflict c4a:class ?class)

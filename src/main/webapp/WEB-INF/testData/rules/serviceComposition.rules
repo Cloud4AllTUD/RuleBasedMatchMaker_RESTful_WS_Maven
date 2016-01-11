@@ -1,7 +1,10 @@
 @prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
-	// Trigger for Matching a Service: noValue(?pref c4a:status "matched") 
+// Description of the rule set: rules to infer a configuration policy based on service synthesis       
+
+	// Description of the rule: rule to match single service.  
+	// Trigger for matching a service: noValue(?pref c4a:status "matched") 
 	// TODO: matches all services, may trigger multiple service conflicts ???
 	[MatchSingleService:
 	(?if rdf:type c4a:InferredConfiguration)
@@ -50,7 +53,7 @@
 	
 	]
 	
-	// Add default settings to a configuration
+	// Description of the rule: add default settings to a configuration
 	[AddDefaultSettings: 
 	(?config rdf:type c4a:Configuration)
 	(?config c4a:refersTo ?sol)
@@ -72,8 +75,8 @@
 	
 	] 
 	
-	[MapParameters:
-	
+	// Description of the rule: map service parameters
+	[MapParameters:	
 	// find the first service
 	(?configA rdf:type c4a:Configuration)
 	(?configA c4a:name "com.certh.service-synthesis")

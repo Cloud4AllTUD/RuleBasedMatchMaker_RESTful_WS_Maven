@@ -1,7 +1,9 @@
 @prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
-// Default | Single User | Match solutions for all NP sets       
+// Description of the rule set: basic alignment rules - each PreferenceSet is an InferredConfiguration.     
+
+// Description of the rule: default | single user | match solutions for all NP sets       
 [AlignNPSets:
 	// If there is an PreferencesSet ... 
 	(?ps rdf:type c4a:PreferenceSet)
@@ -9,12 +11,11 @@
 	// ... and there is no multiple user login (no user information passed) ...
 	noValue(?ps c4a:user)
 	->
-	// than align this PreferenceSet as an InferredConfiguration. 
-	// this means, solutions are matched in next steps (solutionMatching.rules).    
+	// than align this PreferenceSet as an InferredConfiguration. That means, solutions are matched in next steps (solutionMatching.rules).
 	(?ps rdf:type c4a:InferredConfiguration)
 ]
 
-// Specific | Multiple Users | Match solutions only for the merged NP set (ifnps-multi-users-merged) 
+// Description of the rule: specific | multiple users | match solutions only for the merged NP set (ifnps-multi-users-merged) 
 [AlignNPSets:
 	// If there is an PreferencesSet ... 
 	(?ps rdf:type c4a:PreferenceSet)

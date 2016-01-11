@@ -1,6 +1,9 @@
 	@prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
 	@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
+// Description of the rule set: rules to provide textual feedback according to the resolved conflicts       
+
+// Description of the rule: Feedback that the preferred solution is not available
 [NoPrefferdAT:
 	(?config rdf:type c4a:Configuration)
 	(?config c4a:isActive "true")
@@ -38,7 +41,7 @@
 	(?newMessage c4a:learnMore ?learnMore)
 ]
 
-// Add tutorial to a helpMessage 
+// Description of the rule: Add solution tutorial to a helpMessage   
 [AddTuorial:
 	(?if rdf:type c4a:InferredConfiguration)
 	(?if c4a:hasMetadata ?metaData)
@@ -59,7 +62,7 @@
 	(?msg c4a:learnMore ?link)
 ]
 
-// Add feedback that a new NPS has been inferred
+// Description of the rule: Add feedback that a new NPS has been inferred
 [NewNPS:
 	(?if rdf:type c4a:InferredConfiguration)
 	(?if c4a:id ?inf_if_id)

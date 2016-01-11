@@ -1,6 +1,9 @@
 	@prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
 	@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
+// Description of the rule set: rules to infer NPS based on expert-provided knowledge on environmental influences.      
+
+// Description of the rule: rule to infer NPS for increased noise (mupConflicts.jsonld) 	
 [InferPrefSetsForNoise:
 	// If there is a default preference set ... 
 	(?ps rdf:type c4a:PreferenceSet)
@@ -30,8 +33,7 @@
 	print('AFFECTS PREF: captionsEnabled')
 ]
 
-
-// Infer new conditional preference set for context "luminance" 
+// Description of the rule: rule to infer NPS for luminance  (mupConflicts.jsonld)
 [InferPrefSetsForLum:
 	// If there is a default preference set ... 
 	(?ps rdf:type c4a:PreferenceSet)
@@ -82,7 +84,7 @@
 	print('AFFECTS PREF: http://registry.gpii.net/common/screenResolution')
 ]
 
-// add the condition to an inferred NPS
+// Description of the rule: rules to add the condition block to the inferred PreferenceSet
 [AddCond:
 	// If there is an NPS 
 	(?inf_ps rdf:type c4a:PreferenceSet)
@@ -101,7 +103,7 @@
 	(?inf_ps c4a:hasCondition ?c_inf_cond)
 ]
 
-// Transfer all non-affected preferences from the gpii-default to an inferred NPS
+// Description of the rule: rule that transfers all non-affected preferences from the context gpii-default to the newly inferred NPS
 [TransferPrefs:
 	 // If there is a default NPS ... 
 	(?ps rdf:type c4a:PreferenceSet)
