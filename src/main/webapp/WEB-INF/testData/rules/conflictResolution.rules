@@ -112,7 +112,7 @@
 	(?solution rdf:type c4a:InstalledSolution)
 	(?solution c4a:id ?sol_id)
 	(?solution c4a:name ?sol_name)
-	?solution c4a:settings ?setting)
+	(?solution c4a:settings ?setting)
 	(?setting rdf:type c4a:Setting)
 	(?setting c4a:refersTo ?set_id)
 	(?setting c4a:name ?set_name)
