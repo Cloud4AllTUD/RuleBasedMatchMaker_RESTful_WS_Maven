@@ -12,7 +12,10 @@ public class RBMM_WebServiceIT extends TestCase {
   public void test_() {
 
     if (JsonLDManager.getInstance().PERFORM_INTEGRATION_TESTS) {
-
+      
+      // Core test cases
+      _AppPref();
+      // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
       //_CombinedScenario2();
@@ -24,7 +27,20 @@ public class RBMM_WebServiceIT extends TestCase {
           .println("INTEGRATION TESTS WAS IGNORED because 'PERFORM_INTEGRATION_TESTS=false' in config.properties");
 
   }
+  private void _AppPref() {
+    System.out.println("\n*****************************************************");
+    System.out.println("* Testing 'App-specific Prerfs' ***********************");
+    System.out.println("*******************************************************");
 
+    String filepathIN =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/preferences/AppPref.json";
+    String filepathExpectedOUT1 =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/AppPrefOUT.json";
+
+    performTest(filepathIN, filepathExpectedOUT1, "_AppPref");
+  }
   private void _CombinedScenario1() {
     System.out.println("\n*****************************************************");
     System.out.println("* Testing 'CombinedScenario1' *************************************");

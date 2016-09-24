@@ -1,0 +1,20 @@
+{
+  "inferredConfiguration" : {
+    "gpii-default" : {
+      "applications" : {
+        "com.microsoft.windows.highContrast" : {
+          "active" : true,
+          "settings" : {
+            "http://registry.gpii.net/common/highContrastEnabled" : true
+          }
+        },
+        "com.microsoft.windows.screenResolution" : {
+          "active" : true,
+          "settings" : {
+            "com.microsoft.windows.screenResolution" : "high"
+          }
+        }
+      }
+    }
+  }
+}

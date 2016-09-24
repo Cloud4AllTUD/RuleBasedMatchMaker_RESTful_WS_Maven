@@ -1,0 +1,38 @@
+{
+    "preferences": {
+        "contexts": {
+            "gpii-default": {
+                "name": "Default preferences",
+                "preferences": {
+                    "http://registry.gpii.net/common/highContrastEnabled": true,
+                    "http://registry.gpii.net/applications/com.microsoft.windows.screenResolution": {
+                        "resolution": "high"
+                    },
+                    "http://registry.gpii.net/common/matchMakerType": "RuleBased"
+                }
+            }
+        }
+    },
+    "deviceContext": {
+        "OS": {
+            "id": "windows",
+            "version": "3.0.31-693204"
+        },
+        "solutions": [
+            {
+                "id": "com.microsoft.windows.screenResolution"
+            },
+            {
+                "id": "com.microsoft.windows.highContrast"
+            }
+        ]
+    },
+    "environmentReporter": {},
+    "solutionsRegistry": {},
+    "activeContexts": [
+        "gpii-default",
+        "nighttime-at-home"
+    ],
+    "inverseCapabilities": {},
+    "rematch": {}
+}

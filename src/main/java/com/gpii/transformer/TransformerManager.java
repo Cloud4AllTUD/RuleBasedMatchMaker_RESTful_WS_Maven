@@ -866,11 +866,12 @@ public class TransformerManager {
 
         // create a preference object:
         JSONObject outPref = new JSONObject();
-        outPref.put("c4a:id", pID);
         outPref.put("@type", "c4a:Preference");
 
         // handle common preferences
         if (pID.contains("common")) {
+          // for common preference the id is the full URI, e.g. http://registry.gpii.net/common/highContrastEnabled
+          outPref.put("c4a:id", pID);
           // get preference name from path
           String idStr = path.substring(path.lastIndexOf('/') + 1);
 
@@ -903,6 +904,12 @@ public class TransformerManager {
 
         // handle application-specific preferences
         if (pID.contains("applications")) {
+          // for app-specific preference the id is the NOT the full URI, e.g. http://registry.gpii.net/applications/com.microsoft.windows.screenResolution
+          // Instead, it is just the id that corresponds to to solution registry com.microsoft.windows.screenResolution
+          // get preference id from path
+          String idStr = path.substring(path.lastIndexOf('/') + 1);
+          outPref.put("c4a:id", idStr);
+          
           // app-specific preference value is always a JSONObject, e.g. { fontsize: 0.5,
           // invertColours:false}
           JSONObject appPrefValueObject = cPrefs.getJSONObject(pID);

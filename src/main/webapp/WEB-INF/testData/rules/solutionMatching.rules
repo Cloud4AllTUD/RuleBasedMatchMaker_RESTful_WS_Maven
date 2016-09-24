@@ -55,7 +55,6 @@ makeSkolem(?newSetting, ?setting, ?pref)
 (?pref c4a:type "application")
 (?pref c4a:id ?prefSol_id)
 (?pref c4a:setting ?prefSetting)
-
 (?prefSetting c4a:name ?p_name)
 (?prefSetting c4a:value ?p_value)
 
