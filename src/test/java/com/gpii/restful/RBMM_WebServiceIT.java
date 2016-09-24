@@ -15,6 +15,8 @@ public class RBMM_WebServiceIT extends TestCase {
       
       // Core test cases
       _AppPref();
+      // Pilots 3 test cases
+      _MMTest1a();
       // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
@@ -27,6 +29,21 @@ public class RBMM_WebServiceIT extends TestCase {
           .println("INTEGRATION TESTS WAS IGNORED because 'PERFORM_INTEGRATION_TESTS=false' in config.properties");
 
   }
+  public void _MMTest1a()
+  {
+      System.out.println("\n******************_MMTest1a ******************************************");
+      System.out.println("** Multiple ATs of the same type are locally installed *****************");
+      System.out.println("** and the user has not indicated which AT is preferred. ***************");     
+      System.out.println("** Resolution based on a expert defined ranking of AT ** ***************");
+      System.out.println("** defined in knowledge set rankingOfATs *******************************");        
+      System.out.println("\n**********************************************************************");     
+  
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest1a.json";
+      String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest1aOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT1, "_MMTest1a");           
+  }
+  
   private void _AppPref() {
     System.out.println("\n*****************************************************");
     System.out.println("* Testing 'App-specific Prerfs' ***********************");
