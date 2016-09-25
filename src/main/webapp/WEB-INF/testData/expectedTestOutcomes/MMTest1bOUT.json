@@ -1,0 +1,69 @@
+{
+  "inferredConfiguration" : {
+    "gpii-default" : {
+      "applications" : {
+        "com.freedomscientific.jaws" : {
+          "active" : true,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : false,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/pitch" : 0.6,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "some",
+            "http://registry.gpii.net/common/readingUnit" : "paragraph",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/speechRate" : 250.0,
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        },
+        "com.yourdolphin.supernova-as" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : false,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/pitch" : 0.6,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "some",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/speechRate" : 250.0,
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        },
+        "org.nvda-project" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : false,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/pitch" : 0.6,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "some",
+            "http://registry.gpii.net/common/readingUnit" : "paragraph",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/speakTutorialMessages" : false,
+            "http://registry.gpii.net/common/speechRate" : 250.0,
+            "http://registry.gpii.net/common/trackingTTS" : "caret",
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        },
+        "webinsight.webAnywhere.windows" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true
+          }
+        }
+      },
+      "metadata" : [ {
+        "message" : {
+          "de" : {
+            "message" : "Der bevorzugte ScreenReader ist auf diesem Gerät nicht verfügbar. Wir haben JAWS für dich gestartet."
+          },
+          "en" : {
+            "message" : "Your preferred ScreenReader is not available on the device. We have launched JAWS for you."
+          }
+        },
+        "scope" : [ "com.freedomscientific.jaws" ],
+        "type" : "helpMessage"
+      } ]
+    }
+  }
+}

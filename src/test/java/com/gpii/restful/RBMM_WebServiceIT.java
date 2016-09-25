@@ -17,6 +17,7 @@ public class RBMM_WebServiceIT extends TestCase {
       _AppPref();
       // Pilots 3 test cases
       _MMTest1a();
+      _MMTest1b();
       // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
@@ -29,6 +30,21 @@ public class RBMM_WebServiceIT extends TestCase {
           .println("INTEGRATION TESTS WAS IGNORED because 'PERFORM_INTEGRATION_TESTS=false' in config.properties");
 
   }
+  private void _AppPref() {
+    System.out.println("\n*****************************************************");
+    System.out.println("* Testing 'App-specific Prerfs' ***********************");
+    System.out.println("*******************************************************");
+
+    String filepathIN =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/preferences/AppPref.json";
+    String filepathExpectedOUT1 =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/AppPrefOUT.json";
+
+    performTest(filepathIN, filepathExpectedOUT1, "_AppPref");
+  }
+  
   public void _MMTest1a()
   {
       System.out.println("\n******************_MMTest1a ******************************************");
@@ -44,20 +60,22 @@ public class RBMM_WebServiceIT extends TestCase {
       performTest(filepathIN, filepathExpectedOUT1, "_MMTest1a");           
   }
   
-  private void _AppPref() {
-    System.out.println("\n*****************************************************");
-    System.out.println("* Testing 'App-specific Prerfs' ***********************");
-    System.out.println("*******************************************************");
-
-    String filepathIN =
-        System.getProperty("user.dir")
-            + "/src/main/webapp/WEB-INF/testData/preferences/AppPref.json";
-    String filepathExpectedOUT1 =
-        System.getProperty("user.dir")
-            + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/AppPrefOUT.json";
-
-    performTest(filepathIN, filepathExpectedOUT1, "_AppPref");
+  public void _MMTest1b()
+  {
+      System.out.println("\n******************_MMTest1b **************************************************");
+      System.out.println("** Multiple ATs of the same type are available, either locally or as ***********");
+      System.out.println("** cloud-based solution. The user has not indicated which AT is preferred. *****");     
+      System.out.println("** Resolution based on the application layer of a solution (os, browser, cloud)*");
+      System.out.println("** OS ATs are prioritized over browser solutions *******************************");        
+      System.out.println("\n******************************************************************************");     
+  
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest1b.json";
+      String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest1bOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT1, "_MMTest1b");           
   }
+  
+
   private void _CombinedScenario1() {
     System.out.println("\n*****************************************************");
     System.out.println("* Testing 'CombinedScenario1' *************************************");

@@ -258,7 +258,7 @@
 	notEqual(?config_a, ?config_b)
 	notEqual(?sol_a, ?sol_b)	
 	->
-	drop(5,8,9,10,11,12)
+	drop(5)
 	(?config_b c4a:isActive "false")
 	print('**** MATC_Res_ATLayer ************')
 	print('affects MSC for: ' ?aff_set)
