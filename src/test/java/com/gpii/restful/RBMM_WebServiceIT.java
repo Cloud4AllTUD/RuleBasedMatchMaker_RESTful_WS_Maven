@@ -20,6 +20,7 @@ public class RBMM_WebServiceIT extends TestCase {
       _MMTest1b();
       _MMTest1c();
       _MMTest1d();
+      _MMTest2();      
       // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
@@ -104,6 +105,20 @@ public class RBMM_WebServiceIT extends TestCase {
       
       performTest(filepathIN, filepathExpectedOUT1, "_MMTest1d");           
   }
+  public void _MMTest2()
+  {
+      System.out.println("\n******************_MMTest2 ***********************************************");
+      System.out.println("** Multiple ATs of the same class locally available but the preferred ******");
+      System.out.println("** sulotion is missing. ****************************************************");     
+      System.out.println("** Resolution based on a expert defined ranking of AT ** *******************");
+      System.out.println("** defined in knowledge set rankingOfATs ***********************************");        
+      System.out.println("\n**************************************************************************");     
+  
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest2.json";
+      String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest2OUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT1, "_MMTest2");           
+  }  
   private void _CombinedScenario1() {
     System.out.println("\n*****************************************************");
     System.out.println("* Testing 'CombinedScenario1' *************************************");

@@ -1,0 +1,47 @@
+{
+  "inferredConfiguration" : {
+    "gpii-default" : {
+      "applications" : {
+        "com.freedomscientific.jaws" : {
+          "active" : true,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : true,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/pitch" : 0.8,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "most",
+            "http://registry.gpii.net/common/readingUnit" : "sentence",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/speechRate" : 300.0,
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        },
+        "com.yourdolphin.supernova-as" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : true,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/pitch" : 0.8,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "most",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/speechRate" : 300.0,
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        }
+      },
+      "metadata" : [ {
+        "message" : {
+          "de" : {
+            "message" : "Der bevorzugte ScreenReader ist auf diesem Gerät nicht verfügbar. Wir haben JAWS für dich gestartet."
+          },
+          "en" : {
+            "message" : "Your preferred ScreenReader is not available on the device. We have launched JAWS for you."
+          }
+        },
+        "scope" : [ "com.freedomscientific.jaws" ],
+        "type" : "helpMessage"
+      } ]
+    }
+  }
+}
