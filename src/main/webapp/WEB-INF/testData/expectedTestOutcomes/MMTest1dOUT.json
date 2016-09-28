@@ -1,0 +1,90 @@
+{
+  "inferredConfiguration" : {
+    "gpii-default" : {
+      "applications" : {
+        "com.freedomscientific.jaws" : {
+          "active" : true,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : false,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/pitch" : 0.8,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "some",
+            "http://registry.gpii.net/common/readingUnit" : "paragraph",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/speechRate" : 300.0,
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        },
+        "com.microsoft.windows.magnifier" : {
+          "active" : true,
+          "settings" : {
+            "http://registry.gpii.net/common/invertColours" : true,
+            "http://registry.gpii.net/common/magnification" : 2.0,
+            "http://registry.gpii.net/common/magnifierEnabled" : true,
+            "http://registry.gpii.net/common/magnifierPosition" : "TopHalf",
+            "http://registry.gpii.net/common/tracking" : "cursor"
+          }
+        },
+        "com.yourdolphin.supernova-as" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : false,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/invertColours" : true,
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/magnification" : 2.0,
+            "http://registry.gpii.net/common/magnifierEnabled" : true,
+            "http://registry.gpii.net/common/magnifierPosition" : "TopHalf",
+            "http://registry.gpii.net/common/pitch" : 0.8,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "some",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/showCrosshairs" : true,
+            "http://registry.gpii.net/common/speechRate" : 300.0,
+            "http://registry.gpii.net/common/tracking" : "cursor",
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        },
+        "org.nvda-project" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/announceCapitals" : false,
+            "http://registry.gpii.net/common/auditoryOutLanguage" : "en",
+            "http://registry.gpii.net/common/keyEcho" : true,
+            "http://registry.gpii.net/common/pitch" : 0.8,
+            "http://registry.gpii.net/common/punctuationVerbosity" : "some",
+            "http://registry.gpii.net/common/readingUnit" : "paragraph",
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true,
+            "http://registry.gpii.net/common/speakTutorialMessages" : false,
+            "http://registry.gpii.net/common/speechRate" : 300.0,
+            "http://registry.gpii.net/common/trackingTTS" : "caret",
+            "http://registry.gpii.net/common/wordEcho" : false
+          }
+        }
+      },
+      "metadata" : [ {
+        "message" : {
+          "de" : {
+            "message" : "Der bevorzugte ScreenReader ist auf diesem Gerät nicht verfügbar. Wir haben JAWS für dich gestartet."
+          },
+          "en" : {
+            "message" : "Your preferred ScreenReader is not available on the device. We have launched JAWS for you."
+          }
+        },
+        "scope" : [ "com.freedomscientific.jaws" ],
+        "type" : "helpMessage"
+      }, {
+        "message" : {
+          "de" : {
+            "message" : "Der bevorzugte Magnifier ist auf diesem Gerät nicht verfügbar. Wir haben Windows Magnifier für dich gestartet."
+          },
+          "en" : {
+            "message" : "Your preferred Magnifier is not available on the device. We have launched Windows Magnifier for you."
+          }
+        },
+        "scope" : [ "com.microsoft.windows.magnifier" ],
+        "type" : "helpMessage"
+      } ]
+    }
+  }
+}

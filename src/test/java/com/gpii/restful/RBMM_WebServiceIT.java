@@ -18,7 +18,8 @@ public class RBMM_WebServiceIT extends TestCase {
       // Pilots 3 test cases
       _MMTest1a();
       _MMTest1b();
-      _MMTest1c();      
+      _MMTest1c();
+      _MMTest1d();
       // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
@@ -89,7 +90,20 @@ public class RBMM_WebServiceIT extends TestCase {
       
       performTest(filepathIN, filepathExpectedOUT1, "_MMTest1c");           
   }  
-
+  public void _MMTest1d()
+  {
+      System.out.println("\n******************_MMTest1d **********************************************");
+      System.out.println("** Multiple ATs and suits of the same type.**************** ****************");
+      System.out.println("** The user has not indicated which AT is preferred. ***********************");     
+      System.out.println("** Resolution based on a expert defined ranking of AT ** *******************");
+      System.out.println("** defined in knowledge set rankingOfATs ***********************************");        
+      System.out.println("\n**************************************************************************");     
+  
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest1d.json";
+      String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest1dOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT1, "_MMTest1d");           
+  }
   private void _CombinedScenario1() {
     System.out.println("\n*****************************************************");
     System.out.println("* Testing 'CombinedScenario1' *************************************");
