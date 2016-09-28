@@ -28,6 +28,7 @@ public class RBMM_WebServiceIT extends TestCase {
       _MMTest5a();
       _MMTest5b();
       _MMTest6a();
+      _MMTest6b();
       // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
@@ -215,7 +216,20 @@ public class RBMM_WebServiceIT extends TestCase {
       String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest6aOUT.json";
       
       performTest(filepathIN, filepathExpectedOUT, "_MMTest6a");           
-  }  
+  }
+  public void _MMTest6b()
+  {
+      System.out.println("\n******************_MMTest6b **********************************************");
+      System.out.println("** Accessibility Setting can be addressed at different levels **************");
+      System.out.println("** Magnification on Windows => OS and Browser ******************************");        
+      System.out.println("** NOTE : No conflict rule applied ??? *************************************");     
+      System.out.println("\n**************************************************************************");
+      
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest6b.json";
+      String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest6bOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT, "_MMTest6b");           
+  }   
   private void _CombinedScenario1() {
     System.out.println("\n*****************************************************");
     System.out.println("* Testing 'CombinedScenario1' *************************************");
