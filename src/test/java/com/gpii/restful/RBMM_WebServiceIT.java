@@ -27,6 +27,7 @@ public class RBMM_WebServiceIT extends TestCase {
       _MMTest4c();
       _MMTest5a();
       _MMTest5b();
+      _MMTest6a();
       // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
@@ -201,6 +202,19 @@ public class RBMM_WebServiceIT extends TestCase {
       String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest5bOUT.json";
       
       performTest(filepathIN, filepathExpectedOUT, "_MMTest5a");           
+  }
+  public void _MMTest6a()
+  {
+      System.out.println("\n******************_MMTest6a **********************************************");
+      System.out.println("** Accessibility Setting can be addressed at different levels **************");
+      System.out.println("** Font Size on Linux => OS and Browser ************************************");        
+      System.out.println("** No conflict rule applied - ??? ******************************************");     
+      System.out.println("\n**************************************************************************");
+      
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest6a.json";
+      String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest6aOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT, "_MMTest6a");           
   }  
   private void _CombinedScenario1() {
     System.out.println("\n*****************************************************");
