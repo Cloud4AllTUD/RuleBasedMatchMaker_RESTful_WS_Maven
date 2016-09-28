@@ -23,6 +23,7 @@ public class RBMM_WebServiceIT extends TestCase {
       _MMTest2();
       _MMTest3();
       _MMTest4a();
+      _MMTest4b();
       // Review 4 test cases
       _Alicia();
       //_CombinedScenario1();
@@ -145,6 +146,18 @@ public class RBMM_WebServiceIT extends TestCase {
       String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest4aOUT.json";
       
       performTest(filepathIN, filepathExpectedOUT, "_MMTest4a");           
+  }
+  public void _MMTest4b()
+  {
+      System.out.println("\n******************_MMTest4b ***************************");
+      System.out.println("** No AT of the type required by the user is installed.*");
+      System.out.println("** No Magnifier on Linux. ******************************");
+      System.out.println("\n******************************************************");     
+  
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest4b.json";
+      String filepathExpectedOUT = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/MMTest4bOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT, "_MMTest4b");           
   }  
   private void _CombinedScenario1() {
     System.out.println("\n*****************************************************");
