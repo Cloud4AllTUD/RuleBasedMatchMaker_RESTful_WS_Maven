@@ -4,9 +4,7 @@
             "gpii-default": {
                 "name": "Default preferences",
                 "preferences": {
-                    "http://registry.gpii.net/applications/com.microsoft.windows.screenResolution": {
-                        "resolution": "high"
-                    },
+                    "http://registry.gpii.net/common/highContrastEnabled": true,
                     "http://registry.gpii.net/common/matchMakerType": "RuleBased"
                 }
             }
@@ -19,7 +17,7 @@
         },
         "solutions": [
             {
-                "id": "com.microsoft.windows.screenResolution"
+                "id": "com.microsoft.windows.highContrast"
             }
         ]
     },

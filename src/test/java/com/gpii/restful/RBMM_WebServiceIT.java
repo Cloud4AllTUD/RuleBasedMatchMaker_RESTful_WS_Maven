@@ -14,8 +14,9 @@ public class RBMM_WebServiceIT extends TestCase {
     if (JsonLDManager.getInstance().PERFORM_INTEGRATION_TESTS) {
       
       // Core test cases
+      _ComPref();
       _AppPref();
-      // Pilots 3 test cases
+      /*// Pilots 3 test cases
       _MMTest1a();
       _MMTest1b();
       _MMTest1c();
@@ -34,12 +35,26 @@ public class RBMM_WebServiceIT extends TestCase {
       //_CombinedScenario1();
       //_CombinedScenario2();
       _AliciaSz2();
-      _LiaAndManuel();
+      _LiaAndManuel();*/
 
     } else
       System.out
           .println("INTEGRATION TESTS WAS IGNORED because 'PERFORM_INTEGRATION_TESTS=false' in config.properties");
 
+  }
+  private void _ComPref() {
+    System.out.println("\n*****************************************************");
+    System.out.println("* Testing Core Matching Rules for 'Common Prerfs' *****");
+    System.out.println("*******************************************************");
+
+    String filepathIN =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/preferences/ComPref.json";
+    String filepathExpectedOUT1 =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/ComPrefOUT.json";
+
+    performTest(filepathIN, filepathExpectedOUT1, "_ComPref");
   }
   private void _AppPref() {
     System.out.println("\n*****************************************************");

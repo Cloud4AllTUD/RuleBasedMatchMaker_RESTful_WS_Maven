@@ -841,7 +841,7 @@ public class TransformerManager {
       outPrefSet.put("c4a:id", cID);
       outPrefSet.put("c4a:name", cName);
 
-      // translate preferences and add hasPrefs relation
+      // translate preferences and add hasPref relation
       JSONObject cPrefs = inContext.getJSONObject(cID).getJSONObject("preferences");
 
       JSONArray outPrefArray = new JSONArray();
@@ -870,6 +870,8 @@ public class TransformerManager {
 
         // handle common preferences
         if (pID.contains("common")) {
+          // set preference type
+          outPref.put("@type", "c4a:CommonPreference");
           // for common preference the id is the full URI, e.g. http://registry.gpii.net/common/highContrastEnabled
           outPref.put("c4a:id", pID);
           // get preference name from path
@@ -899,11 +901,13 @@ public class TransformerManager {
           } catch (NumberFormatException e) {
           }
 
-          outPref.put("c4a:value", comPrefVal);
+          outPref.put("c4a:hasSimpleValue", comPrefVal);
         }
 
         // handle application-specific preferences
         if (pID.contains("applications")) {
+          // set preference type
+          outPref.put("@type", "c4a:ApplicationPreference");
           // for app-specific preference the id is the NOT the full URI, e.g. http://registry.gpii.net/applications/com.microsoft.windows.screenResolution
           // Instead, it is just the id that corresponds to to solution registry com.microsoft.windows.screenResolution
           // get preference id from path
@@ -923,12 +927,11 @@ public class TransformerManager {
             setting.put("c4a:value", appPrefValue);
             settingSet.put(setting);
           }
-          outPref.put("c4a:setting", settingSet);
-          outPref.put("c4a:type", "application");
+          outPref.put("c4a:hasComplexValue", settingSet);
         }
         outPrefArray.put(outPref);
       }
-      outPrefSet.put("c4a:hasPrefs", outPrefArray);
+      outPrefSet.put("c4a:hasPref", outPrefArray);
       JSONObject pref_list_wrapper = new JSONObject();
       pref_list_wrapper.put("@list", pref_list);
       outPrefSet.put("c4a:prefList", pref_list_wrapper);
