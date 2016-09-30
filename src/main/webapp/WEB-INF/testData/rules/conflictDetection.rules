@@ -3,23 +3,28 @@
 	
 	// Description of the rule set: rules to detect conflicting configuration policies     
 
-	// Description of the rule: DETECTION OF NoATConflict (NATC) - no configuration available	
-	[DetectNoATConflict: 
-	(?if rdf:type c4a:InferredConfiguration)
-	(?if c4a:hasMetadata ?meta)
+	// Description of the rule: DETECTION OF NoSolConflict - no configuration available for a required preference	
+	[DetectNoSolConflict: 
+	(?ps rdf:type c4a:PreferenceSet)
+	(?ps c4a:hasPref ?p)
+	(?ps c4a:hasMetadata ?meta)
+	
+	(?p c4a:id ?p_id)
+	
 	(?meta c4a:type "required")
-	(?meta c4a:scope ?pref)
-	noValue(?if c4a:refersTo ?config)
-	makeSkolem(?newConflict, ?if)
+	(?meta c4a:scope ?scope)
+	
+	equal(?p_id, ?scope)
+	noValue(?p c4a:hasConfig ?config)
+	makeSkolem(?newConflict, ?p)
 	->
-	(?newConflict rdf:type c4a:Conflict)
-	(?newConflict c4a:name "NoATConflict")
-	(?newConflict c4a:refersTo ?pref)
-	(?if c4a:hasConflict ?newConflict)
+	(?newConflict rdf:type c4a:NoSolutionConflict)
+	(?newConflict c4a:noSolFor ?p_id)
+	(?p c4a:hasConflict ?newConflict)
 	
 	print('************ CONFLICT DETECTION ****************')
-	print('CONFLICT: NoATConflict')
-	print('AFFECTED Preference: ' ?pref)
+	print('CONFLICT: NoSolConflict')
+	print('SCOPE: ' ?scope)
 	]
 	
 	// Description of the rule: DETECTION OF MUTIPLE SOLUTION CONFLICTS FOR RELEVANT PREFERENCES (conflictingTermsOnLayers.jsonld)

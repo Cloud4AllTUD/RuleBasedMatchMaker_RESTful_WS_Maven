@@ -16,6 +16,7 @@ public class RBMM_WebServiceIT extends TestCase {
       // Core test cases
       _ComPref();
       _AppPref();
+      _DetectNoSolConflict();
       /*// Pilots 3 test cases
       _MMTest1a();
       _MMTest1b();
@@ -70,6 +71,21 @@ public class RBMM_WebServiceIT extends TestCase {
 
     performTest(filepathIN, filepathExpectedOUT1, "_AppPref");
   }
+  private void _DetectNoSolConflict() {
+    System.out.println("\n*****************************************************");
+    System.out.println("* Testing 'Required Preference is suported by *********");
+    System.out.println("* installed solutions. ********************************");
+    System.out.println("*******************************************************");
+
+    String filepathIN =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/preferences/DetectNoSolConflict.json";
+    String filepathExpectedOUT1 =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/DetectNoSolConflictOUT.json";
+
+    performTest(filepathIN, filepathExpectedOUT1, "_DetectNoSolConflict");
+  }  
   
   public void _MMTest1a()
   {
