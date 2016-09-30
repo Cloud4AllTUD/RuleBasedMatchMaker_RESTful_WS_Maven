@@ -17,11 +17,11 @@
                     "@id": "c4a:website"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "captions",
-                    "c4a:refersTo": "http://registry.gpii.net/common/captionsEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/captionsEnabled",
                     "c4a:name": "captions"
                 }
             ]
@@ -39,11 +39,11 @@
                     "@id": "c4a:os"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screen resolution",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenResolution",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenResolution",
                     "c4a:name": "screen resolution"
                 }
             ]
@@ -61,11 +61,11 @@
                     "@id": "c4a:website"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "simplification",
-                    "c4a:refersTo": "http://registry.gpii.net/common/simplifiedUiEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/simplifiedUiEnabled",
                     "c4a:name": "simplification"
                 }
             ]
@@ -80,9 +80,9 @@
                     "@type": "c4a:Service",
                     "c4a:id": "TextToSpeech",
                     "c4a:name": "Service_TextToSpeech",
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TextToSpeech/textToSpeak",
@@ -90,7 +90,7 @@
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TextToSpeech/spokenTextMp3URL",
                             "c4a:name": "spokenTextMp3URL",
@@ -103,41 +103,41 @@
                     "c4a:id": "Translatewebpage",
                     "c4a:name": "Service_TranslateWebPage",
 					"c4a:priority": 2,
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/Translatewebpage/inputUrl",
                             "c4a:name": "inputUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "input",
                             "c4a:value": "URL_TO_BE_REPLACED"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/Translatewebpage/targetLanguage",
                             "c4a:isExactMatching": true,
                             "c4a:name": "targetLanguage",
-                            "c4a:refersTo": "http://registry.gpii.net/common/language",
+                            "c4a:isAlias": "http://registry.gpii.net/common/language",
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/Translatewebpage/finalUrl",
                             "c4a:name": "finalUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/Translatewebpage/targetLanguageCode",
                             "c4a:isExactMatching": true,
                             "c4a:name": "targetLanguageCode",
-                            "c4a:refersTo": "http://registry.gpii.net/common/language",
+                            "c4a:isAlias": "http://registry.gpii.net/common/language",
                             "c4a:type": "output"
                         }
                     ]
@@ -147,59 +147,59 @@
                     "c4a:id": "FontConverter",
                     "c4a:name": "Service_FontConverter",
 					"c4a:priority": 3,
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/FontConverter/targetFontSize",
                             "c4a:isExactMatching": true,
                             "c4a:name": "targetFontSize",
-                            "c4a:refersTo": "http://registry.gpii.net/common/fontSize",
+                            "c4a:isAlias": "http://registry.gpii.net/common/fontSize",
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/FontConverter/targetColor",
                             "c4a:isExactMatching": true,
                             "c4a:name": "targetColor",
-                            "c4a:refersTo": "http://registry.gpii.net/common/foregroundColour",
+                            "c4a:isAlias": "http://registry.gpii.net/common/foregroundColour",
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/FontConverter/targetBackground",
                             "c4a:isExactMatching": true,
                             "c4a:name": "targetBackground",
-                            "c4a:refersTo": "http://registry.gpii.net/common/backgroundColour",
+                            "c4a:isAlias": "http://registry.gpii.net/common/backgroundColour",
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/FontConverter/targetFontFamily",
                             "c4a:isExactMatching": true,
                             "c4a:name": "targetFontFamily",
-                            "c4a:refersTo": "http://registry.gpii.net/common/fontFamily",
+                            "c4a:isAlias": "http://registry.gpii.net/common/fontFamily",
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/FontConverter/inputUrl",
                             "c4a:name": "inputUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "input",
                             "c4a:value": "URL_TO_BE_REPLACED"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/FontConverter/finalUrl",
                             "c4a:name": "finalUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         }
                     ]
@@ -208,26 +208,26 @@
                     "@type": "c4a:Service",
                     "c4a:id": "URLScreenshotGenerator",
                     "c4a:name": "Service_URLScreenshotGenerator",
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/URLScreenshotGenerator/inputUrl",
                             "c4a:name": "inputUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "input",
                             "c4a:value": "URL_TO_BE_REPLACED"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/URLScreenshotGenerator/screenshot",
                             "c4a:name": "screenshot",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/URLScreenshotGenerator/message",
                             "c4a:name": "message",
@@ -239,23 +239,23 @@
                     "@type": "c4a:Service",
                     "c4a:id": "Identifyimageswithoutaltattributeinwebpage",
                     "c4a:name": "Service_IdentifyImagesWithoutAltAttributeInWebPage",
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/Identifyimageswithoutaltattributeinwebpage/inputUrl",
                             "c4a:name": "inputUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "input",
                             "c4a:value": "URL_TO_BE_REPLACED"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/Identifyimageswithoutaltattributeinwebpage/finalUrl",
                             "c4a:name": "finalUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         }
                     ]
@@ -264,26 +264,26 @@
                     "@type": "c4a:Service",
                     "c4a:id": "CaptchaResolver",
                     "c4a:name": "Service_CaptchaResolver",
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/CaptchaResolver/inputUrl",
                             "c4a:name": "inputUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "input",
                             "c4a:value": "URL_TO_BE_REPLACED"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/CaptchaResolver/api-message",
                             "c4a:name": "api-message",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/CaptchaResolver/captcha",
                             "c4a:name": "captcha",
@@ -296,32 +296,32 @@
                     "c4a:id": "CallWebAnywhere",
                     "c4a:name": "Service_WebAnyWhere",
 					"c4a:priority": 1,
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/CallWebAnywhere/inputUrl",
                             "c4a:name": "inputUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "input",
                             "c4a:value": "URL_TO_BE_REPLACED"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/CallWebAnywhere/voiceLanguage",
                             "c4a:isExactMatching": true,
                             "c4a:name": "voiceLanguage",
-                            "c4a:refersTo": "http://registry.gpii.net/common/language",
+                            "c4a:isAlias": "http://registry.gpii.net/common/language",
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/CallWebAnywhere/finalUrl",
                             "c4a:name": "finalUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         }
                     ]
@@ -330,9 +330,9 @@
                     "@type": "c4a:Service",
                     "c4a:id": "StaticImageMap",
                     "c4a:name": "Service_StaticImageMap",
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/latitude",
@@ -340,7 +340,7 @@
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/longitude",
@@ -348,53 +348,53 @@
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/supported",
                             "c4a:name": "supported",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/success",
                             "c4a:name": "success",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/termsOfUseUrl",
                             "c4a:name": "termsOfUseUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/rateLimitUrl",
                             "c4a:name": "rateLimitUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/imageUrl",
                             "c4a:name": "imageUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/providerUrl",
                             "c4a:name": "providerUrl",
-                            "c4a:refersTo": "http://registry.gpii.net/common/URL",
+                            "c4a:isAlias": "http://registry.gpii.net/common/URL",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/StaticImageMap/html",
                             "c4a:name": "html",
@@ -406,9 +406,9 @@
                     "@type": "c4a:Service",
                     "c4a:id": "TelizeGeolocation",
                     "c4a:name": "Service_TelizeGeolocation",
-                    "c4a:settings": [
+                    "c4a:hasFeature": [
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:default": true,
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/ipAddress",
@@ -416,105 +416,105 @@
                             "c4a:type": "input"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/country",
                             "c4a:name": "country",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/isp",
                             "c4a:name": "isp",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/countryCode",
                             "c4a:name": "countryCode",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/dmaCode",
                             "c4a:name": "dmaCode",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/timezone",
                             "c4a:name": "timezone",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/area_code",
                             "c4a:name": "area_code",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/region",
                             "c4a:name": "region",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/city",
                             "c4a:name": "city",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/longitude",
                             "c4a:name": "longitude",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/ip",
                             "c4a:name": "ip",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/latitude",
                             "c4a:name": "latitude",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/asn",
                             "c4a:name": "asn",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/continent_code",
                             "c4a:name": "continent_code",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/region_code",
                             "c4a:name": "region_code",
                             "c4a:type": "output"
                         },
                         {
-                            "@type": "c4a:Setting",
+                            "@type": "c4a:CustomizationFeature",
                             "c4a:hasValueSpace": "string",
                             "c4a:id": "http://registry.gpii.net/application/TelizeGeolocation/countryCode3",
                             "c4a:name": "countryCode3",
@@ -537,29 +537,29 @@
                     "@id": "c4a:os"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "text-scaling-factor",
-                    "c4a:refersTo": "http://registry.gpii.net/common/fontSize",
+                    "c4a:isAlias": "http://registry.gpii.net/common/fontSize",
                     "c4a:name": "text-scaling-factor"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "cursor-size",
-                    "c4a:refersTo": "http://registry.gpii.net/common/cursorSize",
+                    "c4a:isAlias": "http://registry.gpii.net/common/cursorSize",
                     "c4a:name": "cursor-size"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "gtk-theme",
-                    "c4a:refersTo": "http://registry.gpii.net/common/highContrastEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/highContrastEnabled",
                     "c4a:name": "gtk-theme"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "icon-theme",
-                    "c4a:refersTo": "http://registry.gpii.net/common/highContrastEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/highContrastEnabled",
                     "c4a:name": "icon-theme"
                 }
             ]
@@ -580,11 +580,11 @@
                     "@id": "c4a:browser"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderTTSEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "screenReaderTTSEnabled"
                 }
             ]
@@ -605,59 +605,59 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderTTSEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "screenReaderTTSEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "default\\.TypingEcho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
                     "c4a:name": "Typing Echo"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "default\\.TypingEcho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
                     "c4a:name": "Typing Echo"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ENU-Global\\.Punctuation",
-                    "c4a:refersTo": "http://registry.gpii.net/common/punctuationVerbosity",
+                    "c4a:isAlias": "http://registry.gpii.net/common/punctuationVerbosity",
                     "c4a:name": "Punctuation"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ENU-Global\\.Pitch",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:isAlias": "http://registry.gpii.net/common/pitch",
                     "c4a:name": "Pitch"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ENU-Global\\.Rate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "Rate"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ENU-Global\\.IndicateCapsDuringSayAll: ",
-                    "c4a:refersTo": "http://registry.gpii.net/common/announceCapitals",
+                    "c4a:isAlias": "http://registry.gpii.net/common/announceCapitals",
                     "c4a:name": "Indicate Caps During Say All"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ENU-Global\\.SayAllReads: ",
-                    "c4a:refersTo": "http://registry.gpii.net/common/readingUnit",
+                    "c4a:isAlias": "http://registry.gpii.net/common/readingUnit",
                     "c4a:name": "Say All Reads"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ENU-Global\\.Language: ",
-                    "c4a:refersTo": "http://registry.gpii.net/common/auditoryOutLanguage",
+                    "c4a:isAlias": "http://registry.gpii.net/common/auditoryOutLanguage",
                     "c4a:name": "Language of the Synthesizer"
                 }                
             ]
@@ -675,18 +675,18 @@
                     "@id": "c4a:browser"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "zoom",
                     "c4a:name": "zoom",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierEnabled"
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "zoom",
                     "c4a:name": "zoom",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnification"
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnification"
                 }
             ]
         },
@@ -703,48 +703,48 @@
                     "@id": "c4a:browser"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderTTSEnabled",
                     "c4a:name": "screenReaderTTSEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled"
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "fontSize",
                     "c4a:name": "fontSize",
-                    "c4a:refersTo": "http://registry.gpii.net/common/fontSize"
+                    "c4a:isAlias": "http://registry.gpii.net/common/fontSize"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "magnifierEnabled",
                     "c4a:name": "magnifierEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierEnabled"
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "magnification",
                     "c4a:name": "magnification",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnification"
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnification"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "highContrastEnabled",
                     "c4a:name": "highContrastEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/highContrastEnabled"
+                    "c4a:isAlias": "http://registry.gpii.net/common/highContrastEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "highContrastTheme",
                     "c4a:name": "highContrastTheme",
-                    "c4a:refersTo": "http://registry.gpii.net/common/highContrastTheme"
+                    "c4a:isAlias": "http://registry.gpii.net/common/highContrastTheme"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "invertColours",
                     "c4a:name": "invertColours",
-                    "c4a:refersTo": "http://registry.gpii.net/common/invertColours"
+                    "c4a:isAlias": "http://registry.gpii.net/common/invertColours"
                 }
             ]
         },
@@ -764,47 +764,47 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "Magnifier",
                     "c4a:name": "Magnifier",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierEnabled"
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "Invert",
-                    "c4a:refersTo": "http://registry.gpii.net/common/invertColours",
+                    "c4a:isAlias": "http://registry.gpii.net/common/invertColours",
                     "c4a:name": "Invert"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "Magnification",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnification",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnification",
                     "c4a:name": "Magnification"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "MagnificationMode",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierPosition",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierPosition",
                     "c4a:name": "Magnification Mode"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "FollowFocus",
-                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:isAlias": "http://registry.gpii.net/common/tracking",
                     "c4a:name": "Follow Focus"
                 },                
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "FollowCaret",
-                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:isAlias": "http://registry.gpii.net/common/tracking",
                     "c4a:name": "Follow Caret"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "FollowMouse",
-                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:isAlias": "http://registry.gpii.net/common/tracking",
                     "c4a:name": "Follow Mouse"
                 }                
             ]
@@ -825,77 +825,77 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "enableTutorialMessages",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speakTutorialMessage",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speakTutorialMessage",
                     "c4a:name": "enableTutorialMessages"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "enableEchoByCharacter",
-                    "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
                     "c4a:name": "enableEchoByCharacter"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "enableEchoByWord",
-                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
                     "c4a:name": "enableEchoByWord"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "enableBraille",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderBrailleOutput",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderBrailleOutput",
                     "c4a:name": "enableBraille"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "enableSpeech",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "enableSpeech"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "sayAllStyle",
-                    "c4a:refersTo": "http://registry.gpii.net/common/readingUnit",
+                    "c4a:isAlias": "http://registry.gpii.net/common/readingUnit",
                     "c4a:name": "sayAllStyle"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "voices\\.default\\.rate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "rate"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "voices\\.default\\.average-pitch",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:isAlias": "http://registry.gpii.net/common/pitch",
                     "c4a:name": "average-pitch"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.espeak\\.rate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "rate"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "verbalizePunctuationStyle",
-                    "c4a:refersTo": "http://registry.gpii.net/common/punctuationVerbosity",
+                    "c4a:isAlias": "http://registry.gpii.net/common/punctuationVerbosity",
                     "c4a:name": "punctuationstyle"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "voices\\.default\\.family",
-                    "c4a:refersTo": "http://registry.gpii.net/common/auditoryOutLanguage",
+                    "c4a:isAlias": "http://registry.gpii.net/common/auditoryOutLanguage",
                     "c4a:name": "voice"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "voices\\.default\\.gain",
-                    "c4a:refersTo": "http://registry.gpii.net/common/volumeTTS",
+                    "c4a:isAlias": "http://registry.gpii.net/common/volumeTTS",
                     "c4a:name": "volume"
                 }
             ]
@@ -922,95 +922,95 @@
                     "c4a:link": "http://wwwpub.zih.tu-dresden.de/~loitsch/review/nvdaTutorial.html"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.espeak\\.pitch",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:isAlias": "http://registry.gpii.net/common/pitch",
                     "c4a:name": "pitch"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.espeak\\.volume",
-                    "c4a:refersTo": "http://registry.gpii.net/common/volumeTTS",
+                    "c4a:isAlias": "http://registry.gpii.net/common/volumeTTS",
                     "c4a:name": "volume"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "presentation\\.reportHelpBalloons",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speakTutorialMessages",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speakTutorialMessages",
                     "c4a:name": "reportHelpBalloons"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "keyboard\\.speakTypedCharacters",
-                    "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
                     "c4a:name": "speakTypedCharacters"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "keyboard\\.speakTypedWords",
-                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
                     "c4a:name": "speakTypedWords"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.espeak\\.sayCapForCapitals",
-                    "c4a:refersTo": "http://registry.gpii.net/common/announceCapitals",
+                    "c4a:isAlias": "http://registry.gpii.net/common/announceCapitals",
                     "c4a:name": "sayCapForCapitals"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "virtualBuffers\\.autoSayAllOnPageLoad",
-                    "c4a:refersTo": "http://registry.gpii.net/common/readingUnit",
+                    "c4a:isAlias": "http://registry.gpii.net/common/readingUnit",
                     "c4a:name": "autoSayAllOnPageLoad"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.synth",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "synth"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.espeak\\.rate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "rate"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.symbolLevel",
-                    "c4a:refersTo": "http://registry.gpii.net/common/punctuationVerbosity",
+                    "c4a:isAlias": "http://registry.gpii.net/common/punctuationVerbosity",
                     "c4a:name": "symbolLevel"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speech\\.espeak\\.voice",
-                    "c4a:refersTo": "http://registry.gpii.net/common/auditoryOutLanguage",
+                    "c4a:isAlias": "http://registry.gpii.net/common/auditoryOutLanguage",
                     "c4a:name": "voice"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "braille",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderBrailleOutput",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderBrailleOutput",
                     "c4a:name": "Braille"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "trackFocus",
-                    "c4a:refersTo": "http://registry.gpii.net/common/trackingTTS",
+                    "c4a:isAlias": "http://registry.gpii.net/common/trackingTTS",
                     "c4a:name": "Follow System Focus"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "trackCaret",
-                    "c4a:refersTo": "http://registry.gpii.net/common/trackingTTS",
+                    "c4a:isAlias": "http://registry.gpii.net/common/trackingTTS",
                     "c4a:name": "Follow System Caret"
                 }, 
                                                                   {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "trackMouse",
-                    "c4a:refersTo": "http://registry.gpii.net/common/trackingTTS",
+                    "c4a:isAlias": "http://registry.gpii.net/common/trackingTTS",
                     "c4a:name": "Follow Mouse Cursor"
                 }                
             ]
@@ -1028,11 +1028,11 @@
                     "@id": "c4a:os"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "HighContrastOn",
-                    "c4a:refersTo": "http://registry.gpii.net/common/highContrastEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/highContrastEnabled",
                     "c4a:name": "HighContrastOn"
                 }
             ]
@@ -1053,11 +1053,11 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "onScreenKeyboard",
-                    "c4a:refersTo": "http://registry.gpii.net/common/onScreenKeyboardEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/onScreenKeyboardEnabled",
                     "c4a:name": "onScreenKeyboard"
                 }
             ]
@@ -1078,35 +1078,35 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "mag-factor",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnification",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnification",
                     "c4a:name": "mag-factor"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "show-cross-hairs",
-                    "c4a:refersTo": "http://registry.gpii.net/common/showCrosshairs",
+                    "c4a:isAlias": "http://registry.gpii.net/common/showCrosshairs",
                     "c4a:name": "show-cross-hairs"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "mouse-tracking",
-                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:isAlias": "http://registry.gpii.net/common/tracking",
                     "c4a:name": "show-cross-hairs"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screen-position",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierPosition",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierPosition",
                     "c4a:name": "screen-position"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "magnifier",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierEnabled",
                     "c4a:name": "magnifier"
                 }
             ]
@@ -1127,11 +1127,11 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "onScreenKeyboard",
-                    "c4a:refersTo": "http://registry.gpii.net/common/onScreenKeyboardEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/onScreenKeyboardEnabled",
                     "c4a:name": "onScreenKeyboard"
                 }
             ]
@@ -1152,59 +1152,59 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "stickyKeys",
-                    "c4a:refersTo": "http://registry.gpii.net/common/stickyKeys",
+                    "c4a:isAlias": "http://registry.gpii.net/common/stickyKeys",
                     "c4a:name": "stickyKeys"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "slowKeysEnable",
-                    "c4a:refersTo": "http://registry.gpii.net/common/slowKeysEnable",
+                    "c4a:isAlias": "http://registry.gpii.net/common/slowKeysEnable",
                     "c4a:name": "slowKeysEnable"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "slowkeys-delay",
-                    "c4a:refersTo": "http://registry.gpii.net/common/slowKeysInterval",
+                    "c4a:isAlias": "http://registry.gpii.net/common/slowKeysInterval",
                     "c4a:name": "slowkeys-delay"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "bouncekeys-enable",
-                    "c4a:refersTo": "http://registry.gpii.net/common/debounceEnable",
+                    "c4a:isAlias": "http://registry.gpii.net/common/debounceEnable",
                     "c4a:name": "bouncekeys-enable"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "bouncekeys-delay",
-                    "c4a:refersTo": "http://registry.gpii.net/common/debounceInterval",
+                    "c4a:isAlias": "http://registry.gpii.net/common/debounceInterval",
                     "c4a:name": "bouncekeys-delay"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "mousekeys-enable",
-                    "c4a:refersTo": "http://registry.gpii.net/common/mouseEmulationEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/mouseEmulationEnabled",
                     "c4a:name": "mousekeys-enable"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "mousekeys-init-delay",
-                    "c4a:refersTo": "http://registry.gpii.net/common/initDelay",
+                    "c4a:isAlias": "http://registry.gpii.net/common/initDelay",
                     "c4a:name": "mousekeys-init-delay"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "mousekeys-max-speed",
-                    "c4a:refersTo": "http://registry.gpii.net/common/cursorSpeed",
+                    "c4a:isAlias": "http://registry.gpii.net/common/cursorSpeed",
                     "c4a:name": "mousekeys-max-speed"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "mousekeys-accel-time",
-                    "c4a:refersTo": "http://registry.gpii.net/common/cursorAcceleration",
+                    "c4a:isAlias": "http://registry.gpii.net/common/cursorAcceleration",
                     "c4a:name": "mousekeys-accel-time"
                 }
             ]
@@ -1222,11 +1222,11 @@
                     "@id": "c4a:os"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "MouseTrails",
-                    "c4a:refersTo": "http://registry.gpii.net/common/mouseTrailing",
+                    "c4a:isAlias": "http://registry.gpii.net/common/mouseTrailing",
                     "c4a:name": "MouseTrails"
                 }
             ]
@@ -1244,11 +1244,11 @@
                     "@id": "c4a:os"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "%SystemRoot%\\cursors\\",
-                    "c4a:refersTo": "http://registry.gpii.net/common/cursorSize",
+                    "c4a:isAlias": "http://registry.gpii.net/common/cursorSize",
                     "c4a:name": "Cursor"
                 }
             ]
@@ -1272,95 +1272,95 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderTTSEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "screenReaderTTSEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderLanguage",
-                    "c4a:refersTo": "http://registry.gpii.net/common/auditoryOutLanguage",
+                    "c4a:isAlias": "http://registry.gpii.net/common/auditoryOutLanguage",
                     "c4a:name": "Screen Reader Language"
                 },                
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speechRate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "Reading speed"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "characterEcho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
                     "c4a:name": "Character Echo"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "characterEcho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
                     "c4a:name": "Character Echo"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "announceCapitals",
-                    "c4a:refersTo": "http://registry.gpii.net/common/announceCapitals",
+                    "c4a:isAlias": "http://registry.gpii.net/common/announceCapitals",
                     "c4a:name": "Announcement of capitals letters"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "punctuationVerbosity",
-                    "c4a:refersTo": "http://registry.gpii.net/common/punctuationVerbosity",
+                    "c4a:isAlias": "http://registry.gpii.net/common/punctuationVerbosity",
                     "c4a:name": "Verbosity"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "userDefinedVoices\\pitchListBox",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:isAlias": "http://registry.gpii.net/common/pitch",
                     "c4a:name": "Pitch List Box"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderBrailleOutput",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderBrailleOutput",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderBrailleOutput",
                     "c4a:name": "screenReaderBrailleOutput"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "magnifierEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierEnabled",
                     "c4a:name": "magnifierEnabled"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "magnification",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnification",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnification",
                     "c4a:name": "magnification"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "magnifierPosition",
-                    "c4a:refersTo": "http://registry.gpii.net/common/magnifierPosition",
+                    "c4a:isAlias": "http://registry.gpii.net/common/magnifierPosition",
                     "c4a:name": "magnifierPosition"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "settings//tracking",
-                    "c4a:refersTo": "http://registry.gpii.net/common/tracking",
+                    "c4a:isAlias": "http://registry.gpii.net/common/tracking",
                     "c4a:name": "Tracking Dialog Box"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "colourScheme//configure//invertBrightness",
-                    "c4a:refersTo": "http://registry.gpii.net/common/invertColours",
+                    "c4a:isAlias": "http://registry.gpii.net/common/invertColours",
                     "c4a:name": "Invert Brightness"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "focusHighlighting//shape",
-                    "c4a:refersTo": "http://registry.gpii.net/common/showCrosshairs",
+                    "c4a:isAlias": "http://registry.gpii.net/common/showCrosshairs",
                     "c4a:name": "Invert Brightness"
                 }                
             ]
@@ -1381,11 +1381,11 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderTTSEnabled",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "screenReaderTTSEnabled"
                 }
             ]
@@ -1395,17 +1395,17 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.android.settings.secure",
             "c4a:name": "Android Settings Secure",
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "tts_default_pitch",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:isAlias": "http://registry.gpii.net/common/pitch",
                     "c4a:name": "tts_default_pitch"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "tts_default_rate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "tts_default_rate"
                 }
             ]
@@ -1423,17 +1423,17 @@
                     "@id": "c4a:os"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "fontScale",
-                    "c4a:refersTo": "http://registry.gpii.net/common/fontSize",
+                    "c4a:isAlias": "http://registry.gpii.net/common/fontSize",
                     "c4a:name": "fontScale"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "locale",
-                    "c4a:refersTo": "http://registry.gpii.net/common/language",
+                    "c4a:isAlias": "http://registry.gpii.net/common/language",
                     "c4a:name": "locale"
                 }
             ]
@@ -1451,17 +1451,17 @@
                     "@id": "c4a:os"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "STREAM_MUSIC",
-                    "c4a:refersTo": "http://registry.gpii.net/common/volumeTTS",
+                    "c4a:isAlias": "http://registry.gpii.net/common/volumeTTS",
                     "c4a:name": "STREAM_MUSIC"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "STREAM_SYSTEM",
-                    "c4a:refersTo": "http://registry.gpii.net/common/volume",
+                    "c4a:isAlias": "http://registry.gpii.net/common/volume",
                     "c4a:name": "STREAM_SYSTEM"
                 }
             ]
@@ -1482,41 +1482,41 @@
                     "@id":"c4a:at"
                 }                
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenreader",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "screenreader"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "access_commonprefs_speechrate",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "speechrate"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "access_commonprefs_editingkeyboardecho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
                     "c4a:name": "speechrate"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "access_commonprefs_speechpitch",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:isAlias": "http://registry.gpii.net/common/pitch",
                     "c4a:name": "pitch"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "access_commonprefs_editingkeyboardecho",
-                    "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
                     "c4a:name": "pitch"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "access_commonprefs_screenReaderBrailleOutput",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderBrailleOutput",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderBrailleOutput",
                     "c4a:name": "braille"
                 }
             ]
@@ -1526,11 +1526,11 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.microsoft.windows.screenResolution",
             "c4a:name": "Windows Screen Resolution",
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "resolution",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenResolution",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenResolution",
                     "c4a:name": "Screen Resolution"
                 }
             ],
@@ -1559,53 +1559,53 @@
                     "@id": "c4a:at"
                 }
             ],
-            "c4a:settings": [
+            "c4a:hasFeature": [
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optAutoUseScreenReading.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+                    "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
                     "c4a:name": "Use Screen Reading"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.SelectionType.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/readingUnit",
+                    "c4a:isAlias": "http://registry.gpii.net/common/readingUnit",
                     "c4a:name": "Selection Type"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optSAPI5Voice.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/auditoryOutLanguage",
+                    "c4a:isAlias": "http://registry.gpii.net/common/auditoryOutLanguage",
                     "c4a:name": "Voice"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optSAPI5Pitch.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/pitch",
+                    "c4a:isAlias": "http://registry.gpii.net/common/pitch",
                     "c4a:name": "Pitch"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optSAPI5Speed.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/speechRate",
+                    "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
                     "c4a:name": "Speed"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optSAPI5Volume.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/volumeTTS",
+                    "c4a:isAlias": "http://registry.gpii.net/common/volumeTTS",
                     "c4a:name": "Volume"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optAutoSpeakOnWord.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/wordEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
                     "c4a:name": "Speak on each word"
                 },
                 {
-                    "@type": "c4a:Setting",
+                    "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optAutoSpeakOnLetter.$t",
-                    "c4a:refersTo": "http://registry.gpii.net/common/keyEcho",
+                    "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
                     "c4a:name": "Speak on each letter"
                 }
             ]

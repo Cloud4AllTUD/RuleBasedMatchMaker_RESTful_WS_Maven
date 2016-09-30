@@ -13,20 +13,20 @@
 (?p c4a:name ?p_name)
 (?p c4a:hasSimpleValue ?p_value)
 
-(?solution rdf:type c4a:InstalledSolution)
-(?solution c4a:id ?sol_id)
-(?solution c4a:name ?sol_name)
-(?solution c4a:settings ?setting)
-(?solution c4a:class ?class)
+(?sol rdf:type c4a:InstalledSolution)
+(?sol c4a:id ?sol_id)
+(?sol c4a:name ?sol_name)
+(?sol c4a:hasFeature ?feat)
+(?sol c4a:class ?class)
 (?class rdf:type ?class_type)
 
-(?setting rdf:type c4a:Setting)
-(?setting c4a:refersTo ?set_id)
+(?feat rdf:type c4a:CustomizationFeature)
+(?feat c4a:isAlias ?alias)
 
-equal(?p_id, ?set_id)
+equal(?p_id, ?alias)
 
-makeSkolem(?newConfig, ?solution, ?ps)
-makeSkolem(?newSetting, ?setting, ?p)
+makeSkolem(?newConfig, ?sol, ?ps)
+makeSkolem(?newSetting, ?feat, ?p)
 ->
 (?p c4a:hasConfig ?newConfig)
 (?newConfig c4a:belongsToPrefSet ?ps)
