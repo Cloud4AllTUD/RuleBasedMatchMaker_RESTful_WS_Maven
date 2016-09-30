@@ -11,7 +11,7 @@
 (?p rdf:type c4a:CommonPreference)
 (?p c4a:id ?p_id)
 (?p c4a:name ?p_name)
-(?p c4a:hasSimpleValue ?p_value)
+(?p c4a:simpleValue ?p_value)
 
 (?sol rdf:type c4a:InstalledSolution)
 (?sol c4a:id ?sol_id)
@@ -53,7 +53,7 @@ makeSkolem(?newSetting, ?feat, ?p)
 
 (?p rdf:type c4a:ApplicationPreference)
 (?p c4a:id ?p_id)
-(?p c4a:hasComplexValue ?cpv)
+(?p c4a:complexValue ?cpv)
 (?cpv c4a:name ?p_name)
 (?cpv c4a:value ?p_value)
 

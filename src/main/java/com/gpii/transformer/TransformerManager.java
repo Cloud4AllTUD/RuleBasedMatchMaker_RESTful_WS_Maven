@@ -901,7 +901,7 @@ public class TransformerManager {
           } catch (NumberFormatException e) {
           }
 
-          outPref.put("c4a:hasSimpleValue", comPrefVal);
+          outPref.put("c4a:simpleValue", comPrefVal);
         }
 
         // handle application-specific preferences
@@ -927,7 +927,7 @@ public class TransformerManager {
             setting.put("c4a:value", appPrefValue);
             settingSet.put(setting);
           }
-          outPref.put("c4a:hasComplexValue", settingSet);
+          outPref.put("c4a:complexValue", settingSet);
         }
         outPrefArray.put(outPref);
       }
