@@ -1,0 +1,286 @@
+@prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+	// Description of the rule set: basic rules to match solution settings and user preferences based on solution ontology (semanticSolution.jsonld).     
+
+	// Description of the rule: match common preferences with application settings   
+	[MatchSolutions: 
+	(?ps rdf:type c4a:PreferenceSet)
+	(?ps c4a:hasPref ?p)
+	
+	(?p rdf:type c4a:CommonPreference)
+	(?p c4a:id ?p_id)
+	(?p c4a:name ?p_name)
+	(?p c4a:simpleValue ?p_value)
+	
+	(?sol rdf:type c4a:InstalledSolution)
+	(?sol c4a:id ?sol_id)
+	(?sol c4a:name ?sol_name)
+	(?sol c4a:hasFeature ?feat)
+	(?sol c4a:class ?class)
+	(?class rdf:type ?class_type)
+	
+	(?feat rdf:type c4a:CustomizationFeature)
+	(?feat c4a:isAlias ?alias)
+	
+	equal(?p_id, ?alias)
+	makeSkolem(?newConfig, ?sol, ?ps)
+	makeSkolem(?newSetting, ?feat, ?p)
+	->
+	(?p c4a:hasConfig ?newConfig)
+	(?newConfig c4a:belongsToPrefSet ?ps)
+	(?newConfig c4a:refersToSol ?sol)
+	(?newConfig c4a:refersToPref ?p)
+	(?newConfig c4a:applySetting ?newSetting)
+	(?newConfig rdf:type c4a:Configuration)
+	(?newConfig c4a:id ?sol_id)
+	(?newConfig c4a:name ?sol_name)
+	(?newConfig c4a:isActive "true")
+	
+	(?newSetting rdf:type c4a:Setting)
+	(?newSetting c4a:id ?p_id)
+	(?newSetting c4a:name ?p_name)
+	(?newSetting c4a:value ?p_value)
+	]
+
+	// Description of the rule: match application-specific preferences with application settings
+	[MatchSolutions: 
+	(?ps rdf:type c4a:PreferenceSet)
+	(?ps c4a:hasPref ?p)
+	
+	(?p rdf:type c4a:ApplicationPreference)
+	(?p c4a:id ?p_id)
+	(?p c4a:complexValue ?cpv)
+	(?cpv c4a:name ?p_name)
+	(?cpv c4a:value ?p_value)
+	
+	(?sol rdf:type c4a:InstalledSolution)
+	(?sol c4a:id ?sol_id)
+	(?sol c4a:name ?sol_name)
+	
+	equal(?p_id, ?sol_id)
+	
+	makeSkolem(?newConfig, ?sol, ?ps)
+	makeSkolem(?newSetting, ?p, ?cpv)
+	->
+	(?p c4a:hasConfig ?newConfig)
+	(?newConfig c4a:belongsToPrefSet ?ps)
+	(?newConfig c4a:refersToSol ?sol)
+	(?newConfig c4a:refersToPref ?p)
+	(?newConfig c4a:applySetting ?newSetting)
+	(?newConfig rdf:type c4a:Configuration)
+	(?newConfig c4a:id ?sol_id)
+	(?newConfig c4a:name ?sol_name)
+	(?newConfig c4a:isActive "true")
+	
+	(?newSetting rdf:type c4a:Setting)
+	(?newSetting c4a:id ?p_name)
+	(?newSetting c4a:name ?p_name)
+	(?newSetting c4a:value ?p_value)
+	]
+
+	[MatchSolutionsForRecommendations: 
+	(?ps rdf:type c4a:PreferenceSet)
+	(?ps c4a:hasRecom ?p)
+	
+	(?p rdf:type c4a:CommonPreference)
+	(?p c4a:id ?p_id)
+	(?p c4a:name ?p_name)
+	(?p c4a:simpleValue ?p_value)
+	
+	(?sol rdf:type c4a:InstalledSolution)
+	(?sol c4a:id ?sol_id)
+	(?sol c4a:name ?sol_name)
+	(?sol c4a:hasFeature ?feat)
+	(?sol c4a:class ?class)
+	(?class rdf:type ?class_type)
+	
+	(?feat rdf:type c4a:CustomizationFeature)
+	(?feat c4a:isAlias ?alias)
+	
+	equal(?p_id, ?alias)
+	makeSkolem(?newConfig, ?sol, ?ps)
+	makeSkolem(?newSetting, ?feat, ?p)
+	->
+	(?p c4a:hasConfig ?newConfig)
+	(?newConfig c4a:belongsToPrefSet ?ps)
+	(?newConfig c4a:refersToSol ?sol)
+	(?newConfig c4a:refersToPref ?p)
+	(?newConfig c4a:applySetting ?newSetting)
+	(?newConfig rdf:type c4a:Configuration)
+	(?newConfig c4a:id ?sol_id)
+	(?newConfig c4a:name ?sol_name)
+	(?newConfig c4a:isActive "true")
+	
+	(?newSetting rdf:type c4a:Setting)
+	(?newSetting c4a:id ?p_id)
+	(?newSetting c4a:name ?p_name)
+	(?newSetting c4a:value ?p_value)
+	]	
+
+	// Removes all matched common settings from a configuration for which a user has app-specific preferences defined 
+	[RemoveCommonSettings: 
+	(?if c4a:refersTo ?config)
+	(?config rdf:type c4a:Configuration)
+	(?config c4a:id ?sol_id)
+	(?config c4a:settings ?set1)
+	(?config c4a:settings ?set2)
+	(?set1 c4a:id ?set1_id)
+	(?set2 c4a:id ?set2_id)
+	notEqual(?set1, ?set2)
+	notEqual(?set2_id, ?sol_id)
+	equal(?set1_id, ?sol_id)
+	->
+	drop(4)
+	]
+
+	// ****************** DETECT CONFLICTS ************************
+	// * Description of the rule set: rules to detect conflicting *
+	// * configuration policies                                   *     
+	// ************************************************************
+	
+	// Description of the rule: DETECTION OF NoSolConflict - no configuration available for a required preference	
+	[DetectNoSolConflict: 
+	(?ps rdf:type c4a:PreferenceSet)
+	(?ps c4a:hasPref ?p)
+	(?ps c4a:hasMetadata ?meta)
+	
+	(?p c4a:id ?p_id)
+	
+	(?meta c4a:type "required")
+	(?meta c4a:scope ?scope)
+	
+	equal(?p_id, ?scope)
+	noValue(?p c4a:hasConfig ?config)
+	makeSkolem(?newConflict, ?p)
+	->
+	(?newConflict rdf:type c4a:NoSolutionConflict)
+	(?newConflict c4a:noSolFor ?p_id)
+	(?newConflict c4a:belongsToPref ?p)
+	(?p c4a:status "matched")
+	
+	print('************ CONFLICT DETECTION ****************')
+	print('CONFLICT: NoSolConflict')
+	print('SCOPE: ' ?scope)
+	]
+	
+	// ******************************************************************************************
+	// * RULE SET TO RESOLVE NoSolConflicts:  													* 		
+	// * Resolution based on preference substitutes defined in substitutePreferenceTerms.jsonld	*
+	// * Procedure:																				*
+	// * 1. match all recommendations for which solutions are installed 						*
+	// * 2. select the recommendation with the highest rating									*      
+	// ******************************************************************************************
+
+	// Rules matches all preferences substitutes for which a solution is installed. 
+	[MatchPreferenceSubstitute_SimpleInput:
+	// if there is a NoSolutionConflict
+	(?conflict rdf:type c4a:NoSolutionConflict)
+	(?conflict c4a:belongsToPref ?p) 
+	(?p c4a:id ?p_id)
+	
+	// if there is a PreferenceSubstituteSet for the affected preference (?p_id)        
+    (?s rdf:type c4a:PreferenceSubstituteSet)
+    (?s c4a:id ?s_id)
+    equal(?p_id, ?s_id)
+	
+	// if the preference substitute is of type SimplePreferenceSubstitute  
+    (?s c4a:hasPrefSubst ?subst)
+    (?subst rdf:type c4a:SimplePreferenceSubstitute)
+    
+    // if the substitute input matches the affected preference value
+    (?subst c4a:inputValue ?input_value)
+    (?p c4a:simpleValue ?p_value)
+    equal(?p_value, ?input_value)
+    
+    // if the substitute output matches with the features provided by solutions installed 
+    (?subst c4a:substOutput ?output)
+    (?output c4a:recommend ?recom)
+    (?recom c4a:id ?r_id)
+    
+    (?sol rdf:type c4a:InstalledSolution)
+    (?sol c4a:hasFeature ?feat)
+    (?feat c4a:isAlias ?r_id)  
+    (?ps c4a:hasPref ?p)
+	-> 
+	(?recom c4a:matchedSubstituteFor ?p)
+	print('**** MatchPreferenceSubstitute_SimpleInput ****')
+	print('SUBSTITUTE FOR: ' ?p_id)
+	print('MATCH: ' ?r_id)
+	print('***********************************************')
+	]
+	
+	// Rule matches all preferences substitutes for which a solution is installed. 
+	[MatchPreferenceSubstitute_ComplexInput:
+	// if there is a NoSolConflict
+	(?conflict rdf:type c4a:NoSolutionConflict)
+	(?conflict c4a:belongsToPref ?p) 
+	(?conflict c4a:noSolFor ?p_id)
+	
+	// if there is a PreferenceSubstituteSet for the affected preference (?p_id)        
+    (?s rdf:type c4a:PreferenceSubstituteSet)
+    (?s c4a:id ?s_id)
+    equal(?p_id, ?s_id)
+
+    (?s c4a:hasPrefSubst ?subst)
+    (?subst rdf:type c4a:ComplexPreferenceSubstitute)
+    
+    // if the user's preference value is between the defined input value range for a substitute 
+    (?subst c4a:substInput ?input)
+    (?input c4a:min ?min)
+    (?input c4a:max ?max)
+    (?p c4a:simpleValue ?p_value)
+    le(?p_value, ?max)
+    ge(?p_value, ?min)
+    
+    // If there is a solution installed that supports the recommendation: 
+	(?subst c4a:substOutput ?output)
+    (?output c4a:recommend ?recom)
+    (?recom c4a:id ?r_id)
+    
+    (?sol rdf:type c4a:InstalledSolution)
+    (?sol c4a:hasFeature ?feat)
+    (?feat c4a:isAlias ?r_id)  
+	(?ps c4a:hasPref ?p)
+	->
+    (?recom c4a:matchedSubstituteFor ?p)
+    print('**** MatchPreferenceSubstitute_ComplexInput ****')
+    print('SUBSTITUTE FOR: ' ?p_id)
+    print('MATCH: ' ?r_id)
+    print('***********************************************')
+	]
+	
+	// If ?recom is a matched substitute for p
+	// and the substitute rating corresponds to the value of applyOutputWithRating
+	// then the final substitute is ?recom. 
+	[ApplyMatchedSubstituteBasedOnRating:
+		
+		(?recom c4a:matchedSubstituteFor ?p)
+		(?output c4a:recommend ?recom)
+		(?output c4a:rating ?current_rating)
+		
+		(?subst c4a:applyOutputWithRating ?current_rating)
+	    (?subst c4a:substOutput ?output)
+	    (?ps c4a:hasPref ?p)
+	    -> 
+	    (?ps c4a:hasRecom ?recom)
+	    (?subst c4a:status "stop")
+	    print('**** ApplyMatchedSubstituteBasedOnRating ****')
+	    print('FINAL SUBSTITUTE: ' ?recom)
+	    print('***********************************************')	    		
+	]
+	
+	[UpdateApplyOutputWithRating:		
+		(?recom c4a:matchedSubstituteFor ?p)
+		(?output c4a:recommend ?recom)
+		(?output c4a:rating ?out_rating)
+		noValue(?subst c4a:status "stop")		
+		(?subst c4a:applyOutputWithRating ?current_rating)
+		(?subst c4a:substRatingList ?rating_list)
+	    (?subst c4a:substOutput ?output)
+		notEqual(?out_rating, ?current_rating)
+	    nextMax(?rating_list, ?current_rating, ?new_rating)
+		->
+		drop(4)
+        (?subst c4a:applyOutputWithRating ?new_rating)  
+	]	

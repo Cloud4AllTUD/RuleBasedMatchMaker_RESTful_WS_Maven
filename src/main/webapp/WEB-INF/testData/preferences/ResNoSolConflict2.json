@@ -5,15 +5,13 @@
                 "name": "Default preferences",
                 "preferences": {
                     "http://registry.gpii.net/common/highContrastEnabled": true,
-                    "http://registry.gpii.net/common/magnifierEnabled": true,
-                    "http://registry.gpii.net/common/magnification": 1.5,
                     "http://registry.gpii.net/common/matchMakerType": "RuleBased"                    
                 },
                 "metadata": [
                     {
                         "type": "required",
                         "scope": [
-                            "http://registry.gpii.net/common/magnification"
+                            "http://registry.gpii.net/common/highContrastEnabled"                            
                         ],
                         "value": 1024
                     }
@@ -28,7 +26,7 @@
         },
         "solutions": [
             {
-                "id": "com.microsoft.windows.highContrast"
+                "id": "com.microsoft.windows.screenResolution"
             }            
         ]
     },

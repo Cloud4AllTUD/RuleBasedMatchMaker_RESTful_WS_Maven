@@ -20,6 +20,7 @@
 	->
 	(?newConflict rdf:type c4a:NoSolutionConflict)
 	(?newConflict c4a:noSolFor ?p_id)
+	(?newConflict c4a:belongsToPref ?p)
 	(?p c4a:hasConflict ?newConflict)
 	
 	print('************ CONFLICT DETECTION ****************')

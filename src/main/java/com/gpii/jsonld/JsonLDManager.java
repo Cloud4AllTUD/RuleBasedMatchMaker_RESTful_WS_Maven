@@ -1,12 +1,15 @@
 package com.gpii.jsonld;
 
 import com.google.gson.Gson;
+import com.gpii.bultins.MaxList;
+import com.gpii.bultins.NextList;
 import com.gpii.ontology.OntologyManager;
 import com.gpii.transformer.TransformerManager;
 import com.gpii.utils.Utils;
 import com.hp.hpl.jena.rdf.model.InfModel;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.reasoner.rulesys.BuiltinRegistry;
 import com.hp.hpl.jena.reasoner.rulesys.GenericRuleReasoner;
 import com.hp.hpl.jena.reasoner.rulesys.Rule;
 import java.io.*;
@@ -54,6 +57,10 @@ public class JsonLDManager {
   private static JsonLDManager instance = null;
 
   private JsonLDManager() {
+    // register custom rule bultins 
+    BuiltinRegistry.theRegistry.register(new MaxList());
+    BuiltinRegistry.theRegistry.register(new NextList());
+    
     // read properties file
     Properties prop = new Properties();
     InputStream configInputStream = null;

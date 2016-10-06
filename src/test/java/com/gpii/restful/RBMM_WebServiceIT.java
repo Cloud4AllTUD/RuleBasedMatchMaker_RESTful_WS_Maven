@@ -12,11 +12,12 @@ public class RBMM_WebServiceIT extends TestCase {
   public void test_() {
 
     if (JsonLDManager.getInstance().PERFORM_INTEGRATION_TESTS) {
-      
       // Core test cases
       _ComPref();
       _AppPref();
       _DetectNoSolConflict();
+      _ResNoSolutionConflict_InputRange();
+      _ResNoSolutionConflict_SimpleInput();
       /*// Pilots 3 test cases
       _MMTest1a();
       _MMTest1b();
@@ -73,8 +74,8 @@ public class RBMM_WebServiceIT extends TestCase {
   }
   private void _DetectNoSolConflict() {
     System.out.println("\n*****************************************************");
-    System.out.println("* Testing 'Required Preference is suported by *********");
-    System.out.println("* installed solutions. ********************************");
+    System.out.println("* Testing 'Required Preference is NOT suported by *****");
+    System.out.println("* installed solutions. Assert NoSulutionConflict ******");
     System.out.println("*******************************************************");
 
     String filepathIN =
@@ -85,6 +86,38 @@ public class RBMM_WebServiceIT extends TestCase {
             + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/DetectNoSolConflictOUT.json";
 
     performTest(filepathIN, filepathExpectedOUT1, "_DetectNoSolConflict");
+  }
+  private void _ResNoSolutionConflict_InputRange() {
+    System.out.println("\n**********************************************************");
+    System.out.println("* Test: 'NoSolutionConflict_InputRange' ********************");
+    System.out.println("* Approach: preference subsitutes **************************");
+    System.out.println("* Scope: 'magnification' Substitute: 'screen resolution' ***");
+    System.out.println("************************************************************");
+
+    String filepathIN =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/preferences/ResNoSolConflict1.json";
+    String filepathExpectedOUT1 =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/ResNoSolConflict1OUT.json";
+
+    performTest(filepathIN, filepathExpectedOUT1, "_ResNoSolutionConflict_InputRange");
+  }
+  private void _ResNoSolutionConflict_SimpleInput() {
+    System.out.println("\n**********************************************************");
+    System.out.println("* Test: 'NoSolutionConflict_SimpleInput' ********************");
+    System.out.println("* Approach: preference subsitutes **************************");
+    System.out.println("* Scope: 'magnification' Substitute: 'screen resolution' ***");
+    System.out.println("************************************************************");
+
+    String filepathIN =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/preferences/ResNoSolConflict2.json";
+    String filepathExpectedOUT1 =
+        System.getProperty("user.dir")
+            + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/ResNoSolConflict2OUT.json";
+
+    performTest(filepathIN, filepathExpectedOUT1, "_ResNoSolutionConflict_SimpleInput");
   }  
   
   public void _MMTest1a()

@@ -3,74 +3,45 @@
 	
 // Description of the rule set: rules to resolve conflicting configuration policies     
 
-// Description of the rule: Resolves the NoATConflict (NATC) based on defined PreferenceSubstituteSet (substitutePreferenceTerms.jsonld)
-[NATC_RES_rangeVAl:
-	(?if rdf:type c4a:InferredConfiguration)
+// Description of the rule: Resolves the NoSolConflict based on defined PreferenceSubstituteSet (substitutePreferenceTerms.jsonld)
+[NoSolConflict_RES_rangeVAl:
+	(?ps rdf:type c4a:PreferenceSet)
 	
-	// if there is a NoATConflict that refers to a preference within the '
-	(?if c4a:hasConflict ?conflict)
-	(?conflict rdf:type c4a:Conflict)
-	(?conflict c4a:name "NoATConflict")
-	(?conflict c4a:refersTo ?pref_scope)
-	
-	// if there is a preference substitute   	
+	// if there is a NoSolutionConflict
+	(?conflict rdf:type c4a:NoSolutionConflict)
+	(?Conflict c4a:belongsToPref ?p) 
+	(?conflict c4a:noSolfor ?p_id)
+		
+	// if there is a PreferenceSubstituteSet for the affected preference (?p_id)    	
 	(?substSet rdf:type c4a:PreferenceSubstituteSet)
-	(?substSet c4a:scope ?pref_scope)
-	(?substSet c4a:id ?pref_id)
-	(?substSet c4a:transform ?trans)
+	(?substSet c4a:id ?p_id)
+	//(?substSet c4a:scope ?pref_scope)
+		
+	(?substSet c4a:hasPrefSubst ?prefsubst)
+	(?prefsubst rdf:type c4a:ComplexPreferenceSubstitute)
 	
-	// if there is a preference object with the same '?pref_id' to the conflict  	
-	(?if c4a:hasPrefs ?pref)
-	(?pref c4a:id ?pref_id)
-	(?pref c4a:value ?pref_val)
-	
-	// check if the user's preference value is between the defined value range for a substitute 
-	(?trans c4a:valueRange ?range)
-	(?range c4a:min ?min)
-	(?range c4a:max ?max)
-	le(?pref_val, ?max)
-	ge(?pref_val, ?min)
+	// if the user's preference value is between the defined input value range for a substitute	
+	(?prefsubst c4a:definesInput ?input)
+	(?input c4a:min ?min)
+	(?input c4a:max ?max)
+	(?p c4a:value ?p_value)
+	le(?p_value, ?max)
+	ge(?p_value, ?min)
 	
 	// get the preference recommendation
-	(?trans c4a:subsitute ?subst)
-	(?subst c4a:recommend ?recom)
-	(?recom c4a:id ?r_id)
-	(?recom c4a:value ?r_val)
+	(?prefsubst c4a:definesOutput ?output)
+	(?output c4a:recommend ?recom_pref)
+	(?recom_pref c4a:id ?r_id)
+	(?recom_pref c4a:value ?r_val)
 	
 	// if there are solutions that support the recommended settings
-	(?solution rdf:type c4a:InstalledSolution)
-	(?solution c4a:id ?sol_id)
-	(?solution c4a:name ?sol_name)
-	(?solution c4a:settings ?setting)
-	(?setting rdf:type c4a:Setting)
-	(?setting c4a:refersTo ?set_id)
-	(?setting c4a:name ?set_name)
-	equal(?r_id, ?set_id)
+	(?sol rdf:type c4a:InstalledSolution)
+	(?sol c4a:hasFeature ?feat)
+	(?feat c4a:isAlias ?alias)	
+	equal(?r_id, ?alias)
 
-	// create new knowledge
-	makeSkolem(?newConfig, ?solution, ?if)
-	makeSkolem(?newSetting, ?setting, ?pref)
-	makeSkolem(?newRec, ?newConfig, ?if)
-	
 	->
-	(?if c4a:refersTo ?newConfig)
-	(?newConfig rdf:type c4a:Configuration)
-	(?newConfig c4a:refersTo ?solution)
-	(?newConfig c4a:refersTo ?newRec)
-	(?newConfig c4a:settings ?newSetting)
-	(?newConfig c4a:id ?sol_id)
-	(?newConfig c4a:name ?sol_name)
-	(?newConfig c4a:isActive "true")
-	
-	(?newSetting rdf:type c4a:Setting)
-	(?newSetting c4a:id ?r_id)
-	(?newSetting c4a:name ?set_name)	
-	(?newSetting c4a:value ?r_val)		
-
-	(?newRec rdf:type c4a:Recommendation)
-	(?newRec c4a:refersTo ?substSet)
-	(?newRec c4a:refersTo ?subst)
-	
+	(?ps c4a:hasPref ?recom_pref)
 	print('**** NATC_Res *************')
 	print('affected preference : ' ?pref_scope)
 	print('recommendation: ' ?r_id '+' ?r_val)
