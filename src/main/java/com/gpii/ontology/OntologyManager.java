@@ -41,6 +41,9 @@ public class OntologyManager {
 
   // default model automatically initialized with data from JSON-LD
   public static Model _dmodel;
+  
+  // model only used to auto-generate an rdf model 
+  public static Model _rbmmSchema;
 
   boolean printDebugInfo;
   public String debug;
@@ -446,6 +449,13 @@ public class OntologyManager {
     for (int i = 0; i < uris.length; i++)
       _dmodel.read(System.getProperty("user.dir") + JsonLDManager.getInstance().WEBINF_PATH
           + uris[i]);
+  }
+  
+  public void populateJSONLDSchemas(String uri) {
+    _rbmmSchema = ModelFactory.createOntologyModel();
+    
+    _rbmmSchema.read(System.getProperty("user.dir") + JsonLDManager.getInstance().WEBINF_PATH
+          + uri);
   }
 
   public String testHello(String tmpName) {

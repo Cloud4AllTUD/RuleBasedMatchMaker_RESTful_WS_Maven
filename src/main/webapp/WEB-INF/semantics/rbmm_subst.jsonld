@@ -1,0 +1,151 @@
+{
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rbmm": "http://rbmm.org/schemas/cloud4all/0.1/",
+        "defines": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "rdfs:subClassOf": {
+            "@type": "@id"
+        },
+        "propertyOf": {
+            "@id": "rdfs:domain",
+            "@type": "@id"
+        },
+        "propertyOn": {
+            "@id": "rdfs:range",
+            "@type": "@id"
+        }
+    },
+    "@id": "rbmm:",
+    "@type": "owl:Ontology",
+    "defines": [
+        {
+            "@id": "rbmm:PreferenceSubstituteSet",
+            "@type": "owl:Class",
+            "rdfs:label": "PrefSubstSet",
+            "rdfs:comment": "A collection of preference substitutes."
+        },
+        {
+            "@id": "rbmm:PreferenceSubstitute",
+            "@type": "owl:Class",
+            "rdfs:label": "PrefSubst",
+            "rdfs:comment": "A preference substitutes defines concrete recommendations as alternative for a user indicated preference which might be not satisfiable by the current device."
+        },
+        {
+            "@id": "rbmm:SimplePreferenceSubstitute",
+            "@type": "owl:Class",
+            "rdfs:label": "SimplePrefSubst",
+            "rdfs:comment": "A simple preference substitutes defines recommendations for a single input value.",
+            "rdfs:subClassOf": "rbmm:PreferenceSubstitute"
+        },
+        {
+            "@id": "rbmm:ComplexPreferenceSubstitute",
+            "@type": "owl:Class",
+            "rdfs:label": "ComplexPrefSubst",
+            "rdfs:comment": "A complex preference substitutes defines recommendations for value ranges.",
+            "rdfs:subClassOf": "rbmm:PreferenceSubstitute"
+        },
+        {
+            "@id": "rbmm:Output",
+            "@type": "owl:Class",
+            "rdfs:label": "Output",
+            "rdfs:comment": "A preference substitute defines a concrete recommendation (output)."
+        },
+        {
+            "@id": "rbmm:Recommendation",
+            "@type": "owl:Class",
+            "rdfs:label": "Recom",
+            "rdfs:comment": "A preference not indicated by the user. It is recommended by the system.",
+            "rdfs:subClassOf": "rbmm:Preference"
+        },
+        {
+            "@id": "rbmm:SubstRatingList",
+            "@type": "owl:Class",
+            "rdfs:label": "SubstRatingList",
+            "rdfs:comment": "As each preference substitute can have several recommendations a rating is defined."
+        },
+        {
+            "@id": "rbmm:hasSubst",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "hasSubst",
+            "rdfs:comment": "Each set of preference substitutes consists of 1 to n simple preference substitutes and/or complex preference substitutes.",
+            "propertyOf": "rbmm:PreferenceSubstituteSet",
+            "propertyOn": "rbmm:PreferenceSubstitute"
+        },
+        {
+            "@id": "rbmm:prefSubstSetId",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "id",
+            "rdfs:comment": "The id of a preference substitute set",
+            "propertyOf": "rbmm:PreferenceSubstituteSet",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:definesOutput",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "defOutput",
+            "rdfs:comment": "Each substitute has one or more concreate recommendation (output).",
+            "propertyOf": "rbmm:PreferenceSubstitute",
+            "propertyOn": "rbmm:Output"
+        },
+        {
+            "@id": "rbmm:definesRecommendation",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "defRecom",
+            "rdfs:comment": "Each output defines a recommendation which is sub class of preferences.",
+            "propertyOf": "rbmm:PreferenceSubstitute",
+            "propertyOn": "rbmm:Recommendation"
+        },
+        {
+            "@id": "rbmm:definesRatingList",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "defines",
+            "rdfs:comment": "Each substitute defines a list of redommendation ratings.",
+            "propertyOf": "rbmm:PreferenceSubstitute",
+            "propertyOn": "rbmm:SubstRatingList"
+        },
+        {
+            "@id": "rbmm:defInputMax",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "defInputMax",
+            "rdfs:comment": "Each complex preference substitute defines the input max value for wich the substitute is valid.",
+            "propertyOf": "rbmm:ComplexPreferenceSubstitute",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:defInputMin",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "defInputMin",
+            "rdfs:comment": "Each complex preference substitute defines the input min value for wich the substitute is valid.",
+            "propertyOf": "rbmm:ComplexPreferenceSubstitute",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:defInputValue",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "defInputValue",
+            "rdfs:comment": "Each substitute defines the input value for wich the substitute is valid.",
+            "propertyOf": "rbmm:SimplePreferenceSubstitute",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:applyRecomWithRating",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "applyRating",
+            "rdfs:comment": "Defines which is the rating that shall be applied",
+            "propertyOf": "rbmm:PreferenceSubstitute",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:rating",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "rating",
+            "rdfs:comment": "Rating of a recommendation",
+            "propertyOf": "rbmm:Output",
+            "propertyOn": "rdfs:Literal"
+        }
+    ]
+}

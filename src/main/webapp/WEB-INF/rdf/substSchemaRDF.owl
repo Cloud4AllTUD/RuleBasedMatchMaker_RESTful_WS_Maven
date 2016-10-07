@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/SimplePreferenceSubstitute">
+    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SimplePrefSubst</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A simple preference substitutes defines recommendations for a single input value.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/definesRecommendation">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Recommendation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defRecom</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each output defines a recommendation which is sub class of preferences.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/prefSubstSetId">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">id</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstituteSet"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The id of a preference substitute set</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Output">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Output</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference substitute defines a concrete recommendation (output).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/defInputValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defInputValue</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/SimplePreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each substitute defines the input value for wich the substitute is valid.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrefSubst</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference substitutes defines concrete recommendations as alternative for a user indicated preference which might be not satisfiable by the current device.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/definesOutput">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Output"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defOutput</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each substitute has one or more concreate recommendation (output).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Recommendation">
+    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recom</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference not indicated by the user. It is recommended by the system.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstituteSet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrefSubstSet</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of preference substitutes.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/defInputMin">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defInputMin</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/ComplexPreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each complex preference substitute defines the input min value for wich the substitute is valid.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/SubstRatingList">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubstRatingList</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As each preference substitute can have several recommendations a rating is defined.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/rating">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rating</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Output"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rating of a recommendation</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasSubst">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSubst</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstituteSet"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each set of preference substitutes consists of 1 to n simple preference substitutes and/or complex preference substitutes.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/ComplexPreferenceSubstitute">
+    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComplexPrefSubst</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A complex preference substitutes defines recommendations for value ranges.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/applyRecomWithRating">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">applyRating</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines which is the rating that shall be applied</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/defInputMax">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defInputMax</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/ComplexPreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each complex preference substitute defines the input max value for wich the substitute is valid.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/definesRatingList">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/SubstRatingList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defines</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each substitute defines a list of redommendation ratings.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+</rdf:RDF>

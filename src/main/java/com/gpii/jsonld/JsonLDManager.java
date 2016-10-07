@@ -34,6 +34,10 @@ public class JsonLDManager {
   public boolean USE_THE_REAL_ONTOLOGY;
 
   // static input files
+  public String coreSchema;
+  public String preferenceSubstituteSchema;
+  
+  
   public String[] semantics;
   public String semanticsGeneratedFromOwlFilePath;
   public String[] rules;
@@ -51,6 +55,10 @@ public class JsonLDManager {
   public String inferredOntModelFilepath;
   public String rbmmJsonOutputFilepath;
   // -files for debugging
+  
+  // files for generated rdf schemas
+  public String coreSchemaRDFFilepath;
+  public String substSchemaRDFFilepath;
 
   public Gson gson;
 
@@ -125,6 +133,17 @@ public class JsonLDManager {
           System.getProperty("user.dir") + WEBINF_PATH + prop.getProperty("rbmmJsonOutputFilepath");
       // -debug
 
+      // schema
+      coreSchemaRDFFilepath =
+          System.getProperty("user.dir") + WEBINF_PATH + prop.getProperty("coreSchemaRDFFilepath");
+      
+      substSchemaRDFFilepath =
+          System.getProperty("user.dir") + WEBINF_PATH + prop.getProperty("substSchemaRDFFilepath");
+      
+      coreSchema = prop.getProperty("coreSchema");
+      preferenceSubstituteSchema = prop.getProperty("preferenceSubstituteSchema"); 
+      
+      // integration tests
       PERFORM_INTEGRATION_TESTS =
           Boolean.parseBoolean(prop.getProperty("PERFORM_INTEGRATION_TESTS"));
       INTEGRATION_TESTS_INCLUDE_ONTOLOGY_TRANSFORMATION_INTO_JSONLD =
@@ -178,6 +197,13 @@ public class JsonLDManager {
 
     // debug - write initial model to .owl
     Utils.getInstance().writeOntologyModelToFile(OntologyManager._dmodel, initialOntModelFilepath);
+    
+    // generate RDF schemas
+    OntologyManager.getInstance().populateJSONLDSchemas(coreSchema);
+    Utils.getInstance().writeOntologyModelToFile(OntologyManager._rbmmSchema, coreSchemaRDFFilepath);
+    
+    OntologyManager.getInstance().populateJSONLDSchemas(preferenceSubstituteSchema);
+    Utils.getInstance().writeOntologyModelToFile(OntologyManager._rbmmSchema, substSchemaRDFFilepath);
 
     /***********************/
     /* PREPROCESSING - End */

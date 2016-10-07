@@ -1,0 +1,258 @@
+{
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rbmm": "http://rbmm.org/schemas/cloud4all/0.1/",
+        "defines": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "rdfs:subClassOf": {
+            "@type": "@id"
+        },
+        "propertyOf": {
+            "@id": "rdfs:domain",
+            "@type": "@id"
+        },
+        "propertyOn": {
+            "@id": "rdfs:range",
+            "@type": "@id"
+        }
+    },
+    "@id": "rbmm:",
+    "@type": "owl:Ontology",
+    "defines": [
+        {
+            "@id": "rbmm:PreferenceSet",
+            "@type": "owl:Class",
+            "rdfs:label": "PrefSet",
+            "rdfs:comment": "A collection of user preferences for a certain context."
+        },
+        {
+            "@id": "rbmm:Preference",
+            "@type": "owl:Class",
+            "rdfs:label": "Pref",
+            "rdfs:comment": "A user preferences for a certain context."
+        },
+        {
+            "@id": "rbmm:ApplicationPreference",
+            "@type": "owl:Class",
+            "rdfs:label": "AppPref",
+            "rdfs:comment": "A application specific user preference",
+            "rdfs:subClassOf": "rbmm:Preference"
+        },
+        {
+            "@id": "rbmm:CommonPreference",
+            "@type": "owl:Class",
+            "rdfs:label": "ComPref",
+            "rdfs:comment": "A user preference  of type common",
+            "rdfs:subClassOf": "rbmm:Preference"
+        },
+        {
+            "@id": "rbmm:MetaData",
+            "@type": "owl:Class",
+            "rdfs:label": "MetaData",
+            "rdfs:comment": "Meta data of a preference set."
+        },
+        {
+            "@id": "rbmm:Configuration",
+            "@type": "owl:Class",
+            "rdfs:label": "Conf",
+            "rdfs:comment": "An inferred configuration (inferred knowledge)."
+        },
+        {
+            "@id": "rbmm:Setting",
+            "@type": "owl:Class",
+            "rdfs:label": "Set",
+            "rdfs:comment": "An setting of configruation (inferred knowledge)."
+        },
+        {
+            "@id": "rbmm:Solution",
+            "@type": "owl:Class",
+            "rdfs:label": "Sol",
+            "rdfs:comment": "An accessibility solution."
+        },
+        {
+            "@id": "rbmm:CustomizationFeature",
+            "@type": "owl:Class",
+            "rdfs:label": "Feat",
+            "rdfs:comment": "A feature of a solution that can be adjusted individually."
+        },
+        {
+            "@id": "rbmm:hasPref",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "hasPref",
+            "rdfs:comment": "Each set of prefereences consists of 1 to n preferences.",
+            "propertyOf": "rbmm:PreferenceSet",
+            "propertyOn": "rbmm:Preference"
+        },
+        {
+            "@id": "rbmm:hasMeta",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "hasMeta",
+            "rdfs:comment": "Each set of preferences can has a meta data.",
+            "propertyOf": "rbmm:PreferenceSet",
+            "propertyOn": "rbmm:MetaData"
+        },
+        {
+            "@id": "rbmm:hasConfig",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "hasConfig",
+            "rdfs:comment": "A preference can have a configurations (inferred knowledge).",
+            "propertyOf": "rbmm:Preference",
+            "propertyOn": "rbmm:Configuration"
+        },
+        {
+            "@id": "rbmm:belongsToPrefSet",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "belongsToPrefSet",
+            "rdfs:comment": "A configuration belongs to a preference set (inferred knowledge).",
+            "propertyOf": "rbmm:Configuration",
+            "propertyOn": "rbmm:PreferenceSet"
+        },
+        {
+            "@id": "rbmm:refersToSol",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "refersToSol",
+            "rdfs:comment": "A configuration refers to a solution (inferred knowledge).",
+            "propertyOf": "rbmm:Configuration",
+            "propertyOn": "rbmm:Solution"
+        },
+        {
+            "@id": "rbmm:applySetting",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "applySetting",
+            "rdfs:comment": "A configuration has settings that shall be applied for a user (inferred knowledge).",
+            "propertyOf": "rbmm:Configuration",
+            "propertyOn": "rbmm:Setting"
+        },
+        {
+            "@id": "rbmm:hasFeature",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "hasFeature",
+            "rdfs:comment": "A solution can have features which can be adjusted individually.",
+            "propertyOf": "rbmm:Configuration",
+            "propertyOn": "rbmm:CustomizationFeature"
+        },
+        {
+            "@id": "rbmm:prefSetId",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "id",
+            "rdfs:comment": "A set of preference has an id.",
+            "propertyOf": "rbmm:PreferenceSet",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:prefId",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "id",
+            "rdfs:comment": "A preference has an id.",
+            "propertyOf": "rbmm:Preference",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:prefName",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "name",
+            "rdfs:comment": "The name of a preference.",
+            "propertyOf": "rbmm:Preference",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:prefValue",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "value",
+            "rdfs:comment": "The value of a preference.",
+            "propertyOf": "rbmm:Preference",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:metaType",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "type",
+            "rdfs:comment": "The type of meta data defined for a preference set.",
+            "propertyOf": "rbmm:MetaData",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:metaScope",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "scope",
+            "rdfs:comment": "The scope of meta data defined for a preference set.",
+            "propertyOf": "rbmm:MetaData",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:confId",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "id",
+            "rdfs:comment": "A configuration has an id.",
+            "propertyOf": "rbmm:Configuration",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:confName",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "name",
+            "rdfs:comment": "The name of a configruation.",
+            "propertyOf": "rbmm:Configuration",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:isActive",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "isActive",
+            "rdfs:comment": "A configruation has a property is active which indicates if a solution shall be activated automatically.",
+            "propertyOf": "rbmm:Configuration",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:setId",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "id",
+            "rdfs:comment": "A setting has an id.",
+            "propertyOf": "rbmm:Setting",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:setName",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "name",
+            "rdfs:comment": "The name of a setting.",
+            "propertyOf": "rbmm:Setting",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:setValue",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "value",
+            "rdfs:comment": "The value of a setting.",
+            "propertyOf": "rbmm:Setting",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:solId",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "id",
+            "rdfs:comment": "A solution has an id.",
+            "propertyOf": "rbmm:Solution",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:solName",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "name",
+            "rdfs:comment": "The name of a solution.",
+            "propertyOf": "rbmm:Solution",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:isAlias",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "isAlias",
+            "rdfs:comment": "The relation of a customization fetaure to a preference term.",
+            "propertyOf": "rbmm:CustomizationFeature",
+            "propertyOn": "rdfs:Literal"
+        }
+    ]
+}
