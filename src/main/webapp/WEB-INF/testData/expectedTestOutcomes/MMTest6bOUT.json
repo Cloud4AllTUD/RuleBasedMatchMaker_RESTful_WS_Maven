@@ -3,13 +3,13 @@
     "gpii-default" : {
       "applications" : {
         "com.google.chrome" : {
-          "active" : true,
+          "active" : false,
           "settings" : {
             "http://registry.gpii.net/common/magnification" : 1.2
           }
         },
         "com.ilunion.cloud4chrome" : {
-          "active" : true,
+          "active" : false,
           "settings" : {
             "http://registry.gpii.net/common/magnification" : 1.2
           }
@@ -20,19 +20,7 @@
             "http://registry.gpii.net/common/magnification" : 1.2
           }
         }
-      },
-      "metadata" : [ {
-        "message" : {
-          "de" : {
-            "message" : "Der bevorzugte Magnifier ist auf diesem Gerät nicht verfügbar. Wir haben Windows Magnifier für dich gestartet."
-          },
-          "en" : {
-            "message" : "Your preferred Magnifier is not available on the device. We have launched Windows Magnifier for you."
-          }
-        },
-        "scope" : [ "com.microsoft.windows.magnifier" ],
-        "type" : "helpMessage"
-      } ]
+      }
     }
   }
 }

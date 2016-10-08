@@ -14,7 +14,15 @@
         },
         {
             "@type": "c4a:MultipleSolConflictTrigger",
+            "c4a:id": "http://registry.gpii.net/common/magnification"
+        },        
+        {
+            "@type": "c4a:MultipleSolConflictTrigger",
             "c4a:id": "http://registry.gpii.net/common/highContrastEnabled"
-        }
+        },
+        {
+            "@type": "c4a:MultipleSolConflictTrigger",
+            "c4a:id": "http://registry.gpii.net/common/fontSize"
+        }        
     ]
 }

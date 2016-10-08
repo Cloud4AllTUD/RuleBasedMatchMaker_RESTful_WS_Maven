@@ -89,8 +89,6 @@
 	(?sol c4a:id ?sol_id)
 	(?sol c4a:name ?sol_name)
 	(?sol c4a:hasFeature ?feat)
-	(?sol c4a:class ?class)
-	(?class rdf:type ?class_type)
 	
 	(?feat rdf:type c4a:CustomizationFeature)
 	(?feat c4a:isAlias ?alias)
@@ -312,10 +310,7 @@
 	(?newConflict c4a:affectsConf ?conf1)
 	(?newConflict c4a:affectsConf ?conf2)
 	(?newConflict c4a:isTriggerdBy ?aff_term)	
-	print('************ MultipleSolutionConflict Detected ****************')
-	print('TRIGGER: ' ?aff_term)
-	print('AFFECTS: ' ?sol1)
-	print('AFFECTS: ' ?sol2)	 
+	print('**** DetectMultipleSolutionConflict *****')
 	]
 		
 	// Add to a configuration whether a product is preferred 

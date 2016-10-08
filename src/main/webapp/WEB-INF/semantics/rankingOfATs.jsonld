@@ -5,12 +5,12 @@
     },
     "@graph": [
         {
-            "@id": "c4a:screenreader",
-            "c4a:ranking": {
-                "http://registry.gpii.net/applications/com.freedomscientific.jaws": 640,
-                "http://registry.gpii.net/applications/org.nvda-project": 510,
-                "http://registry.gpii.net/applications/com.yourdolphin.supernova-as": 90
-            }
+            "@id": "http://rbmm.org/schemas/solutionranking/screenreader",
+            "@type": "c4a:SolutionRanking",
+            "c4a:id": "http://registry.gpii.net/common/screenReaderTTSEnabled",
+            "http://registry.gpii.net/applications/com.freedomscientific.jaws": 640,
+            "http://registry.gpii.net/applications/org.nvda-project": 510,
+            "http://registry.gpii.net/applications/com.yourdolphin.supernova-as": 90
         }        
     ]
 }

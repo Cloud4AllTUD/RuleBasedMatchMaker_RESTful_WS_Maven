@@ -20,10 +20,10 @@ public class RBMM_WebServiceIT extends TestCase {
       _ResNoSolutionConflict_SimpleInput();
       _ResMSCuserPriority();
       _ResMSCuserPriorities();
-      /*// Pilots 3 test cases
+      // Pilots 3 test cases
       _MMTest1a();
       _MMTest1b();
-      _MMTest1c();
+      /*_MMTest1c();
       //_MMTest1d();
       _MMTest2();
       _MMTest3();
@@ -31,11 +31,11 @@ public class RBMM_WebServiceIT extends TestCase {
       _MMTest4b();
       _MMTest4c();
       _MMTest5a();
-      _MMTest5b();
+      _MMTest5b();*/
       _MMTest6a();
       _MMTest6b();
       // Review 4 test cases
-      _Alicia();
+      /*_Alicia();
       //_CombinedScenario1();
       //_CombinedScenario2();
       _AliciaSz2();
@@ -299,7 +299,7 @@ public class RBMM_WebServiceIT extends TestCase {
       System.out.println("\n******************_MMTest6a **********************************************");
       System.out.println("** Accessibility Setting can be addressed at different levels **************");
       System.out.println("** Font Size on Linux => OS and Browser ************************************");        
-      System.out.println("** No conflict rule applied - ??? ******************************************");     
+      System.out.println("** Resolution: ResMSCConsiderATLayer ***************************************");     
       System.out.println("\n**************************************************************************");
       
       String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest6a.json";
@@ -312,7 +312,7 @@ public class RBMM_WebServiceIT extends TestCase {
       System.out.println("\n******************_MMTest6b **********************************************");
       System.out.println("** Accessibility Setting can be addressed at different levels **************");
       System.out.println("** Magnification on Windows => OS and Browser ******************************");        
-      System.out.println("** NOTE : No conflict rule applied ??? *************************************");     
+      System.out.println("** Resolution: ResMSCConsiderATLayer ***************************************");     
       System.out.println("\n**************************************************************************");
       
       String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/MMTest6b.json";

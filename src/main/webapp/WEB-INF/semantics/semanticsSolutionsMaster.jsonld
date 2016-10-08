@@ -9,12 +9,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "info.cloud4all.www",
             "c4a:name": "Cloud4all.info",
-            "c4a:class": [
-                {
-                    "@id": "c4a:task"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:website"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:task"
                 }
             ],
             "c4a:hasFeature": [
@@ -31,12 +33,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "org.freedesktop.xrandr",
             "c4a:name": "Screen Resolution on Linux ",
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -47,18 +51,20 @@
                     "c4a:name": "screen resolution"
                 }
             ]
-        },    
+        },
         {
             "@id": "http://registry.gpii.net/applications/eu.gpii.olb",
             "@type": "c4a:Solution",
             "c4a:id": "eu.gpii.olb",
             "c4a:name": "Online Banking App",
-            "c4a:class": [
-                {
-                    "@id": "c4a:task"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:website"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:task"
                 }
             ],
             "c4a:hasFeature": [
@@ -69,7 +75,7 @@
                     "c4a:name": "simplification"
                 }
             ]
-        }, 
+        },
         {
             "@id": "http://registry.gpii.net/applications/com.certh.service-synthesis",
             "@type": "c4a:Solution",
@@ -102,7 +108,7 @@
                     "@type": "c4a:Service",
                     "c4a:id": "Translatewebpage",
                     "c4a:name": "Service_TranslateWebPage",
-					"c4a:priority": 2,
+                    "c4a:priority": 2,
                     "c4a:hasFeature": [
                         {
                             "@type": "c4a:CustomizationFeature",
@@ -146,7 +152,7 @@
                     "@type": "c4a:Service",
                     "c4a:id": "FontConverter",
                     "c4a:name": "Service_FontConverter",
-					"c4a:priority": 3,
+                    "c4a:priority": 3,
                     "c4a:hasFeature": [
                         {
                             "@type": "c4a:CustomizationFeature",
@@ -295,7 +301,7 @@
                     "@type": "c4a:Service",
                     "c4a:id": "CallWebAnywhere",
                     "c4a:name": "Service_WebAnyWhere",
-					"c4a:priority": 1,
+                    "c4a:priority": 1,
                     "c4a:hasFeature": [
                         {
                             "@type": "c4a:CustomizationFeature",
@@ -529,12 +535,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "org.gnome.desktop.interface",
             "c4a:name": "Gnome Interface Settings",
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -569,15 +577,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "webinsight.webAnywhere.windows",
             "c4a:name": "WebAnywhere",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:task"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:browser"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:task"
                 }
             ],
             "c4a:hasFeature": [
@@ -594,15 +601,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.freedomscientific.jaws",
             "c4a:name": "JAWS",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -659,7 +665,7 @@
                     "c4a:id": "ENU-Global\\.Language: ",
                     "c4a:isAlias": "http://registry.gpii.net/common/auditoryOutLanguage",
                     "c4a:name": "Language of the Synthesizer"
-                }                
+                }
             ]
         },
         {
@@ -667,12 +673,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.google.chrome",
             "c4a:name": "Google Chrome-GHOST",
-            "c4a:class": [
-                {
-                    "@id": "c4a:task"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:browser"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:task"
                 }
             ],
             "c4a:hasFeature": [
@@ -695,12 +703,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.ilunion.cloud4chrome",
             "c4a:name": "Cloud4chrome",
-            "c4a:class": [
-                {
-                    "@id": "c4a:task"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:browser"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:task"
                 }
             ],
             "c4a:hasFeature": [
@@ -753,15 +763,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.microsoft.windows.magnifier",
             "c4a:name": "Windows Magnifier",
-            "c4a:class": [
-                {
-                    "@id": "c4a:magnifier"
-                },
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -794,7 +803,7 @@
                     "c4a:id": "FollowFocus",
                     "c4a:isAlias": "http://registry.gpii.net/common/tracking",
                     "c4a:name": "Follow Focus"
-                },                
+                },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "FollowCaret",
@@ -806,7 +815,7 @@
                     "c4a:id": "FollowMouse",
                     "c4a:isAlias": "http://registry.gpii.net/common/tracking",
                     "c4a:name": "Follow Mouse"
-                }                
+                }
             ]
         },
         {
@@ -814,15 +823,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "org.gnome.orca",
             "c4a:name": "ORCA",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -905,15 +913,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "org.nvda-project",
             "c4a:name": "NVDA",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:tutorial": [
@@ -1006,13 +1013,13 @@
                     "c4a:id": "trackCaret",
                     "c4a:isAlias": "http://registry.gpii.net/common/trackingTTS",
                     "c4a:name": "Follow System Caret"
-                }, 
-                                                                  {
+                },
+                {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "trackMouse",
                     "c4a:isAlias": "http://registry.gpii.net/common/trackingTTS",
                     "c4a:name": "Follow Mouse Cursor"
-                }                
+                }
             ]
         },
         {
@@ -1020,12 +1027,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.microsoft.windows.highContrast",
             "c4a:name": "WindowsHighContrast",
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -1042,15 +1051,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.microsoft.windows.onscreenKeyboard",
             "c4a:name": "WindowsOn-Screen-Keyboard",
-            "c4a:class": [
-                {
-                    "@id": "c4a:onscreenkeyboard"
-                },
-                {
-                    "@id": "c4a:input"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:input"
                 }
             ],
             "c4a:hasFeature": [
@@ -1067,15 +1075,9 @@
             "@type": "c4a:Solution",
             "c4a:id": "org.gnome.desktop.a11y.magnifier",
             "c4a:name": "GnomeMagnifier",
-            "c4a:class": [
-                {
-                    "@id": "c4a:magnifier"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:output"
-                },
-                {
-                    "@id": "c4a:at"
                 }
             ],
             "c4a:hasFeature": [
@@ -1116,15 +1118,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "org.gnome.desktop.a11y.applications.onscreen-keyboard",
             "c4a:name": "GnomeOn-Screen-Keyboard",
-            "c4a:class": [
-                {
-                    "@id": "c4a:onscreenkeyboard"
-                },
-                {
-                    "@id": "c4a:input"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:input"
                 }
             ],
             "c4a:hasFeature": [
@@ -1141,15 +1142,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "org.gnome.desktop.a11y.keyboard",
             "c4a:name": "On-Screen-Keyboard",
-            "c4a:class": [
-                {
-                    "@id": "c4a:onscreenkeyboard"
-                },
-                {
-                    "@id": "c4a:input"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:input"
                 }
             ],
             "c4a:hasFeature": [
@@ -1214,12 +1214,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.microsoft.windows.mouseTrailing",
             "c4a:name": "WindowsMouseTrailing",
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -1236,12 +1238,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.microsoft.windows.cursors",
             "c4a:name": "WindowsCursors",
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -1258,18 +1262,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.yourdolphin.supernova-as",
             "c4a:name": "com.yourdolphin.supernova-as",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:magnifier"
-                },
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -1283,31 +1283,31 @@
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "screenReaderLanguage",
                     "c4a:isAlias": "http://registry.gpii.net/common/auditoryOutLanguage",
-                    "c4a:name": "Screen Reader Language"
-                },                
+                    "c4a:name": "ScreenReaderLanguage"
+                },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "speechRate",
                     "c4a:isAlias": "http://registry.gpii.net/common/speechRate",
-                    "c4a:name": "Reading speed"
+                    "c4a:name": "Readingspeed"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "characterEcho",
                     "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
-                    "c4a:name": "Character Echo"
+                    "c4a:name": "CharacterEcho"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "characterEcho",
                     "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
-                    "c4a:name": "Character Echo"
+                    "c4a:name": "CharacterEcho"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "announceCapitals",
                     "c4a:isAlias": "http://registry.gpii.net/common/announceCapitals",
-                    "c4a:name": "Announcement of capitals letters"
+                    "c4a:name": "Announcementofcapitalsletters"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
@@ -1319,7 +1319,7 @@
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "userDefinedVoices\\pitchListBox",
                     "c4a:isAlias": "http://registry.gpii.net/common/pitch",
-                    "c4a:name": "Pitch List Box"
+                    "c4a:name": "PitchListBox"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
@@ -1349,20 +1349,20 @@
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "settings//tracking",
                     "c4a:isAlias": "http://registry.gpii.net/common/tracking",
-                    "c4a:name": "Tracking Dialog Box"
+                    "c4a:name": "TrackingDialogBox"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "colourScheme//configure//invertBrightness",
                     "c4a:isAlias": "http://registry.gpii.net/common/invertColours",
-                    "c4a:name": "Invert Brightness"
+                    "c4a:name": "InvertBrightness"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "focusHighlighting//shape",
                     "c4a:isAlias": "http://registry.gpii.net/common/showCrosshairs",
-                    "c4a:name": "Invert Brightness"
-                }                
+                    "c4a:name": "InvertBrightness"
+                }
             ]
         },
         {
@@ -1370,15 +1370,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.android.talkback",
             "c4a:name": "Talkback",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -1394,7 +1393,7 @@
             "@id": "http://registry.gpii.net/applications/com.android.settings.secure",
             "@type": "c4a:Solution",
             "c4a:id": "com.android.settings.secure",
-            "c4a:name": "Android Settings Secure",
+            "c4a:name": "AndroidSettingsSecure",
             "c4a:hasFeature": [
                 {
                     "@type": "c4a:CustomizationFeature",
@@ -1414,13 +1413,15 @@
             "@id": "http://registry.gpii.net/applications/com.android.persistentConfiguration",
             "@type": "c4a:Solution",
             "c4a:id": "com.android.persistentConfiguration",
-            "c4a:name": "Android Persistent Configuration",
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:name": "AndroidPersistentConfiguration",
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -1442,13 +1443,15 @@
             "@id": "http://registry.gpii.net/applications/com.android.audioManager",
             "@type": "c4a:Solution",
             "c4a:id": "com.android.audioManager",
-            "c4a:name": "Android Audio Manager",
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:name": "AndroidAudioManager",
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ],
             "c4a:hasFeature": [
@@ -1471,16 +1474,15 @@
             "@type": "c4a:Solution",
             "c4a:id": "http://registry.gpii.net/applications/es.codefactory.android.app.ma",
             "c4a:name": "es.codefactory.android.app.ma",
-            "c4a:class": [
+            "c4a:layer": [
                 {
-                    "@id":"c4a:screenreader"
-                },
+                    "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
                 {
-                    "@id":"c4a:task"
-                },
-                {
-                    "@id":"c4a:at"
-                }                
+                    "@id": "c4a:task"
+                }
             ],
             "c4a:hasFeature": [
                 {
@@ -1520,26 +1522,28 @@
                     "c4a:name": "braille"
                 }
             ]
-        },        
+        },
         {
             "@id": "http://registry.gpii.net/applications/com.microsoft.windows.screenResolution",
             "@type": "c4a:Solution",
             "c4a:id": "com.microsoft.windows.screenResolution",
-            "c4a:name": "Windows Screen Resolution",
+            "c4a:name": "WindowsScreenResolution",
             "c4a:hasFeature": [
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "resolution",
                     "c4a:isAlias": "http://registry.gpii.net/common/screenResolution",
-                    "c4a:name": "Screen Resolution"
+                    "c4a:name": "ScreenResolution"
                 }
             ],
-            "c4a:class": [
-                {
-                    "@id": "c4a:output"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:os"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:output"
                 }
             ]
         },
@@ -1548,15 +1552,14 @@
             "@type": "c4a:Solution",
             "c4a:id": "com.texthelp.readWriteGold",
             "c4a:name": "ReadWriteGold",
-            "c4a:class": [
-                {
-                    "@id": "c4a:screenreader"
-                },
-                {
-                    "@id": "c4a:task"
-                },
+            "c4a:layer": [
                 {
                     "@id": "c4a:at"
+                }
+            ],
+            "c4a:context": [
+                {
+                    "@id": "c4a:task"
                 }
             ],
             "c4a:hasFeature": [
@@ -1564,13 +1567,13 @@
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optAutoUseScreenReading.$t",
                     "c4a:isAlias": "http://registry.gpii.net/common/screenReaderTTSEnabled",
-                    "c4a:name": "Use Screen Reading"
+                    "c4a:name": "UseScreenReading"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.SelectionType.$t",
                     "c4a:isAlias": "http://registry.gpii.net/common/readingUnit",
-                    "c4a:name": "Selection Type"
+                    "c4a:name": "SelectionType"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
@@ -1600,46 +1603,15 @@
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optAutoSpeakOnWord.$t",
                     "c4a:isAlias": "http://registry.gpii.net/common/wordEcho",
-                    "c4a:name": "Speak on each word"
+                    "c4a:name": "Speakoneachword"
                 },
                 {
                     "@type": "c4a:CustomizationFeature",
                     "c4a:id": "ApplicationSettings.Speech.optAutoSpeakOnLetter.$t",
                     "c4a:isAlias": "http://registry.gpii.net/common/keyEcho",
-                    "c4a:name": "Speak on each letter"
+                    "c4a:name": "Speakoneachletter"
                 }
             ]
-        },
-        {
-            "@id": "c4a:suite",
-            "@type": "c4a:AccessibilitySolution",
-            "c4a:name": "Access Suite",
-            "c4a:refersTo": {
-                "@list": [
-                    "http://registry.gpii.net/common/screenReaderTTSEnabled",
-                    "http://registry.gpii.net/common/magnifierEnabled"
-                ]
-            }
-        },
-        {
-            "@id": "c4a:screenreader",
-            "@type": "c4a:AccessibilitySolution",
-            "c4a:name": "ScreenReader",
-            "c4a:refersTo": {
-                "@list": [
-                    "http://registry.gpii.net/common/screenReaderTTSEnabled"
-                ]
-            }
-        },
-        {
-            "@id": "c4a:magnifier",
-            "@type": "c4a:AccessibilitySolution",
-            "c4a:name": "Magnifier",
-            "c4a:refersTo": {
-                "@list": [
-                    "http://registry.gpii.net/common/magnifierEnabled"
-                ]
-            }
         },
         {
             "@id": "c4a:input",
@@ -1675,6 +1647,22 @@
             "@id": "c4a:website",
             "@type": "c4a:AccessibilityLayer",
             "c4a:name": "website"
+        },
+        {
+            "@id": "http://rbmm.org/schemas/layerranking",
+            "@type": "c4a:LayerRanking",
+            "c4a:at": 4024,
+            "c4a:os": 3024,
+            "c4a:browser": 2024,
+            "c4a:website": 1024
+        },
+        {
+            "@id": "http://rbmm.org/schemas/layerranking",
+            "@type": "c4a:LayerRanking",
+            "c4a:at": 4024,
+            "c4a:os": 3024,
+            "c4a:browser": 2024,
+            "c4a:website": 1024
         }
     ]
 }

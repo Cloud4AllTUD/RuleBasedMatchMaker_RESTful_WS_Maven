@@ -3,7 +3,7 @@
     "gpii-default" : {
       "applications" : {
         "com.ilunion.cloud4chrome" : {
-          "active" : true,
+          "active" : false,
           "settings" : {
             "http://registry.gpii.net/common/fontSize" : 18.0
           }
