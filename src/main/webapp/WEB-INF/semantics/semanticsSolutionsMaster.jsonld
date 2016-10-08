@@ -1657,12 +1657,11 @@
             "c4a:website": 1024
         },
         {
-            "@id": "http://rbmm.org/schemas/layerranking",
-            "@type": "c4a:LayerRanking",
-            "c4a:at": 4024,
-            "c4a:os": 3024,
-            "c4a:browser": 2024,
-            "c4a:website": 1024
+            "@id": "http://rbmm.org/schemas/contextranking",
+            "@type": "c4a:ContextRanking",
+            "c4a:task": 1024,
+            "c4a:output": 2024,
+            "c4a:input": 2024
         }
     ]
 }

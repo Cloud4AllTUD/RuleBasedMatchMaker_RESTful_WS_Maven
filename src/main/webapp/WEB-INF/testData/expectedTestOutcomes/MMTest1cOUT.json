@@ -63,19 +63,7 @@
             "http://registry.gpii.net/common/wordEcho" : false
           }
         }
-      },
-      "metadata" : [ {
-        "message" : {
-          "de" : {
-            "message" : "Der bevorzugte ScreenReader ist auf diesem Gerät nicht verfügbar. Wir haben JAWS für dich gestartet."
-          },
-          "en" : {
-            "message" : "Your preferred ScreenReader is not available on the device. We have launched JAWS for you."
-          }
-        },
-        "scope" : [ "com.freedomscientific.jaws" ],
-        "type" : "helpMessage"
-      } ]
+      }
     }
   }
 }
