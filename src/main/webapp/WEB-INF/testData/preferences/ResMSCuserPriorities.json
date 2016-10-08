@@ -1,0 +1,50 @@
+{
+    "preferences": {
+        "contexts": {
+            "gpii-default": {
+                "name": "Default preferences",
+                "preferences": {
+                    "http://registry.gpii.net/common/screenReaderTTSEnabled": true
+                },
+                "metadata": [
+                    {
+                        "type": "priority",
+                        "scope": [
+                            "com.freedomscientific.jaws"
+                        ],
+                        "value": 1024
+                    },
+                    {
+                        "type": "priority",
+                        "scope": [
+                            "org.nvda-project"
+                        ],
+                        "value": 900
+                    }
+                ]
+            }
+        }
+    },
+    "deviceContext": {
+        "OS": {
+            "id": "win32",
+            "version": "5.0.0"
+        },
+        "solutions": [
+            {
+                "id": "org.nvda-project"
+            },
+            {
+                "id": "com.yourdolphin.supernova-as"
+            },
+            {
+                "id": "com.freedomscientific.jaws"
+            }
+        ]
+    },
+    "environmentReporter": {},
+    "solutionsRegistry": {},
+    "activeContexts": [],
+    "inverseCapabilities": {},
+    "rematch": {}
+}

@@ -1,0 +1,185 @@
+	@prefix c4a: <http://rbmm.org/schemas/cloud4all/0.1/>.
+	@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+	// Rule resolves MultipleSolutionConflict (MSC) by deactivating a not prioritized solutions.    
+	[MSC_DeactivateSolNotPrefferd:
+		(?c rdf:type c4a:MultipleSolutionConflict)
+		(?c c4a:isResolvedBy "priority")
+		(?c c4a:affectsConf ?conf)
+		(?conf c4a:isActive "true")
+		noValue(?conf c4a:hasPriority ?x)
+		(?conf c4a:refersToSol ?sol)
+		->
+		drop(3)
+		(?conf c4a:isActive "false")
+		print('**** DeactivateSolNotPrefferd ***** ')
+		print(?sol)
+	]
+	
+	// Rule resolves a MulitpleSolutionConflict (MSC) based on choosing the prioritized product with the highest rating
+	[ResMSCActivateHighestPriorConf:
+		(?c rdf:type c4a:MultipleSolutionConflict)
+		(?c c4a:isResolvedBy "priority")
+		(?c c4a:affectsConf ?conf_1)
+		(?c c4a:affectsConf ?conf_2)
+		notEqual(?conf_1, ?conf_2)
+		
+		// if both configurations are active
+		(?conf_1 c4a:isActive "true")
+		(?conf_2 c4a:isActive "true")
+		
+		// if both configuration have a priority   
+		(?conf_1 c4a:hasPriority ?prio_1)
+		(?conf_2 c4a:hasPriority ?prio_2)
+		
+		// if conf_1 is higher prioritized as conf_2
+		ge(?prio_1, ?prio_2)
+		->
+		drop(6)
+		(?conf_2 c4a:isActive "false")
+		print('**** ResMSCActivateHighestPriorConf ****')	
+	]
+
+	// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on defined AT Rankings (rankingOfATs.jsonld).
+	[MSC_Res_ATRanking:
+	(?conflict rdf:type c4a:Conflict)
+	(?conflict c4a:refersTo ?config_a)
+	(?conflict c4a:refersTo ?config_b)
+	(?conflict c4a:affects ?aff_set)
+	(?config_a c4a:isActive "true")
+	(?config_b c4a:isActive "true")
+	(?config_a c4a:refersTo ?sol_a)
+	(?config_b c4a:refersTo ?sol_b)
+	
+	(?if rdf:type c4a:InferredConfiguration)
+	noValue(?if c4a:solPreferred)
+	(?if c4a:id ?if_id)	
+	(?if c4a:refersTo ?config_a)
+	(?if c4a:refersTo ?config_b)
+	
+	(?at c4a:ranking ?r)
+	(?at c4a:refersTo ?l)
+	listContains(?l, ?aff_set) 
+	
+	(?r ?sol_a ?r_a)
+	(?r ?sol_b ?r_b)
+	greaterThan(?r_a, ?r_b)
+	notEqual(?config_a, ?config_b)
+	->
+	drop(5)
+	(?config_b c4a:isActive "false")
+	print('****************************')
+	print('**** MATC_Res_ATRanking ****')
+	print('affects MSC for: ' ?aff_set)
+	print('Configuration activated: ' ?sol_a)
+	print('Configuration deactivated: ' ?sol_b)	
+	print('****************************')	
+]
+
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on defined AccessibilityLayer (semanticSolutions.jsonld). 
+[MSC_Res_ATLayer:
+	(?conflict rdf:type c4a:Conflict)
+	(?conflict c4a:refersTo ?config_a)
+	(?conflict c4a:refersTo ?config_b)
+	(?conflict c4a:affects ?aff_set)
+	(?config_a c4a:isActive "true")
+	(?config_b c4a:isActive "true")
+	(?config_a c4a:refersTo ?sol_a)
+	(?config_b c4a:refersTo ?sol_b)
+	(?config_b c4a:settings ?config_b_set)
+	(?config_b_set rdf:type c4a:Setting)
+	(?config_b_set c4a:id ?aff_set)
+	(?config_b_set c4a:name ?x)
+	(?config_b_set c4a:value ?y)
+	
+	(?if rdf:type c4a:InferredConfiguration)
+	noValue(?if c4a:solPreferred)
+	(?if c4a:id ?if_id)	
+	(?if c4a:refersTo ?config_a)
+	(?if c4a:refersTo ?config_b)
+	
+	(?sol_a c4a:class ?class_a)
+	(?sol_b c4a:class ?class_b)
+	(?class_a rdf:type c4a:AccessibilityLayer)
+	(?class_b rdf:type c4a:AccessibilityLayer)	
+	equal(?class_a,c4a:at)
+	equal(?class_b,c4a:browser)
+	notEqual(?config_a, ?config_b)
+	notEqual(?sol_a, ?sol_b)	
+	->
+	drop(5)
+	(?config_b c4a:isActive "false")
+	print('**** MATC_Res_ATLayer ************')
+	print('affects MSC for: ' ?aff_set)
+	print('Configuration activated: ' ?sol_a)	
+	print('Configuration deactivated: ' ?sol_b)
+	print('**********************************')	
+]
+
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on defined AccessibilityContex (semanticSolutions.jsonld).
+[MSC_Res_ATContext:
+	(?conflict rdf:type c4a:Conflict)
+	(?conflict c4a:refersTo ?config_a)
+	(?conflict c4a:refersTo ?config_b)
+	(?conflict c4a:affects ?aff_set)	
+	(?config_a c4a:isActive "true")
+	(?config_b c4a:isActive "true")
+	(?config_a c4a:refersTo ?sol_a)
+	(?config_b c4a:refersTo ?sol_b)
+	
+	(?if rdf:type c4a:InferredConfiguration)
+	noValue(?if c4a:solPreferred)
+	(?if c4a:id ?if_id)	
+	(?if c4a:refersTo ?config_a)
+	(?if c4a:refersTo ?config_b)
+	
+	(?sol_a c4a:class ?class_a)
+	(?sol_b c4a:class ?class_b)
+	(?class_a rdf:type c4a:AccessibilityContext)
+	(?class_b rdf:type c4a:AccessibilityContext)	
+	equal(?class_a,c4a:output)
+	equal(?class_b,c4a:task)
+	notEqual(?config_a, ?config_b)
+	->
+	drop(5)
+	(?config_b c4a:isActive "false")
+	print('**** MATC_Res_ATContext **********')
+	print('affects MSC for: ' ?aff_set)
+	print('Configuration activated: ' ?sol_a)	
+	print('Configuration deactivated: ' ?sol_b)
+	print('**********************************')	
+]
+
+
+// Description of the rule: Resolves the MUTIPLE SOLUTION CONFLICTS (MSC) based on user defined solution priorities.
+[Res1bTwoSolPreferred:
+	(?conflict rdf:type c4a:Conflict)
+	(?conflict c4a:class ?class)
+	(?conflict c4a:refersTo ?config)
+	(?conflict c4a:activated ?config)
+	(?config c4a:isActive "true")
+	(?config c4a:solPreferred "true")
+	(?config c4a:refersTo ?sol)
+	
+	(?conflict c4a:refersTo ?config_b)
+	(?conflict c4a:activated ?config_b)	
+	(?config_b c4a:isActive "true")
+	(?config_b c4a:solPreferred "true")
+	(?config_b c4a:refersTo ?sol_b)
+	
+	(?if rdf:type c4a:InferredConfiguration)
+	(?if c4a:id ?if_id)	
+	(?if c4a:refersTo ?config)
+	(?if c4a:refersTo ?config_b)
+	notEqual(?config, ?config_b)
+	noValue(?conflict c4a:deactivated ?x)
+	->
+	drop(4, 5)
+	(?config c4a:isActive "false")
+	(?conflict c4a:deactivated ?config)
+	print('*********** Resolution B MSC ******************')
+	print('CONTEXT: ' ?if_id)
+	print('conflict: ' ?class)
+	print('deactivated solution: ' ?sol)	
+	print('activated solution: ' ?sol_b)	
+]

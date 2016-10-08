@@ -951,7 +951,7 @@ public class TransformerManager {
 
           outMetaObject.put("@type", "c4a:Metadata");
           outMetaObject.put("c4a:type", cMeta.get("type").toString());
-          outMetaObject.put("c4a:value", cMeta.get("value").toString());
+          outMetaObject.put("c4a:value", cMeta.get("value"));
           outMetaObject.put("c4a:scope", cMeta.getJSONArray("scope"));
 
           outMetaArray.put(outMetaObject);

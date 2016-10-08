@@ -18,6 +18,8 @@ public class RBMM_WebServiceIT extends TestCase {
       _DetectNoSolConflict();
       _ResNoSolutionConflict_InputRange();
       _ResNoSolutionConflict_SimpleInput();
+      _ResMSCuserPriority();
+      _ResMSCuserPriorities();
       /*// Pilots 3 test cases
       _MMTest1a();
       _MMTest1b();
@@ -119,7 +121,32 @@ public class RBMM_WebServiceIT extends TestCase {
 
     performTest(filepathIN, filepathExpectedOUT1, "_ResNoSolutionConflict_SimpleInput");
   }  
+  public void _ResMSCuserPriority()
+  {
+      System.out.println("\n****************** ResMSCuserPriority ******************************");
+      System.out.println("** Multiple ATs of the same type are locally installed *****************");
+      System.out.println("** and the user has indicated exactely one product priority of  ********");
+      System.out.println("** and the prioritized product is amongst the installed ****************");      
+      System.out.println("\n**********************************************************************");     
   
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/ResMSCuserPriority.json";
+      String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/ResMSCuserPriorityOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT1, "_ResMSCuserPriority");           
+  }
+  public void _ResMSCuserPriorities()
+  {
+      System.out.println("\n****************** ResMSCuserPriorities ******************************");
+      System.out.println("** Multiple ATs of the same type are locally installed *****************");
+      System.out.println("** and the user has indicated a product priority of  *******************");
+      System.out.println("** and the prioritized product is amongst the installed ****************");      
+      System.out.println("\n**********************************************************************");     
+  
+      String filepathIN = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/preferences/ResMSCuserPriorities.json";
+      String filepathExpectedOUT1 = System.getProperty("user.dir") + "/src/main/webapp/WEB-INF/testData/expectedTestOutcomes/ResMSCuserPrioritiesOUT.json";
+      
+      performTest(filepathIN, filepathExpectedOUT1, "_ResMSCuserPriorities");           
+  }    
   public void _MMTest1a()
   {
       System.out.println("\n******************_MMTest1a ******************************************");
@@ -134,7 +161,6 @@ public class RBMM_WebServiceIT extends TestCase {
       
       performTest(filepathIN, filepathExpectedOUT1, "_MMTest1a");           
   }
-  
   public void _MMTest1b()
   {
       System.out.println("\n******************_MMTest1b **************************************************");

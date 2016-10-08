@@ -17,13 +17,10 @@
 	(?sol c4a:id ?sol_id)
 	(?sol c4a:name ?sol_name)
 	(?sol c4a:hasFeature ?feat)
-	(?sol c4a:class ?class)
-	(?class rdf:type ?class_type)
 	
 	(?feat rdf:type c4a:CustomizationFeature)
-	(?feat c4a:isAlias ?alias)
+	(?feat c4a:isAlias ?p_id)
 	
-	equal(?p_id, ?alias)
 	makeSkolem(?newConfig, ?sol, ?ps)
 	makeSkolem(?newSetting, ?feat, ?p)
 	->
@@ -283,4 +280,58 @@
 		->
 		drop(4)
         (?subst c4a:applyOutputWithRating ?new_rating)  
-	]	
+	]
+	
+	// ******************************************************************************************
+	// * RULE SET TO DETECT AND RESOLVE MultipleSolutionConflict								* 		
+	// ******************************************************************************************	
+	
+	// Rule detects a MultipleSolutionConflict for relevant preferences (multipleSolConflictTrigger.jsonld)
+	[DetectMultipleSolutionConflict:
+	// If there are two configurations ...
+	(?conf1 rdf:type c4a:Configuration)
+	(?conf2 rdf:type c4a:Configuration)
+	(?conf1 c4a:belongsToPrefSet ?ps)
+	(?conf2 c4a:belongsToPrefSet ?ps)
+	notEqual(?conf1, ?conf2)
+
+	// and these configurations have conflicting settings  
+	(?trigger rdf:type c4a:MultipleSolConflictTrigger)
+	(?trigger c4a:id ?aff_term)	
+	
+	(?conf1 c4a:id ?sol1)
+	(?conf1 c4a:applySetting ?conf1_set)
+	(?conf1_set c4a:id ?aff_term)
+	(?conf2 c4a:id ?sol2)
+	(?conf2 c4a:applySetting ?conf2_set)
+	(?conf2_set c4a:id ?aff_term)
+	
+	makeSkolem(?newConflict, ?ps, ?aff_term)
+	->
+	(?newConflict rdf:type c4a:MultipleSolutionConflict)
+	(?newConflict c4a:affectsConf ?conf1)
+	(?newConflict c4a:affectsConf ?conf2)
+	(?newConflict c4a:isTriggerdBy ?aff_term)	
+	print('************ MultipleSolutionConflict Detected ****************')
+	print('TRIGGER: ' ?aff_term)
+	print('AFFECTS: ' ?sol1)
+	print('AFFECTS: ' ?sol2)	 
+	]
+		
+	// Add to a configuration whether a product is preferred 
+	[AddSolutionPriorityToConfiguration:
+		(?c rdf:type c4a:MultipleSolutionConflict)
+		(?c c4a:affectsConf ?conf)
+		(?conf c4a:belongsToPrefSet ?ps)
+		(?conf c4a:id ?con_id)
+		
+		(?ps c4a:hasMetadata ?meta)
+		(?meta c4a:type "priority")
+		(?meta c4a:scope ?con_id)
+		(?meta c4a:value ?prio)
+		->
+		(?c c4a:isResolvedBy "priority")
+		(?conf c4a:hasPriority ?prio)
+		print('**** AddSolutionPriorityToConfiguration ****')
+		print(?sol 'priority' ?prio)
+	]

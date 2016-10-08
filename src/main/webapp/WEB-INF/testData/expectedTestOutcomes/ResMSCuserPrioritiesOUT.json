@@ -1,0 +1,26 @@
+{
+  "inferredConfiguration" : {
+    "gpii-default" : {
+      "applications" : {
+        "com.freedomscientific.jaws" : {
+          "active" : true,
+          "settings" : {
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true
+          }
+        },
+        "com.yourdolphin.supernova-as" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true
+          }
+        },
+        "org.nvda-project" : {
+          "active" : false,
+          "settings" : {
+            "http://registry.gpii.net/common/screenReaderTTSEnabled" : true
+          }
+        }
+      }
+    }
+  }
+}
