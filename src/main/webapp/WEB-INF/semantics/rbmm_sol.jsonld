@@ -1,0 +1,106 @@
+{
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rbmm": "http://rbmm.org/schemas/cloud4all/0.1/",
+        "defines": {
+            "@reverse": "rdfs:isDefinedBy"
+        },
+        "rdfs:subClassOf": {
+            "@type": "@id"
+        },
+        "propertyOf": {
+            "@id": "rdfs:domain",
+            "@type": "@id"
+        },
+        "propertyOn": {
+            "@id": "rdfs:range",
+            "@type": "@id"
+        }
+    },
+    "@id": "rbmm:",
+    "@type": "owl:Ontology",
+    "defines": [
+        {
+            "@id": "rbmm:Solution",
+            "@type": "owl:Class",
+            "rdfs:label": "Sol",
+            "rdfs:comment": "An accessibility solution."
+        },
+        {
+            "@id": "rbmm:ConfigurationContext",
+            "@type": "owl:Class",
+            "rdfs:label": "ConfigurationContext",
+            "rdfs:comment": "Describes the context in which a solution works, e.g. task specific."
+        },
+        {
+            "@id": "rbmm:ConfigurationLayer",
+            "@type": "owl:Class",
+            "rdfs:label": "ConfigurationLayer",
+            "rdfs:comment": "Describes the layer at which a solution works, e.g. operating system."
+        },
+        {
+            "@id": "rbmm:WorksOnLayer",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "WorksOnLayer",
+            "rdfs:comment": "The layer at which a solution works.",
+            "propertyOf": "rbmm:Solution",
+            "propertyOn": "rbmm:ConfigurationLayer"
+        },
+        {
+            "@id": "rbmm:WorkForContext",
+            "@type": "owl:ObjectProperty",
+            "rdfs:label": "WorkForContext",
+            "rdfs:comment": "The context in which a solution works.",
+            "propertyOf": "rbmm:Solution",
+            "propertyOn": "rbmm:ConfigurationContext"
+        },
+        {
+            "@id": "rbmm:LayerRanking",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "LayerRanking",
+            "rdfs:comment": "The ranking of a configuration layer.",
+            "propertyOf": "rbmm:ConfigurationLayer",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:ContextRanking",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "ContextRanking",
+            "rdfs:comment": "The ranking of a configuration context.",
+            "propertyOf": "rbmm:ConfigurationContext",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:SolutionRanking",
+            "@type": "owl:Class",
+            "rdfs:label": "SolutionRanking",
+            "rdfs:comment": "The ranking of a all solution of a certain type."
+        },
+        {
+            "@id": "rbmm:SolIsRanked",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "IsRanked",
+            "rdfs:comment": "A solution is ranked accoring to a solution ranking.",
+            "propertyOf": "rbmm:Solution",
+            "propertyOn": "rbmm:SolutionRanking"
+        },
+        {
+            "@id": "rbmm:SolutionRankingId",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "Id",
+            "rdfs:comment": "The id of the solution ranking represents the type of products according to which which the solutions are ranked",
+            "propertyOf": "rbmm:SolutionRanking",
+            "propertyOn": "rdfs:Literal"
+        },
+        {
+            "@id": "rbmm:SolutionRankingValue",
+            "@type": "owl:DataProperty",
+            "rdfs:label": "Value",
+            "rdfs:comment": "The value at which the solutions is ranked according to the type of of solution",
+            "propertyOf": "rbmm:SolutionRanking",
+            "propertyOn": "rdfs:Literal"
+        }
+    ]
+}

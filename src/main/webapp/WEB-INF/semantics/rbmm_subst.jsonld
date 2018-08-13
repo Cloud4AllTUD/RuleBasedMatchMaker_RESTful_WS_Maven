@@ -96,7 +96,7 @@
             "@type": "owl:ObjectProperty",
             "rdfs:label": "defRecom",
             "rdfs:comment": "Each output defines a recommendation which is sub class of preferences.",
-            "propertyOf": "rbmm:PreferenceSubstitute",
+            "propertyOf": "rbmm:Output",
             "propertyOn": "rbmm:Recommendation"
         },
         {

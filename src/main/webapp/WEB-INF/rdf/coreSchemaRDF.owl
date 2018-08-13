@@ -4,12 +4,188 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/solId">
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/solName">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">id</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
     <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solution has an id.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The name of a solution.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Input">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Input</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference substitute defines for which preference the recommendation is valid.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasFeature">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/CustomizationFeature"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasFeature</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solution can have features which can be adjusted individually.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/belongsToPrefSet">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSet"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongsToPrefSet</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configuration belongs to a preference set (inferred knowledge).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrefSet</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of user preferences for a certain context.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/SolutionRanking">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ranking</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ranking of a all solution of a certain type.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/ApplicationPreference">
+    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AppPref</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A application specific user preference</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/belongsToPref">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongsToPref</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/NoSolutionConflict"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A No solution Conflict belongs to a preference (inferred knowledge).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/WorksOnLayer">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/ConfigurationLayer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorksOnLayer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The layer at which a solution works.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/rating">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rating</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Recommendation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rating of a recommendation</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/refersToSol">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refersToSol</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configuration refers to a solution (inferred knowledge).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/applySetting">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Setting"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">applySetting</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configuration has settings that shall be applied for a user (inferred knowledge).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/CommonPreference">
+    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComPref</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A user preference  of type common</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Configuration">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conf</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inferred configuration (inferred knowledge).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrefSubst</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference substitutes defines concrete recommendations as alternative for a user indicated preference which might be not satisfiable by the current device.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/ConfigurationLayer">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ConfigurationLayer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes the layer at which a solution works, e.g. operating system.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Recommendation">
+    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recom</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference substitute defines a concrete recommendation (output). It is not indicated by the user. Instead it is recommended by the system.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstituteSet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrefSubstSet</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of preference substitutes for a preference terme.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasPref">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPref</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSet"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each set of prefereences consists of 1 to n preferences.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasConfig">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasConfig</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference can have a configurations (inferred knowledge).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/affectsConf">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">affectsConf</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/MultipleSolutionConflict"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A multiple solution conflict affects a configuration.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Preference">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pref</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A user preferences for a certain context.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/setValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Setting"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of a setting.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/metaScope">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scope</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/MetaData"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The scope of meta data defined for a preference set.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/isActive">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isActive</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configruation has a property is active which indicates if a solution shall be activated automatically.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/isAlias">
@@ -20,6 +196,14 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relation of a customization fetaure to a preference term.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/solId">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">id</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solution has an id.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/metaType">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</rdfs:label>
@@ -28,16 +212,15 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The type of meta data defined for a preference set.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/solName">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The name of a solution.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Solution">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sol</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solution can be a application, or set of customization features.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/InstalledSolution">
+    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InstSol</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An accessibility solution.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -50,34 +233,41 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A setting has an id.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/belongsToPrefSet">
-    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSet"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongsToPrefSet</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/definesOutput">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Recommendation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defOut</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configuration belongs to a preference set (inferred knowledge).</rdfs:comment>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each substitute has one or more concreate recommendation (output).</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasFeature">
-    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/CustomizationFeature"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasFeature</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/ContextRanking">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ContextRanking</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solution can have features which can be adjusted individually.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/ConfigurationContext"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ranking of a configuration context.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/ApplicationPreference">
-    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AppPref</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/ConfigurationContext">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ConfigurationContext</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A application specific user preference</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes the context in which a solution works, e.g. task specific.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSet">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrefSet</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/SubstRatingList">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubstRatingList</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of user preferences for a certain context.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As each preference substitute can have several recommendations a rating is defined.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/SolutionRankingId">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/SolutionRanking"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The id of the solution ranking represents the type of products according to which which the solutions are ranked</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/setName">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -103,8 +293,21 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference has an id.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasSubst">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSubst</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstituteSet"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each set of preference substitutes consists of 1 to n simple preference substitutes and/or complex preference substitutes.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/WorkForContext">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/ConfigurationContext"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkForContext</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The context in which a solution works.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasMeta">
     <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/MetaData"/>
@@ -114,34 +317,35 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each set of preferences can has a meta data.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/applySetting">
-    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Setting"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">applySetting</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/NoSolutionConflict">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoSolConflict</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configuration has settings that shall be applied for a user (inferred knowledge).</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/refersToSol">
-    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refersToSol</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configuration refers to a solution (inferred knowledge).</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/CommonPreference">
-    <rdfs:subClassOf rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComPref</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A user preference  of type common</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An NoSolutionConflict is inferred when a user preference cannot be satisfied by the  settings supported  (inferred knowledge).</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Configuration">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conf</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/prefSubstSetId">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">id</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inferred configuration (inferred knowledge).</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstituteSet"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The id of a preference substitute set</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/IsRanked">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/SolutionRanking"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IsRanked</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Solution"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solution is ranked accoring to a functionality provided by the solution.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/isTriggeredBy">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isTriggeredBy</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/MultipleSolutionConflict"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A multiple solution conflict is triggered by a preference terms </rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/confId">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -151,27 +355,33 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configuration has an id.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/MultipleSolutionConflict">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MultipleSolConflict</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An MultipleSolutionConflict is inferred when a user preference can be satisfied by the multiple settings supported  (inferred knowledge).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Setting">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An setting of configruation (inferred knowledge).</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasPref">
-    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPref</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/definesRating">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/SubstRatingList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definesRating</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSet"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each set of prefereences consists of 1 to n preferences.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each substitute defines a list of redommendation ratings.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/hasConfig">
-    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasConfig</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/LayerRanking">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LayerRanking</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Preference"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A preference can have a configurations (inferred knowledge).</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/ConfigurationLayer"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ranking of a configuration layer.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/prefValue">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -189,19 +399,21 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of preference has an id.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/setValue">
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/SolutionRankingValue">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Value</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Setting"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of a setting.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/SolutionRanking"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value at which the solutions is ranked according to the type of of solution</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/Preference">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pref</rdfs:label>
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/definesInput">
+    <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Input"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defin</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A user preferences for a certain context.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each substitute has one or more concreate recommendation (output).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/CustomizationFeature">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feat</rdfs:label>
@@ -217,12 +429,12 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The name of a configruation.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/metaScope">
+  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/applyRecomWithRating">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scope</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">applyRating</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/MetaData"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The scope of meta data defined for a preference set.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines which is the rating that shall be applied</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/MetaData">
@@ -230,13 +442,5 @@
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meta data of a preference set.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rbmm.org/schemas/cloud4all/0.1/isActive">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isActive</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Configuration"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A configruation has a property is active which indicates if a solution shall be activated automatically.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataProperty"/>
   </rdf:Description>
 </rdf:RDF>

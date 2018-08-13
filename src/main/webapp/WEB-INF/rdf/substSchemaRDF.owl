@@ -15,7 +15,7 @@
     <rdfs:range rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Recommendation"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defRecom</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/"/>
-    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/PreferenceSubstitute"/>
+    <rdfs:domain rdf:resource="http://rbmm.org/schemas/cloud4all/0.1/Output"/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each output defines a recommendation which is sub class of preferences.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>

@@ -36,6 +36,7 @@ public class JsonLDManager {
   // static input files
   public String coreSchema;
   public String preferenceSubstituteSchema;
+  public String solutionSemanticSchema;
   
   
   public String[] semantics;
@@ -59,6 +60,7 @@ public class JsonLDManager {
   // files for generated rdf schemas
   public String coreSchemaRDFFilepath;
   public String substSchemaRDFFilepath;
+  public String solSchemaRDFFilepath;
 
   public Gson gson;
 
@@ -140,8 +142,12 @@ public class JsonLDManager {
       substSchemaRDFFilepath =
           System.getProperty("user.dir") + WEBINF_PATH + prop.getProperty("substSchemaRDFFilepath");
       
+      solSchemaRDFFilepath =
+          System.getProperty("user.dir") + WEBINF_PATH + prop.getProperty("solSchemaRDFFilepath");
+
       coreSchema = prop.getProperty("coreSchema");
-      preferenceSubstituteSchema = prop.getProperty("preferenceSubstituteSchema"); 
+      preferenceSubstituteSchema = prop.getProperty("preferenceSubstituteSchema");
+      solutionSemanticSchema = prop.getProperty("solutionSemanticSchema");
       
       // integration tests
       PERFORM_INTEGRATION_TESTS =
@@ -204,6 +210,9 @@ public class JsonLDManager {
     
     OntologyManager.getInstance().populateJSONLDSchemas(preferenceSubstituteSchema);
     Utils.getInstance().writeOntologyModelToFile(OntologyManager._rbmmSchema, substSchemaRDFFilepath);
+
+    OntologyManager.getInstance().populateJSONLDSchemas(solutionSemanticSchema);
+    Utils.getInstance().writeOntologyModelToFile(OntologyManager._rbmmSchema, solSchemaRDFFilepath);
 
     /***********************/
     /* PREPROCESSING - End */

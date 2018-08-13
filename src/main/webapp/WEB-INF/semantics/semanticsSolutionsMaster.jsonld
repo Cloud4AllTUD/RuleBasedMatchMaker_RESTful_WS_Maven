@@ -1615,37 +1615,37 @@
         },
         {
             "@id": "c4a:input",
-            "@type": "c4a:AccessibilityContext",
+            "@type": "c4a:ConfigurationContext",
             "c4a:name": "InputSoftware"
         },
         {
             "@id": "c4a:output",
-            "@type": "c4a:AccessibilityContext",
+            "@type": "c4a:ConfigurationContext",
             "c4a:name": "OutputSoftware"
         },
         {
             "@id": "c4a:task",
-            "@type": "c4a:AccessibilityContext",
+            "@type": "c4a:ConfigurationContext",
             "c4a:name": "TaskSpecificSoftware"
         },
         {
             "@id": "c4a:at",
-            "@type": "c4a:AccessibilityLayer",
+            "@type": "c4a:ConfigurationLayer",
             "c4a:name": "at"
         },
         {
             "@id": "c4a:browser",
-            "@type": "c4a:AccessibilityLayer",
+            "@type": "c4a:ConfigurationLayer",
             "c4a:name": "browser"
         },
         {
             "@id": "c4a:os",
-            "@type": "c4a:AccessibilityLayer",
+            "@type": "c4a:ConfigurationLayer",
             "c4a:name": "os"
         },
         {
             "@id": "c4a:website",
-            "@type": "c4a:AccessibilityLayer",
+            "@type": "c4a:ConfigurationLayer",
             "c4a:name": "website"
         },
         {

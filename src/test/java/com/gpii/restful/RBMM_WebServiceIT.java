@@ -13,18 +13,18 @@ public class RBMM_WebServiceIT extends TestCase {
 
     if (JsonLDManager.getInstance().PERFORM_INTEGRATION_TESTS) {
       // Core test cases
-      _ComPref();
-      _AppPref();
-      _DetectNoSolConflict();
+      //_ComPref();
+      //_AppPref();
+      //_DetectNoSolConflict();
       _ResNoSolutionConflict_InputRange();
-      _ResNoSolutionConflict_SimpleInput();
+      /*_ResNoSolutionConflict_SimpleInput();
       _ResMSCuserPriority();
       _ResMSCuserPriorities();
       // Pilots 3 test cases
       _MMTest1a();
       _MMTest1b();
       _MMTest1c();
-      _MMTest1d();
+      _MMTest1d();*/
       /*_MMTest2();
       _MMTest3();
       _MMTest4a();
@@ -32,8 +32,8 @@ public class RBMM_WebServiceIT extends TestCase {
       _MMTest4c();
       _MMTest5a();
       _MMTest5b();*/
-      _MMTest6a();
-      _MMTest6b();
+      /*_MMTest6a();
+      _MMTest6b();*/
       // Review 4 test cases
       /*_Alicia();
       //_CombinedScenario1();

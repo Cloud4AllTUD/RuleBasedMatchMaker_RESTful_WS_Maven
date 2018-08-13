@@ -70,56 +70,13 @@
             "@id": "rbmm:Solution",
             "@type": "owl:Class",
             "rdfs:label": "Sol",
-            "rdfs:comment": "A solution can be a application, or set of customization features."
-        },
-        {
-            "@id": "rbmm:InstalledSolution",
-            "@type": "owl:Class",
-            "rdfs:label": "InstSol",
-            "rdfs:comment": "An accessibility solution.",
-            "rdfs:subClassOf": "rbmm:Solution"
+            "rdfs:comment": "An accessibility solution."
         },
         {
             "@id": "rbmm:CustomizationFeature",
             "@type": "owl:Class",
             "rdfs:label": "Feat",
             "rdfs:comment": "A feature of a solution that can be adjusted individually."
-        },
-        {
-            "@id": "rbmm:NoSolutionConflict",
-            "@type": "owl:Class",
-            "rdfs:label": "NoSolConflict",
-            "rdfs:comment": "An NoSolutionConflict is inferred when a user preference cannot be satisfied by the  settings supported  (inferred knowledge)."
-        },
-        {
-            "@id": "rbmm:belongsToPref",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "belongsToPref",
-            "rdfs:comment": "A No solution Conflict belongs to a preference (inferred knowledge).",
-            "propertyOf": "rbmm:NoSolutionConflict",
-            "propertyOn": "rbmm:Preference"
-        },        
-        {
-            "@id": "rbmm:MultipleSolutionConflict",
-            "@type": "owl:Class",
-            "rdfs:label": "MultipleSolConflict",
-            "rdfs:comment": "An MultipleSolutionConflict is inferred when a user preference can be satisfied by the multiple settings supported  (inferred knowledge)."
-        },
-        {
-            "@id": "rbmm:affectsConf",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "affectsConf",
-            "rdfs:comment": "A multiple solution conflict affects a configuration.",
-            "propertyOf": "rbmm:MultipleSolutionConflict",
-            "propertyOn": "rbmm:Configuration"
-        },
-        {
-            "@id": "rbmm:isTriggeredBy",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "isTriggeredBy",
-            "rdfs:comment": "A multiple solution conflict is triggered by a preference terms ",
-            "propertyOf": "rbmm:MultipleSolutionConflict",
-            "propertyOn": "rdfs:Literal"
         },
         {
             "@id": "rbmm:hasPref",
@@ -174,7 +131,7 @@
             "@type": "owl:ObjectProperty",
             "rdfs:label": "hasFeature",
             "rdfs:comment": "A solution can have features which can be adjusted individually.",
-            "propertyOf": "rbmm:Solution",
+            "propertyOf": "rbmm:Configuration",
             "propertyOn": "rbmm:CustomizationFeature"
         },
         {
@@ -295,167 +252,6 @@
             "rdfs:label": "isAlias",
             "rdfs:comment": "The relation of a customization fetaure to a preference term.",
             "propertyOf": "rbmm:CustomizationFeature",
-            "propertyOn": "rdfs:Literal"
-        },
-        {
-            "@id": "rbmm:PreferenceSubstituteSet",
-            "@type": "owl:Class",
-            "rdfs:label": "PrefSubstSet",
-            "rdfs:comment": "A collection of preference substitutes for a preference terme."
-        },
-        {
-            "@id": "rbmm:PreferenceSubstitute",
-            "@type": "owl:Class",
-            "rdfs:label": "PrefSubst",
-            "rdfs:comment": "A preference substitutes defines concrete recommendations as alternative for a user indicated preference which might be not satisfiable by the current device."
-        },
-        {
-            "@id": "rbmm:Recommendation",
-            "@type": "owl:Class",
-            "rdfs:label": "Recom",
-            "rdfs:comment": "A preference substitute defines a concrete recommendation (output). It is not indicated by the user. Instead it is recommended by the system.",
-            "rdfs:subClassOf": "rbmm:Preference"
-        },
-        {
-            "@id": "rbmm:Input",
-            "@type": "owl:Class",
-            "rdfs:label": "Input",
-            "rdfs:comment": "A preference substitute defines for which preference the recommendation is valid."
-        },
-        {
-            "@id": "rbmm:hasSubst",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "hasSubst",
-            "rdfs:comment": "Each set of preference substitutes consists of 1 to n simple preference substitutes and/or complex preference substitutes.",
-            "propertyOf": "rbmm:PreferenceSubstituteSet",
-            "propertyOn": "rbmm:PreferenceSubstitute"
-        },
-        {
-            "@id": "rbmm:prefSubstSetId",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "id",
-            "rdfs:comment": "The id of a preference substitute set",
-            "propertyOf": "rbmm:PreferenceSubstituteSet",
-            "propertyOn": "rdfs:Literal"
-        },
-        {
-            "@id": "rbmm:definesOutput",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "defOut",
-            "rdfs:comment": "Each substitute has one or more concreate recommendation (output).",
-            "propertyOf": "rbmm:PreferenceSubstitute",
-            "propertyOn": "rbmm:Recommendation"
-        },
-        {
-            "@id": "rbmm:definesInput",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "defin",
-            "rdfs:comment": "Each substitute has one or more concreate recommendation (output).",
-            "propertyOf": "rbmm:PreferenceSubstitute",
-            "propertyOn": "rbmm:Input"
-        },
-        {
-            "@id": "rbmm:rating",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "rating",
-            "rdfs:comment": "Rating of a recommendation",
-            "propertyOf": "rbmm:Recommendation",
-            "propertyOn": "rdfs:Literal"
-        },
-        {
-            "@id": "rbmm:SubstRatingList",
-            "@type": "owl:Class",
-            "rdfs:label": "SubstRatingList",
-            "rdfs:comment": "As each preference substitute can have several recommendations a rating is defined."
-        },
-        {
-            "@id": "rbmm:definesRating",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "definesRating",
-            "rdfs:comment": "Each substitute defines a list of redommendation ratings.",
-            "propertyOf": "rbmm:PreferenceSubstitute",
-            "propertyOn": "rbmm:SubstRatingList"
-        },
-        {
-            "@id": "rbmm:applyRecomWithRating",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "applyRating",
-            "rdfs:comment": "Defines which is the rating that shall be applied",
-            "propertyOf": "rbmm:PreferenceSubstitute",
-            "propertyOn": "rdfs:Literal"
-        },
-        {
-            "@id": "rbmm:ConfigurationContext",
-            "@type": "owl:Class",
-            "rdfs:label": "ConfigurationContext",
-            "rdfs:comment": "Describes the context in which a solution works, e.g. task specific."
-        },
-        {
-            "@id": "rbmm:ConfigurationLayer",
-            "@type": "owl:Class",
-            "rdfs:label": "ConfigurationLayer",
-            "rdfs:comment": "Describes the layer at which a solution works, e.g. operating system."
-        },
-        {
-            "@id": "rbmm:WorksOnLayer",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "WorksOnLayer",
-            "rdfs:comment": "The layer at which a solution works.",
-            "propertyOf": "rbmm:Solution",
-            "propertyOn": "rbmm:ConfigurationLayer"
-        },
-        {
-            "@id": "rbmm:WorkForContext",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "WorkForContext",
-            "rdfs:comment": "The context in which a solution works.",
-            "propertyOf": "rbmm:Solution",
-            "propertyOn": "rbmm:ConfigurationContext"
-        },
-        {
-            "@id": "rbmm:LayerRanking",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "LayerRanking",
-            "rdfs:comment": "The ranking of a configuration layer.",
-            "propertyOf": "rbmm:ConfigurationLayer",
-            "propertyOn": "rdfs:Literal"
-        },
-        {
-            "@id": "rbmm:ContextRanking",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "ContextRanking",
-            "rdfs:comment": "The ranking of a configuration context.",
-            "propertyOf": "rbmm:ConfigurationContext",
-            "propertyOn": "rdfs:Literal"
-        },
-        {
-            "@id": "rbmm:SolutionRanking",
-            "@type": "owl:Class",
-            "rdfs:label": "Ranking",
-            "rdfs:comment": "The ranking of a all solution of a certain type."
-        },
-        {
-            "@id": "rbmm:IsRanked",
-            "@type": "owl:ObjectProperty",
-            "rdfs:label": "IsRanked",
-            "rdfs:comment": "A solution is ranked accoring to a functionality provided by the solution.",
-            "propertyOf": "rbmm:Solution",
-            "propertyOn": "rbmm:SolutionRanking"
-        },
-        {
-            "@id": "rbmm:SolutionRankingId",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "Id",
-            "rdfs:comment": "The id of the solution ranking represents the type of products according to which which the solutions are ranked",
-            "propertyOf": "rbmm:SolutionRanking",
-            "propertyOn": "rdfs:Literal"
-        },
-        {
-            "@id": "rbmm:SolutionRankingValue",
-            "@type": "owl:DataProperty",
-            "rdfs:label": "Value",
-            "rdfs:comment": "The value at which the solutions is ranked according to the type of of solution",
-            "propertyOf": "rbmm:SolutionRanking",
             "propertyOn": "rdfs:Literal"
         }
     ]
